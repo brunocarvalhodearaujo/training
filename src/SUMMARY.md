@@ -8,7 +8,7 @@
   - [Funções](./javascript/funcoes.md)
   - [Arrays e objetos](./javascript/arrays-e-objetos.md)
   - [Promises e async/await para programação assíncrona](./javascript/promises-e-async-await.md)
-- [Gerenciando dependências com NPM](./javascript/gerenciando-dependencias-com-npm.md)
+  - [Gerenciando dependências com NPM](./javascript/gerenciando-dependencias-com-npm.md)
 - [Observabilidade](./javascript/observabilidade.md)
 - [Projetos práticos](./javascript/projetos/README.md)
   - [Projeto 1: Hello World](./javascript/projetos/01-hello-world.md)
