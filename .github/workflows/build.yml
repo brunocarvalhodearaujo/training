@@ -12,6 +12,7 @@ on:
     tags:
       - 'v*.*.*'
     branches:
+      - develop
       - main
       - master
   release:
