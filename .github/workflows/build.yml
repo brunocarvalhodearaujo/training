@@ -24,7 +24,7 @@ concurrency:
 
 jobs:
   build:
-    name: 👷 Generate PDF
+    name: 👷 Generate HTML
     runs-on: ubuntu-latest
     permissions: write-all
     timeout-minutes: 10
