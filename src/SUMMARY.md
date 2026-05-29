@@ -2,7 +2,12 @@
 
 # JavaScript e Node.js
 
-- [Visão Geral](./javascript/visao-geral.md)
+- [Fundamentos](./javascript/visao-geral.md)
+  - [Variáveis](./javascript/variaveis.md)
+  - [Estruturas de controle](./javascript/estruturas-de-controle.md)
+  - [Funções](./javascript/funcoes.md)
+  - [Arrays e objetos](./javascript/arrays-e-objetos.md)
+  - [Promises e async/await para programação assíncrona](./javascript/promises-e-async-await.md)
 - [Gerenciando dependências com NPM](./javascript/gerenciando-dependencias-com-npm.md)
 - [Observabilidade](./javascript/observabilidade.md)
 - [Projetos práticos](./javascript/projetos/README.md)
