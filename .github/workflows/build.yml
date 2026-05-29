@@ -42,9 +42,6 @@ jobs:
           version: latest
       - name: 🚢 Run mdbook container
         run: docker compose run --rm mdbook
-        env:
-          MUNDIAL_MOCK_API_URL: https://mundial-server-${{ github.event.inputs.environment }}.mable.agency
-          MUNDIAL_MOCK_API_TOKEN: fce8784c55aab61a1bc356465f3be28772c75dd2
       - name: Upload site files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v4
