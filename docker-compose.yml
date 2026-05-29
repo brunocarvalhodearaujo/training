@@ -1,0 +1,5 @@
+services:
+  mdbook:
+    build: .
+    volumes:
+      - ${PWD}:/book
