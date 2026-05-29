@@ -1,8 +1,12 @@
 # Summary
 
 - [Visão Geral](./README.md)
-- [JavaScript](./javascript.md)
-- [Gerenciando dependências com NPM](./gerenciando-dependencias-com-npm.md)
+
+# Node.js
+
+- [Visão Geral](./javascript/visao-geral.md)
+- [Gerenciando dependências com NPM](./javascript/gerenciando-dependencias-com-npm.md)
+- [Observabilidade](./javascript/observabilidade.md)
 
 # Base de conhecimento
 
