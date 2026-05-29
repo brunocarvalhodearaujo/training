@@ -101,7 +101,7 @@ O loop `for...in` é usado para iterar sobre as propriedades enumeráveis de um 
 const pessoa = { nome: "João", idade: 30 }
 
 for (const chave in pessoa) {
-  console.log(chave) // Imprime as chaves do objeto
+  console.info(chave) // Imprime as chaves do objeto
 }
 ```
 
@@ -112,7 +112,7 @@ O loop `for...of` é usado para iterar sobre objetos iteráveis, como arrays, st
 ```javascript
 const frutas = ["maçã", "banana", "laranja"]
 for (const fruta of frutas) {
-  console.log(fruta) // Imprime os valores do array
+  console.info(fruta) // Imprime os valores do array
 }
 ```
 
@@ -123,7 +123,7 @@ O loop `while` executa um bloco de código enquanto uma condição especificada 
 ```javascript
 let contador = 0
 while (contador < 5) {
-  console.log(contador)
+  console.info(contador)
   contador++
 }
 ```
@@ -135,7 +135,7 @@ O loop `do...while` é semelhante ao `while`, mas a condição é verificada ap�
 ```javascript
 let contador = 0
 do {
-  console.log(contador)
+  console.info(contador)
   contador++
 } while (contador < 5)
 ```
@@ -175,7 +175,7 @@ As funções anônimas são funções que não possuem um nome. Elas são freque
 
 ```javascript
 setTimeout(function() {
-  console.log("Esta mensagem será exibida após 2 segundos")
+  console.info("Esta mensagem será exibida após 2 segundos")
 }, 2000)
 ```
 
@@ -183,7 +183,7 @@ Essa mesma função anônima pode ser escrita como uma função em flecha para u
 
 ```javascript
 setTimeout(() => {
-  console.log("Esta mensagem será exibida após 2 segundos")
+  console.info("Esta mensagem será exibida após 2 segundos")
 }, 2000)
 ```
 
@@ -197,9 +197,9 @@ Os arrays são usados para armazenar uma coleção de elementos ordenados. Eles 
 
 ```javascript
 const frutas = ["maçã", "banana", "laranja"]
-console.log(frutas) // Imprime ["maçã", "banana", "laranja"]
-console.log(frutas[0]) // Imprime "maçã"
-console.log(frutas.length) // Imprime 3
+console.info(frutas) // Imprime ["maçã", "banana", "laranja"]
+console.info(frutas[0]) // Imprime "maçã"
+console.info(frutas.length) // Imprime 3
 ```
 
 ##### Métodos de manipulação de arrays
@@ -209,7 +209,7 @@ O JavaScript oferece uma variedade de métodos para manipular arrays, como `push
 - `length`: Retorna o número de elementos em um array.
     ```javascript
     const frutas = ["maçã", "banana", "laranja"]
-    console.log(frutas.length) // Imprime 3
+    console.info(frutas.length) // Imprime 3
     ```
 - `push`: Adiciona um ou mais elementos ao final de um array.
     ````javascript
@@ -259,7 +259,7 @@ O JavaScript oferece uma variedade de métodos para manipular arrays, como `push
 - `forEach`: Executa uma função para cada elemento do array.
     ```javascript
     const frutas = ["maçã", "banana", "laranja"]
-    frutas.forEach(fruta => console.log(fruta)) // Imprime cada fruta no console
+    frutas.forEach(fruta => console.info(fruta)) // Imprime cada fruta no console
     ```
 - `find`: Retorna o valor do primeiro elemento do array que satisfaz a função de teste fornecida.
     ```javascript
