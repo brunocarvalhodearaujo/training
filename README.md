@@ -4,3 +4,4 @@
 
 - [docker-mdbook](https://github.com/peaceiris/docker-mdbook)
 - [mdbook-pdf](https://github.com/HollowMan6/mdbook-pdf/tree/main)
+- [mdbook](https://rust-lang.github.io/mdBook/index.html)
