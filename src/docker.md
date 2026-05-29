@@ -3,7 +3,7 @@
 Este documento contém os principais comandos para manipulação do Docker e Docker compose e algumas explicações sobre
 conceitos importantes.
 
-## Docker
+## Comandos do Docker
 
 ### Criar tag de uma imagem
 
@@ -204,7 +204,7 @@ Para remover todas as redes Docker, utilize o comando abaixo:
 docker network rm -f $(docker network ls -q)
 ````
 
-## Docker compose
+## Comandos do Docker compose
 
 Esta seção contém os principais comandos para manipulação de projetos Docker compose.
 
@@ -424,7 +424,39 @@ Um registro de imagens Docker é um serviço que armazena e distribui imagens Do
 
 O Docker Hub é um serviço de registro de imagens Docker público e gratuito, mantido pela Docker Inc. Ele permite que os usuários armazenem, compartilhem e gerenciem imagens Docker. O Docker Hub oferece uma vasta biblioteca de imagens oficiais e comunitárias, facilitando o acesso a aplicações populares e ferramentas de desenvolvimento. Além disso, o Docker Hub suporta repositórios privados, permitindo que organizações armazenem imagens de forma segura. Ele também oferece recursos como integração com sistemas de CI/CD, webhooks e automação de builds.
 
+### Como incluir um usuário em um grupo do Docker?
+
+Para incluir um usuário em um grupo do Docker, você pode usar o comando `usermod` no terminal. O comando abaixo adiciona o usuário ao grupo `docker`, permitindo que ele execute comandos do Docker sem precisar de privilégios de superusuário (sudo):
+
+````sh
+sudo usermod -aG docker [nome_do_usuario]
+````
+
+É necessário substituir `[nome_do_usuario]` pelo nome do usuário que você deseja adicionar ao grupo do Docker. Após executar este comando, é recomendado fazer logout e login novamente para que as alterações tenham efeito.
+
+## Como incluir um registro inseguro no Docker?
+
+Para incluir um registro inseguro no Docker, você precisa editar o arquivo de configuração do Docker, geralmente localizado em `/etc/docker/daemon.json`. Adicione a seguinte configuração, substituindo `[endereço_do_registro]` pelo endereço do seu registro inseguro:
+
+````json
+{
+  "insecure-registries": ["[endereço_do_registro]"]
+}
+````
+
+Por exemplo, se o endereço do registro for `myregistry.local:5000`, a configuração ficaria assim:
+
+````json
+{
+  "insecure-registries": ["myregistry.local:5000"]
+}
+````
+
+
+
 ## Referências
 
 - [O que é Docker?](http://www.mundodocker.com.br/o-que-e-docker)
 - [Tips & Tricks with Docker & Docker compose](http://blog.zot24.com/tips-tricks-docker)
+- [Passos pós-instalação Docker](https://docs.docker.com/engine/install/linux-postinstall/)
+- [Permission denied Docker daemon](https://newbedev.com/shell-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket-at-unix-var-run-docker-sock-get-http-2fvar-2frun-2fdocker-sock-v1-24-containers-json-all-1-dial-unix-var-run-docker-sock-connect-permission-denied-code-example)
