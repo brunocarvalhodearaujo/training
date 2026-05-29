@@ -1,4 +1,4 @@
-name: Build and Deploy 🚀
+name: 🚀 Build and Deploy
 
 on:
   pull_request:
@@ -24,7 +24,7 @@ concurrency:
 
 jobs:
   build:
-    name: 👷 Generate pdf
+    name: 👷 Generate PDF
     runs-on: ubuntu-latest
     permissions: write-all
     timeout-minutes: 10

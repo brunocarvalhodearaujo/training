@@ -19,7 +19,7 @@ additional-js = ["mermaid.min.js", "mermaid-init.js"]
 
 [output.pdf]
 landscape = false
-display-header-footer = true
+display-header-footer = false
 print-background = false
 scale = 0.7
 paper-width = 8
