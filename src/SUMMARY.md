@@ -8,3 +8,4 @@
 - [Docker e Compose](./docker-e-compose.md)
 - [Kubernetes](./kubernetes.md)
 - [Terraform](./terraform.md)
+- [AWS](./aws.md)
