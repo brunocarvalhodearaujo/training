@@ -1,4 +1,4 @@
-# JavaScript
+# JavaScript e Node.js
 
 O JavaScript® (às vezes abreviado para JS) é uma linguagem de programação amplamente utilizada para desenvolvimento web, permitindo a criação de páginas interativas e dinâmicas. Ele é executado no lado do cliente (navegador) e também pode ser utilizado no lado do servidor (Node.js). O JavaScript é uma linguagem de alto nível, interpretada e parcialmente orientada a objetos, que suporta paradigmas de programação funcional e imperativa.
 
