@@ -1,0 +1,40 @@
+[book]
+authors = ["Bruno Carvalho de Araujo"]
+language = "pt-BR"
+src = "src"
+title = "Treinamento de Node.js e React"
+
+[build]
+build-dir = "build"
+
+[preprocessor.toc]
+command = "mdbook-toc"
+renderer = ["html"]
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[output.html]
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
+
+[output.pdf]
+landscape = false
+display-header-footer = true
+print-background = false
+scale = 0.7
+paper-width = 8
+paper-height = 10
+margin-top = 0.5
+margin-bottom = 0.5
+margin-left = 0.5
+margin-right = 0.5
+page-ranges = ""
+ignore-invalid-page-ranges = false
+header-template = "<h3 style='font-size:8px; margin-left: 48%; display: none' class='title'></h3>"
+footer-template = "<p style='font-size:10px; margin-left: 48%; display: none'><span class='pageNumber'></span> / <span class='totalPages'></span></p>"
+prefer-css-page-size = true
+generate-document-outline = false
+generate-tagged-pdf = true
+
+[output.pdf-outline]
+like-wkhtmltopdf = true

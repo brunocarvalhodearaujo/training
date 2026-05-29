@@ -1,0 +1,52 @@
+name: Build and Deploy 🚀
+
+on:
+  pull_request:
+    branches:
+      - feature/*
+      - hotfix/*
+      - release/*
+      - main
+      - master
+  push:
+    tags:
+      - 'v*.*.*'
+    branches:
+      - main
+      - master
+  release:
+    types:
+      - created
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: 👷 Generate pdf
+    runs-on: ubuntu-latest
+    permissions: write-all
+    timeout-minutes: 10
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: 🏗 Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          install: true
+          version: latest
+      - name: 🚢 Run mdbook container
+        run: docker compose run --rm mdbook
+        env:
+          MUNDIAL_MOCK_API_URL: https://mundial-server-${{ github.event.inputs.environment }}.mable.agency
+          MUNDIAL_MOCK_API_TOKEN: fce8784c55aab61a1bc356465f3be28772c75dd2
+      - name: Upload site files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: build/pdf
