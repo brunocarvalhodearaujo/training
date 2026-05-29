@@ -1,4 +1,4 @@
-# 1. Gerenciando dependências com NPM
+# Gerenciando dependências com NPM
 
 ## O que é o NPM?
 
