@@ -140,6 +140,52 @@ do {
 } while (contador < 5)
 ```
 
+### Funções
+
+As funções são blocos de código reutilizáveis que realizam uma tarefa específica. Elas podem ser declaradas usando a palavra-chave `function` ou como expressões de função. As funções podem receber parâmetros e retornar valores.
+
+```javascript
+function saudacao(nome) {
+  return `Olá, ${nome}!`
+}
+const mensagem = saudacao("João") // mensagem é "Olá, João!"
+```
+
+#### Funções em flecha (arrow functions)
+
+As funções em flecha são uma forma concisa de escrever funções em JavaScript. Elas são especialmente úteis para funções anônimas e callbacks.
+
+```javascript
+const saudacao = (nome) => {
+  return `Olá, ${nome}!`
+}
+const mensagem = saudacao("João") // mensagem é "Olá, João!"
+```
+
+> É importante notar que as funções em flecha não possuem seu próprio `this`, `arguments`, `super` ou `new.target`, o que as torna inadequadas para certos casos, como métodos de objetos ou funções construtoras, Além disso é possível escrever a função em flecha de forma ainda mais concisa quando ela possui apenas um parâmetro e uma expressão de retorno:
+
+```javascript
+const saudacao = nome => `Olá, ${nome}!`
+const mensagem = saudacao("João") // mensagem é "Olá, João!"
+```
+
+#### Funções anônimas
+
+As funções anônimas são funções que não possuem um nome. Elas são frequentemente usadas como argumentos para outras funções, como callbacks.
+
+```javascript
+setTimeout(function() {
+  console.log("Esta mensagem será exibida após 2 segundos")
+}, 2000)
+```
+
+Essa mesma função anônima pode ser escrita como uma função em flecha para uma sintaxe mais concisa:
+
+```javascript
+setTimeout(() => {
+  console.log("Esta mensagem será exibida após 2 segundos")
+}, 2000)
+```
 
 ### Arrays e objetos
 
@@ -151,13 +197,20 @@ Os arrays são usados para armazenar uma coleção de elementos ordenados. Eles 
 
 ```javascript
 const frutas = ["maçã", "banana", "laranja"]
+console.log(frutas) // Imprime ["maçã", "banana", "laranja"]
 console.log(frutas[0]) // Imprime "maçã"
+console.log(frutas.length) // Imprime 3
 ```
 
 ##### Métodos de manipulação de arrays
 
 O JavaScript oferece uma variedade de métodos para manipular arrays, como `push`, `pop`, `shift`, `unshift`, `slice`, `splice`, entre outros. Esses métodos permitem adicionar, remover e modificar elementos em um array de maneira eficiente.
 
+- `length`: Retorna o número de elementos em um array.
+    ```javascript
+    const frutas = ["maçã", "banana", "laranja"]
+    console.log(frutas.length) // Imprime 3
+    ```
 - `push`: Adiciona um ou mais elementos ao final de um array.
     ````javascript
     const frutas = ["maçã", "banana"]
