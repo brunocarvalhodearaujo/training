@@ -4,10 +4,10 @@ A ideia deste projeto é passar pelos conceitos de desenvolvimento de software u
 
 ## Funcionalidades
 
-- Adicionar receitas e despesas
-- Visualizar um resumo financeiro
-- Editar e excluir entradas
-- Filtrar por categoria e data
+- [ ] Adicionar receitas e despesas
+- [ ] Visualizar um resumo financeiro
+- [ ] Editar e excluir entradas
+- [ ] Filtrar por categoria e data
 
 ## Tecnologias Utilizadas
 
