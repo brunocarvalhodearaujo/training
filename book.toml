@@ -2,7 +2,7 @@
 authors = ["Bruno Carvalho de Araujo"]
 language = "pt-BR"
 src = "src"
-title = "Treinamento de Node.js e React"
+title = "Treinamento"
 
 [build]
 build-dir = "build"
