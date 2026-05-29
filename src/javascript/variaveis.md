@@ -5,7 +5,7 @@ O JavaScript utiliza `var`, `let` e `const` para declarar variáveis. `var` tem 
 Você pode declarar variáveis usando:
 
 ```javascript
-var nome = "João" // Variável global ou de função, não recomendado para uso moderno
+var nome = "João" // Variável global ou de função
 let idade = 30
 const PI = 3.14 // Valor constante
 ```
