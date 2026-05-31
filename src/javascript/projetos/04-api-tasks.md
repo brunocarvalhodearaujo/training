@@ -277,3 +277,13 @@ app.listen(3000, () => {
   console.info('Listening on 127.0.0.1:3000')
 })
 ```
+
+Nesse momento a aplicação Express está configurada para ouvir na porta 3000, mas ainda não temos nenhuma rota definida para manipular as tarefas. Nos próximos passos, vamos adicionar as rotas para criar, ler, atualizar e excluir tarefas, além de configurar a conexão com o banco de dados usando o Knex.
+
+### Explicação do código:
+- **import express**: Importa o módulo Express para criar o servidor web.
+- **import console**: Importa o módulo console para usar o método `console.info` para exibir mensagens informativas no terminal.
+- **const app = express()**: Cria uma instância do aplicativo Express.
+- **app.use(express.json())**: Middleware que converte o corpo das requisições para JSON, permitindo que a API receba dados no formato JSON.
+- **app.use(express.urlencoded({ extended: true }))**: Middleware que converte o corpo das requisições para URL-encoded, permitindo que a API receba dados de formulários HTML.
+- **app.listen(3000, () => { ... })**: Inicia o servidor Express na porta 3000 e exibe uma mensagem no console indicando que o servidor está ouvindo nessa porta.
