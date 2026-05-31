@@ -354,13 +354,29 @@ A partir deste ponto, a API de tarefas já tem um endpoint funcional para criar 
 
 ### Testando o endpoint de criação de tarefas:
 
-1. Abra o Postman e crie uma nova requisição POST para a URL `http://localhost:3000/tasks`.
-2. No corpo da requisição, selecione o formato JSON e adicione o seguinte conteúdo para criar uma nova tarefa:
+1. Execute o servidor Express usando o comando:
+    ```bash
+    npm start
+    ```
+    O servidor deve iniciar e exibir a mensagem "Listening on port 3000".
+    > Caso o serviço já esteja em execução é necessário reiniciá-lo para que as alterações no código sejam aplicadas. Você pode parar o servidor atual usando `Ctrl + C` no terminal e, em seguida, executar `npm start` novamente para reiniciar o servidor.
+2. Abra o Postman e crie uma nova requisição POST para a URL `http://localhost:3000/tasks`.
+3. No corpo da requisição, selecione o formato JSON e adicione o seguinte conteúdo para criar uma nova tarefa:
     ```json
     { "name": "Minha primeira tarefa" }
     ```
-3. Envie a requisição e verifique se a resposta retorna o ID, nome e status da tarefa criada, com um status HTTP 201 (Created). A resposta deve ser semelhante a:
+4. Envie a requisição e verifique se a resposta retorna o ID, nome e status da tarefa criada, com um status HTTP 201 (Created). A resposta deve ser semelhante a:
     ```json
     { "id": 1, "name": "Minha primeira tarefa", "completed": false }
     ```
-4. Verifique no banco de dados MySQL, usando o DBeaver, se a nova tarefa foi inserida corretamente na tabela `tasks`. Você deve ver um registro com o nome "Minha primeira tarefa" e o status `completed` como `false`.
+5. Se preferir você poderá usar o terminal para testar o endpoint usando o `curl`:
+    ```bash
+    curl -X POST http://localhost:3000/tasks \
+      -H "Content-Type: application/json" \
+      -d '{"name": "Minha primeira tarefa"}'
+    ```
+    A resposta deve ser semelhante a:
+    ```json
+    { "id": 1, "name": "Minha primeira tarefa", "completed": false }
+    ```
+6. Verifique no banco de dados MySQL, usando o DBeaver, se a nova tarefa foi inserida corretamente na tabela `tasks`. Você deve ver um registro com o nome "Minha primeira tarefa" e o status `completed` como `false`.
