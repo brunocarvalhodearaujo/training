@@ -568,11 +568,9 @@ export const CreateTask: FC<Props> = () => {
 #### Explicação do código:
 
 - **CreateTask**: Componente funcional que exibe um formulário para criar novas tarefas.
-- **useState**: Hooks do React para gerenciar o estado do nome da tarefa, o estado de carregamento e o estado de erro.
+- **useState**: O hook `useState` é uma função do React que permite adicionar estado a componentes funcionais. Ele retorna um array com dois elementos: o valor atual do estado e uma função para atualizar esse valor. No exemplo acima, estamos usando `useState` para gerenciar o estado do nome da tarefa, o estado de carregamento e o estado de erro. Cada vez que o estado é atualizado usando a função fornecida pelo `useState`, o componente é re-renderizado para refletir as mudanças na interface.
 - **handleSubmit**: Função assíncrona que é chamada quando o formulário é submetido. Ela previne o comportamento padrão do formulário, define o estado de carregamento e chama a função `createTask` para enviar a requisição à API. Se a tarefa for criada com sucesso, o nome da tarefa é limpo. Se ocorrer um erro, a mensagem de erro é exibida.
 - **form**: O formulário contém um campo de entrada para o nome da tarefa e um botão de envio. O botão é desabilitado enquanto a requisição está em andamento para evitar múltiplas submissões.
 - **error**: Se houver um erro durante a criação da tarefa, a mensagem de erro é exibida abaixo do formulário em vermelho.
 
 > A primeira vista o JSX pode parecer confuso, mas ele é apenas uma sintaxe que permite escrever HTML dentro do JavaScript. O JSX é transformado em chamadas de funções do React para criar os elementos da interface. Por exemplo, o código JSX `<h2>Create Task</h2>` é transformado em `React.createElement('h2', null, 'Create Task')` durante a compilação. Isso permite que você escreva a estrutura da interface de forma mais intuitiva e legível, enquanto o React cuida de criar os elementos correspondentes no DOM.
-
-> O hook `useState` é uma função do React que permite adicionar estado a componentes funcionais. Ele retorna um array com dois elementos: o valor atual do estado e uma função para atualizar esse valor. No exemplo acima, estamos usando `useState` para gerenciar o estado do nome da tarefa, o estado de carregamento e o estado de erro. Cada vez que o estado é atualizado usando a função fornecida pelo `useState`, o componente é re-renderizado para refletir as mudanças na interface.
