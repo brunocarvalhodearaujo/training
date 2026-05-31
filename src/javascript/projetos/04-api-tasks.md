@@ -258,8 +258,10 @@ Para criar um script que execute as migrações do Knex, adicione a seguinte lin
     ```
     Este comando executará a migração definida no arquivo `src/migrations/1.js`, criando a tabela `tasks` no banco de dados MySQL. Se precisar reverter a migração, você pode usar o comando `npm run rollback` para desfazer a última migração aplicada.
     > É necessário que o contêiner MySQL esteja em execução para que as migrações sejam aplicadas com sucesso. Certifique-se de que o Docker Compose esteja ativo e o contêiner MySQL esteja rodando antes de executar as migrações.
+5. Abra o DBeaver e conecte-se ao banco de dados MySQL usando as credenciais definidas no `docker-compose.yml` (host: `localhost`, porta: `3306`, usuário: `root`, senha: `root`, banco de dados: `tasks-api`). Verifique se a tabela `tasks` foi criada com sucesso e explore sua estrutura.
+  > Você pode visualizar o [manual de configuração do DBeaver](../../SQL-e-bancos-de-dados-relacionais.md#dbeaver) para aprender como configurar conexões no DBeaver e gerenciar seu banco de dados MySQL.
 
-## Passo 7: Criar o servidor Express e as rotas da API
+## Passo 7: Criar arquivo `src/index.js` para configurar o servidor Express
 
 Nesta etapa, vamos criar o arquivo `src/index.js` e incluir o conteúdo abaixo para começar a construir o servidor Express e definir as rotas da API de tarefas:
 
@@ -281,8 +283,8 @@ app.listen(3000, () => {
 Nesse momento a aplicação Express está configurada para ouvir na porta 3000, mas ainda não temos nenhuma rota definida para manipular as tarefas. Nos próximos passos, vamos adicionar as rotas para criar, ler, atualizar e excluir tarefas, além de configurar a conexão com o banco de dados usando o Knex.
 
 ### Explicação do código:
-- **import express**: Importa o módulo Express para criar o servidor web.
-- **import console**: Importa o módulo console para usar o método `console.info` para exibir mensagens informativas no terminal.
+- **import express from 'express'**: Importa o módulo Express para criar o servidor web.
+- **import console from 'node:console'**: Importa o módulo console para usar o método `console.info` para exibir mensagens informativas no terminal.
 - **const app = express()**: Cria uma instância do aplicativo Express.
 - **app.use(express.json())**: Middleware que converte o corpo das requisições para JSON, permitindo que a API receba dados no formato JSON.
 - **app.use(express.urlencoded({ extended: true }))**: Middleware que converte o corpo das requisições para URL-encoded, permitindo que a API receba dados de formulários HTML.
