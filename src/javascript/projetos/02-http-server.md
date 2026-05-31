@@ -85,3 +85,5 @@ Neste projeto, vamos criar um servidor HTTP simples usando Node.js. Este servido
     npm start
     ```
 2. Você verá a mensagem "Listening on 127.0.0.1:3000" no terminal, indicando que o servidor está em execução e pronto para receber requisições.
+
+3. Abra um navegador web e acesse `http://localhost:3000`. Você verá a mensagem "Hello World!" exibida na página, confirmando que o servidor HTTP está funcionando corretamente.
