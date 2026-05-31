@@ -482,12 +482,44 @@ Para isso vamos criar um novo projeto React fora do diretório `04-api-tasks` do
 
 Agora você pode começar a editar os arquivos dentro do diretório `04-api-tasks-frontend/src` para construir a interface da aplicação React que irá consumir a API de tarefas. Você pode criar componentes para exibir a lista de tarefas, um formulário para criar novas tarefas e botões para marcar as tarefas como concluídas. Utilizaremos o [`fetch` API](../fetch.md) para fazer requisições HTTP à API de tarefas que criamos anteriormente e atualizar a interface com os dados recebidos.
 
+## Criando um arquivo para armazenar as chamadas à API
+
+Crie um arquivo `src/api.ts` para centralizar as chamadas à API de tarefas. Este arquivo conterá funções para criar, ler, atualizar e excluir tarefas, facilitando a manutenção e reutilização do código relacionado à comunicação com a API. E para começar, adicione a função para criar uma nova tarefa:
+
+```typescript
+export const createTask = async (name: string) => {
+  const requestOptions: RequestInit = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ name })
+  }
+
+  const response = await fetch('http://localhost:3000/tasks', requestOptions)
+
+  if (!response.ok) {
+    throw new Error('Failed to create task')
+  }
+
+  return await response.json()
+}
+```
+
+#### Explicação do código:
+- **createTask**: Função assíncrona que recebe o nome da tarefa como parâmetro e faz uma requisição POST para a API de tarefas.
+- **requestOptions**: Objeto que define as opções da requisição, incluindo o método HTTP, os cabeçalhos e o corpo da requisição, que é convertido para JSON usando `JSON.stringify`.
+- **fetch**: Função nativa do JavaScript para fazer requisições HTTP. Ela é usada para enviar a requisição para o endpoint da API de tarefas.
+- **response.ok**: Verifica se a resposta da API foi bem-sucedida (status HTTP 200-299). Se não for bem-sucedida, lança um erro.
+- **response.json()**: Converte a resposta da API para um objeto JavaScript usando o método `json()` da resposta, que é uma função
+
 ### Criando o componente para criar tarefas
 
 Crie o arquivo `src/views/CreateTask.tsx` que será responsável por exibir um formulário para criar novas tarefas e enviar os dados para a API:
 
 ```typescript
 import React, { useState, type FC } from 'react'
+import { createTask } from '../api'
 
 type Props = {}
 
@@ -502,23 +534,11 @@ export const CreateTask: FC<Props> = () => {
     setError(null)
 
     try {
-      const requestOptions: RequestInit = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name })
-      }
-      const response = await fetch('http://localhost:3000/tasks', requestOptions)
-
-      if (!response.ok) {
-        throw new Error('Failed to create task')
-      }
-
-      const data = await response.json()
-      console.info('Task created:', data)
+      const newTask = await createTask(name)
+      console.log('Task created:', newTask)
       setName('')
     } catch (err) {
-      console.error(err)
-      setError('Failed to create task')
+      setError((err as Error).message)
     } finally {
       setLoading(false)
     }
@@ -544,3 +564,13 @@ export const CreateTask: FC<Props> = () => {
   )
 }
 ```
+
+#### Explicação do código:
+
+- **CreateTask**: Componente funcional que exibe um formulário para criar novas tarefas.
+- **useState**: Hooks do React para gerenciar o estado do nome da tarefa, o estado de carregamento e o estado de erro.
+- **handleSubmit**: Função assíncrona que é chamada quando o formulário é submetido. Ela previne o comportamento padrão do formulário, define o estado de carregamento e chama a função `createTask` para enviar a requisição à API. Se a tarefa for criada com sucesso, o nome da tarefa é limpo. Se ocorrer um erro, a mensagem de erro é exibida.
+- **form**: O formulário contém um campo de entrada para o nome da tarefa e um botão de envio. O botão é desabilitado enquanto a requisição está em andamento para evitar múltiplas submissões.
+- **error**: Se houver um erro durante a criação da tarefa, a mensagem de erro é exibida abaixo do formulário em vermelho.
+
+> A primeira vista o JSX pode parecer confuso, mas ele é apenas uma sintaxe que permite escrever HTML dentro do JavaScript. O JSX é transformado em chamadas de funções do React para criar os elementos da interface. Por exemplo, o código JSX `<h2>Create Task</h2>` é transformado em `React.createElement('h2', null, 'Create Task')` durante a compilação. Isso permite que você escreva a estrutura da interface de forma mais intuitiva e legível, enquanto o React cuida de criar os elementos correspondentes no DOM.
