@@ -1,6 +1,10 @@
 # Linux
 
-O Linux é um sistema operacional de código aberto baseado no kernel Linux, criado por Linus Torvalds em 1991. Ele é amplamente utilizado em servidores, desktops, dispositivos móveis e sistemas embarcados devido à sua estabilidade, segurança e flexibilidade. O Linux é conhecido por sua filosofia de software livre, permitindo que os usuários modifiquem e distribuam o sistema operacional conforme necessário. Existem várias distribuições Linux, como Ubuntu, Fedora, Debian e CentOS, cada uma com suas próprias características e propósitos específicos. O Linux é uma escolha popular para desenvolvedores, administradores de sistemas e entusiastas de tecnologia em todo o mundo.
+## Visão geral
+
+O Linux é um sistema operacional de código aberto baseado no kernel Linux, criado por Linus Torvalds em 1991. Ele é amplamente utilizado em servidores, desktops, dispositivos móveis e sistemas embarcados devido à sua estabilidade, segurança e flexibilidade.
+
+O Linux é conhecido por sua filosofia de software livre, permitindo que os usuários modifiquem e distribuam o sistema operacional conforme necessário. Existem várias distribuições Linux, como Ubuntu, Fedora, Debian e CentOS, cada uma com suas próprias características e propósitos específicos. O Linux é uma escolha popular para desenvolvedores, administradores de sistemas e entusiastas de tecnologia em todo o mundo.
 
 ## Comandos básicos do Linux
 
