@@ -15,8 +15,8 @@ Neste projeto, vamos criar uma aplicação simples em Node.js que exibe a mensag
 1. Certifique-se de ter o Node.js instalado em sua máquina. Você pode baixar a versão mais recente do Node.js em [https://nodejs.org/](https://nodejs.org/).
 2. Crie uma nova pasta para o projeto e navegue até ela no terminal:
    ```bash
-   mkdir hello-world
-   cd hello-world
+   mkdir 01-hello-world
+   cd 01-hello-world
    ```
 
 ### Passo 2: Inicializar o projeto com o NPM

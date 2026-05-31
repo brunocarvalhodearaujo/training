@@ -15,8 +15,8 @@ Neste projeto, vamos criar um servidor HTTP simples usando Node.js. Este servido
 1. Certifique-se de ter o Node.js instalado em sua máquina. Você pode baixar a versão mais recente do Node.js em [https://nodejs.org/](https://nodejs.org/).
 2. Crie uma nova pasta para o projeto e navegue até ela no terminal:
     ```bash
-    mkdir http-server
-    cd http-server
+    mkdir 02-http-server
+    cd 02-http-server
     ```
 3. Inicialize um novo projeto Node.js:
     ```bash
@@ -27,7 +27,7 @@ Neste projeto, vamos criar um servidor HTTP simples usando Node.js. Este servido
 
     ````diff
     {
-      "name": "http-server",
+      "name": "02-http-server",
       "version": "1.0.0",
       "description": "",
       "main": "index.js",

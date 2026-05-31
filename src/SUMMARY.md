@@ -19,6 +19,7 @@
 - [Projetos práticos](./javascript/projetos/README.md)
   - [Projeto 1: Olá Mundo](./javascript/projetos/01-hello-world.md)
   - [Projeto 2: Servidor HTTP simples](./javascript/projetos/02-http-server.md)
+  - [Projeto 3: Servidor Express simples](./javascript/projetos/03-express-simple-server.md)
 
 # DevOps
 
