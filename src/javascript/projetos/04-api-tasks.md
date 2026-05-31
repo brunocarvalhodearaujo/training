@@ -486,7 +486,7 @@ Agora você pode começar a editar os arquivos dentro do diretório `04-api-task
 
 Crie o arquivo `src/views/CreateTask.tsx` que será responsável por exibir um formulário para criar novas tarefas e enviar os dados para a API:
 
-```tsx
+```typescript
 import React, { useState, type FC } from 'react'
 
 type Props = {}
