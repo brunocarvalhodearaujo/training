@@ -307,7 +307,7 @@ const app = express()
 
 Em seguida, adicione o seguinte código para criar um endpoint POST que permita criar uma nova tarefa após a linha `app.use(express.urlencoded({ extended: true }))`:
 
-````javascript,diff
+````javascript
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
@@ -381,3 +381,99 @@ A partir deste ponto, a API de tarefas já tem um endpoint funcional para criar 
     { "id": 1, "name": "Minha primeira tarefa", "completed": false }
     ```
 6. Verifique no banco de dados MySQL, usando o DBeaver, se a nova tarefa foi inserida corretamente na tabela `tasks`. Você deve ver um registro com o nome "Minha primeira tarefa" e o status `completed` como `false`.
+
+## Passo 9: Criando uma tela em React para consumir a API de tarefas
+
+Nesta etapa, vamos criar uma interface simples usando React para consumir a API de tarefas que acabamos de criar. A interface permitirá que os usuários visualizem a lista de tarefas, criem novas tarefas e marquem as tarefas como concluídas.
+
+Para isso vamos criar um novo projeto React fora do diretório `04-api-tasks` do nosso projeto atual. Siga os passos abaixo para iniciar uma aplicação React:
+
+1. Abra um novo terminal e navegue para o diretório onde deseja criar a aplicação React. Em seguida, execute o seguinte comando para criar um novo projeto React usando o Create React App:
+
+    ```bash
+    npx create-react-app --template typescript 04-api-tasks-frontend
+    ```
+    Este comando criará um novo diretório chamado `04-api-tasks-frontend` com a estrutura básica de um projeto React. Será solicitado que você confirme a instalação do Create React App e suas dependências. Após a instalação, o terminal exibirá uma mensagem de sucesso indicando que a aplicação React foi criada com sucesso, juntamente com instruções para iniciar o servidor de desenvolvimento.
+
+    ```output
+    Need to install the following packages:
+    create-react-app@5.1.0
+    Ok to proceed? (y) y
+
+
+    Creating a new React app in /Users/bruno/04-api-tasks-frontend.
+
+    Installing packages. This might take a couple of minutes.
+    Installing react, react-dom, and react-scripts with cra-template-typescript...
+
+
+    added 1298 packages in 56s
+
+    268 packages are looking for funding
+      run `npm fund` for details
+
+    Initialized a git repository.
+
+    Installing template dependencies using npm...
+
+    added 22 packages, removed 1 package, and changed 2 packages in 4s
+
+    268 packages are looking for funding
+      run `npm fund` for details
+
+    We detected TypeScript in your project (src/App.test.tsx) and created a tsconfig.json file for you.
+
+    Your tsconfig.json has been populated with default values.
+
+    Removing template package using npm...
+
+
+    removed 1 package, and audited 1319 packages in 5s
+
+    268 packages are looking for funding
+      run `npm fund` for details
+
+    28 vulnerabilities (9 low, 6 moderate, 13 high)
+
+    To address issues that do not require attention, run:
+      npm audit fix
+
+    To address all issues (including breaking changes), run:
+      npm audit fix --force
+
+    Run `npm audit` for details.
+
+    Created git commit.
+
+    Success! Created 04-api-tasks-frontend at /Users/bruno/04-api-tasks-frontend
+    Inside that directory, you can run several commands:
+
+      npm start
+        Starts the development server.
+
+      npm run build
+        Bundles the app into static files for production.
+
+      npm test
+        Starts the test runner.
+
+      npm run eject
+        Removes this tool and copies build dependencies, configuration files
+        and scripts into the app directory. If you do this, you can’t go back!
+
+    We suggest that you begin by typing:
+
+      cd 04-api-tasks-frontend
+      npm start
+
+    Happy hacking!
+    ```
+2. Navegue para o diretório do projeto React:
+    ```bash
+    cd 04-api-tasks-frontend
+    ```
+3. Inicie o servidor de desenvolvimento do React:
+    ```bash
+    npm start
+    ```
+    O comando `npm start` iniciará o servidor de desenvolvimento e abrirá a aplicação React no navegador, geralmente em `http://localhost:3000`. Você verá a página inicial do Create React App, indicando que a aplicação React foi criada com sucesso.
