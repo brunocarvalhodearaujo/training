@@ -23,32 +23,65 @@ Neste projeto, vamos criar um servidor HTTP simples usando Node.js. Este servido
     npm init -y
     ```
     Isso criará um arquivo `package.json` com as configurações padrão.
-4. Edite o arquivo `package.json` incluindo a propriedade `type` para `module` para habilitar o suporte a módulos ES6:
-    ```diff
+4. Edite o arquivo `package.json` incluindo a propriedade `type` para `module` para habilitar o suporte a módulos ES6 e o script de inicialização:
+
+    ````diff
     {
       "name": "http-server",
       "version": "1.0.0",
       "description": "",
-      "main": "server.js",
-      - ...
-      + "type": "module",
+      "main": "index.js",
+    + "type": "module",
       "scripts": {
-        "start": "node server.js"
+    -    "test": "echo \"Error: no test specified\" && exit 1"
+    +    "test": "echo \"Error: no test specified\" && exit 1",
+    +   "start": "node index.js"
       },
+      "keywords": [],
       "author": "",
       "license": "ISC"
     }
-    ```
+    ````
+
+    > O campo `type: "module"` é necessário para que possamos usar a sintaxe de importação ES6 (`import`) em nosso código. Sem essa configuração, o Node.js trataria os arquivos como CommonJS, e a sintaxe de importação não funcionaria corretamente.
+
+    > O script `start` é adicionado para facilitar a execução do servidor. Com ele, você pode iniciar o servidor usando o comando `npm start` em vez de `node index.js`.
 
 ### Passo 2: Criar o servidor HTTP
 
-1. Crie um arquivo chamado `server.js` na raiz do projeto:
+1. Crie um arquivo chamado `index.js` na raiz do projeto:
     ```bash
-    touch server.js
+    touch index.js
     ```
-2. Abra o arquivo `server.js` em seu editor de código e adicione o seguinte código para criar um servidor HTTP simples:
+2. Abra o arquivo `index.js` em seu editor de código e adicione o seguinte código para criar um servidor HTTP simples:
 
-  ```javascript
-  import http from 'node:http'
-  ```
-  > É importante utilizar o prefixo `node:` ao importar módulos nativos do Node.js para garantir que o ambiente de execução reconheça corretamente os módulos.
+    ```javascript
+    import { createServer } from 'node:http'
+
+    const server = createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' })
+      res.end('Hello World!\n')
+    })
+
+    server.listen(3000, '127.0.0.1', () => {
+      console.log('Listening on 127.0.0.1:3000')
+    })
+    ```
+
+    > É importante utilizar o prefixo `node:` ao importar módulos nativos do Node.js para garantir que o ambiente de execução reconheça corretamente os módulos.
+
+    ### Vamos entender o que cada parte do código faz:
+
+    - `import { createServer } from 'node:http'`: Importa a função `createServer` do módulo nativo `http` do Node.js.
+    - `createServer((req, res) => { ... })`: Cria um servidor HTTP que recebe uma função de callback. Esta função é chamada toda vez que uma requisição é feita ao servidor. Ela recebe dois parâmetros: `req` (objeto de requisição) e `res` (objeto de resposta).
+    - `res.writeHead(200, { 'Content-Type': 'text/plain' })`: Define o status da resposta como 200 (OK) e o tipo de conteúdo como texto simples.
+    - `res.end('Hello World!\n')`: Envia a resposta "Hello World!" e encerra a conexão.
+    - `server.listen(3000, '127.0.0.1', () => { ... })`: Inicia o servidor e faz com que ele escute na porta 3000 no endereço IP 127.0.0.1. A função de callback é chamada quando o servidor começa a escutar.
+
+### Passo 3: Executar o servidor
+
+1. No terminal, execute o comando para iniciar o servidor:
+    ```bash
+    npm start
+    ```
+2. Você verá a mensagem "Listening on 127.0.0.1:3000" no terminal, indicando que o servidor está em execução e pronto para receber requisições.
