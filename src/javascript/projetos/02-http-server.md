@@ -104,7 +104,7 @@ Neste projeto, vamos criar um servidor HTTP simples usando Node.js. Este servido
     - `createServer((req, res) => { ... })`: Cria um servidor HTTP que recebe uma função de callback. Esta função é chamada toda vez que uma requisição é feita ao servidor. Ela recebe dois parâmetros: `req` (objeto de requisição) e `res` (objeto de resposta).
     - `res.writeHead(200, { 'Content-Type': 'text/plain' })`: Define o status da resposta como 200 (OK) e o tipo de conteúdo como texto simples.
     - `res.end('Hello World!\n')`: Envia a resposta "Hello World!" e encerra a conexão.
-    - `server.listen(3000, '127.0.0.1', () => { ... })`: Inicia o servidor e faz com que ele escute na porta 3000 no endereço IP 127.0.0.1. A função de callback é chamada quando o servidor começa a escutar.
+    - `server.listen(3000, '127.0.0.1', () => { ... })`: Inicia o servidor e faz com que ele escute na porta 3000 no endereço IP 127.0.0.1. A função de callback é chamada quando o servidor começa a escutar, no callback utilizamos uma [arrow function](../funcoes.md#funções-em-flecha-arrow-functions) para imprimir uma mensagem no console indicando que o servidor está rodando.
 
 ### Passo 3: Executar o servidor
 
