@@ -2,6 +2,8 @@
 
 ![Linux](./.attachments/ubuntu-desktop-rounded-corners.png.avif)
 
+## Introdução ao Linux
+
 O Linux é um sistema operacional de código aberto baseado no kernel Linux, criado por Linus Torvalds em 1991. Ele é amplamente utilizado em servidores, desktops, dispositivos móveis e sistemas embarcados devido à sua estabilidade, segurança e flexibilidade.
 
 O Linux é conhecido por sua filosofia de software livre, permitindo que os usuários modifiquem e distribuam o sistema operacional conforme necessário. Existem várias distribuições Linux, como Ubuntu, Fedora, Debian e CentOS, cada uma com suas próprias características e propósitos específicos. O Linux é uma escolha popular para desenvolvedores, administradores de sistemas e entusiastas de tecnologia em todo o mundo.
@@ -399,58 +401,3 @@ Sim, o Android é baseado no kernel Linux. O sistema operacional Android utiliza
 ### O que é uma conexão SSH?
 
 SSH (Secure Shell) é um protocolo de rede criptografado usado para comunicação segura entre computadores em uma rede. Ele permite que os usuários se conectem remotamente a servidores e dispositivos de rede, executem comandos e transfiram arquivos de forma segura. O SSH é amplamente utilizado para administração remota de sistemas e é conhecido por sua segurança e confiabilidade. Ele utiliza autenticação baseada em chaves ou senhas para garantir que apenas usuários autorizados possam acessar os recursos do sistema remoto.
-
-## Referências
-
-- [A taxa de quadros é limitada a 30 FPS em sessões remotas baseadas no Windows](https://learn.microsoft.com/pt-br/troubleshoot/windows-server/remote/frame-rate-limited-to-30-fps)
-- [Is it possible to copy files to QEMU image without running QEMU](https://stackoverflow.com/questions/70351250/is-it-possible-to-copy-files-to-qemu-image-without-running-qemu)
-- [The Ultimate Beginner's Guide to GPU Passthrough Proxmox, Windows 10](https://www.reddit.com/r/homelab/comments/b5xpua/the_ultimate_beginners_guide_to_gpu_passthrough/)
-- [How to login windows remote desktop (RDP) in windows 11 when Microsoft account and Hello Pin enabled?](https://superuser.com/questions/1715525/how-to-login-windows-remote-desktop-rdp-in-windows-11-when-microsoft-account-a)
-- [Proxmox VE - Fedora CoreOS : Un mariage presque parfait / An almost perfect Union](https://wiki.geco-it.net/public:pve_fcos)
-- [Accessing an LXC container](https://subscription.packtpub.com/book/cloud-and-networking/9781788397605/7/ch07lvl1sec42/accessing-an-lxc-container)
-- [Instalando e Configurando o ZSH no Ubuntu 20.04](https://medium.com/@gutoinfo.ribeiro/instalando-e-configurando-o-zsh-no-ubuntu-20-04-4ef8a2499ed5)
-- [Configurando o systemd-resolved para resolução DNS usando os servidores da nordvpn](https://plus.diolinux.com.br/t/configurando-o-systemd-resolved-para-resolucao-dns-usando-os-servidores-da-nordvpn/51530)
-- [Network File System (NFS)](https://ubuntu.com/server/docs/network-file-system-nfs)
-- [Google Cloud Platform - Regions and zones](https://cloud.google.com/compute/docs/regions-zones)
-- [automated-kubernetes-proxmox](https://github.com/matthieuml/automated-kubernetes-proxmox/blob/main/packer-image/ubuntu.pkr.hcl)
-- [Terraform Dynamic Blocks](https://www.cloudbolt.io/terraform-best-practices/terraform-dynamic-blocks/)
-- [Basic Authentication for ingress host](https://medium.com/@athulmve/basic-authentication-for-ingress-host-9abeef927902)
-- [Step By Step Guide for Proxmox GPU Passthrough!](https://akashrajvanshi.medium.com/step-by-step-guide-for-proxmox-gpu-passthrough-6e885898fdae)
-- [Use hostPath volumes](https://www.alibabacloud.com/help/en/ack/ack-managed-and-ack-dedicated/user-guide/use-hostpath-volumes)
-- [Basic Authentication for ingress host](https://medium.com/@athulmve/basic-authentication-for-ingress-host-9abeef927902)
-- [microsoft/bringing-old-photos-back-to-life](https://replicate.com/microsoft/bringing-old-photos-back-to-life?input=docker)
-- [Leveraging LLMs in your Obsidian Notes](https://ollama.com/blog/llms-in-obsidian)
-- [sync-elasticsearch-mysql](https://github.com/brunocarvalhodearaujo/sync-elasticsearch-mysql/blob/main/docker-compose.yaml)
-- [NVIDIA GPU Passthrough in Proxmox LXCs](https://clait.sh/posts/gpu-passthrough-proxmox/)
-- [node-cloud-blobstore-wrapper](https://github.com/adobe/node-cloud-blobstore-wrapper/blob/master/lib/aws.js)
-- [argo-tunnel-examples](https://github.com/cloudflare/argo-tunnel-examples/blob/master/sharing-k8s-dashboard/dashboard-auth-proxy/deployment.yaml)
-- [oss gallery](https://oss.gallery/?q=s3)
-- [umbrel apps](https://apps.umbrel.com/app/maybe)
-- [Hiden Storage Local dan Local-Lvm](https://dev.to/seno21/hiden-storage-local-dan-local-lvm-273a)
-- [Deploying Amazon API Gateway and Lambda with Terraform](https://dev.to/aws-builders/deploying-amazon-api-gateway-and-lambda-with-terraform-1i2o)
-- [FUSE-based file system backed by Amazon S3](https://github.com/s3fs-fuse/s3fs-fuse)
-- [Lose Network After Installing PCI NIC](https://forum.proxmox.com/threads/lose-network-after-installing-pci-nic.144611/)
-- [Passthrough Physical Disk to Virtual Machine (VM)](https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM))
-- [Blocos CIDR da VPC](https://docs.aws.amazon.com/pt_br/vpc/latest/userguide/vpc-cidr-blocks.html)
-- [pfsense openvpn](https://simplificandoredes.com/instalar-e-configurar-servidor-openvpn-no-pfsense/#google_vignette)
-- [Replace your Homelab VPN with Cloudflare Zero Trust](https://medium.com/@sirkirby/replace-your-homelab-vpn-with-cloudflare-zero-trust-8416a1d7045e)
-- [Cloud-Init Support](https://pve.proxmox.com/wiki/Cloud-Init_Support)
-- [Step by Step process of how to add and mount EBS Volume on Ubuntu EC2 Linux Instance](https://medium.com/@mudasirhaji/step-by-step-process-of-how-to-add-and-mount-ebs-volume-on-ubuntu-ec2-linux-instance-a4be8870a4dd)
-- [az-devops-agents-k8s](https://github.com/anveshmuppeda/az-devops-agents-k8s/blob/main/helm-charts/az-selfhosted-agents/templates/_helpers.tpl)
-- [pmint93\helm-charts](https://github.com/pmint93/helm-charts/tree/master)
-- [Building Container-Optimized OS from source](https://cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source)
-- [EAP no desenvolvimento de software](https://dev.to/yuripeixinho/eap-desenvolvimento-de-softwa-509o)
-- [Node.JS-ADS-System](https://github.com/MohamedAlabasy/Node.JS-ADS-System/blob/main/src/controllers/adsController.ts)
-- [Desenvolva um código melhor com Object Calisthenics](https://medium.com/@rafaelcruz_48213/desenvolva-um-código-melhor-com-object-calisthenics-d5364767a9ba)
-- [Next.js 14+ Performance Optimization: Modern Approaches for Production Applications](https://dev.to/hijazi313/nextjs-14-performance-optimization-modern-approaches-for-production-applications-3n65)
-- [Gemini Code Assist: AI coding assistance for any language](https://codeassist.google)
-- [Medium | itautecnologia](https://medium.com/@itautecnologia)
-- [OSS | gallery](https://oss.gallery)
-- [Reduce memory usage using NodeJs Stream API and Generator in IO intensive application](https://medium.com/@yiqun.rong2/reduce-memory-usage-using-nodejs-stream-api-and-generator-in-io-intensive-application-23e84735a523)
-- [opentelemetry-operations-js](https://github.com/GoogleCloudPlatform/opentelemetry-operations-js/blob/b08a217bc40a4a7e69aae311b24f050d85a9bc6c/samples/instrumentation-quickstart/src/util.ts)
-- [NodeJS graphql Client usage with Promise](https://the-guild.dev/graphql/ws/recipes)
-- [opentelemetry-operations-js](https://github.com/GoogleCloudPlatform/opentelemetry-operations-js/blob/b08a217bc40a4a7e69aae311b24f050d85a9bc6c/samples/instrumentation-quickstart/Dockerfile)
-- [Proxmox - BTRFS](https://pve.proxmox.com/wiki/BTRFS)
-- [External secrets](https://external-secrets.io)
-- [External Basic Authentication](https://kubernetes.github.io/ingress-nginx/examples/auth/external-auth/)
-- [Fix for Remote Desktop Error code 0x207 on Mac for Ubuntu](https://dev.to/emile1636/rdp-error-code-0x207-on-mac-for-ubuntu-24-d6d)
