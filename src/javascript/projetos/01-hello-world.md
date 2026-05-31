@@ -60,9 +60,11 @@ Neste projeto, vamos criar uma aplicação simples em Node.js que exibe a mensag
 ## Passo 6: Incluindo um script de execução no `package.json`
 
 1. Abra o arquivo `package.json` e adicione um script para facilitar a execução do projeto. Modifique a seção "scripts" para incluir o seguinte:
-   ```json
+   ```diff
    "scripts": {
-     "start": "node src/index.js"
+   -  "test": "echo \"Error: no test specified\" && exit 1"
+   +. "test": "echo \"Error: no test specified\" && exit 1",
+   +  "start": "node src/index.js"
    }
    ```
 2. Agora, você pode iniciar o projeto usando o comando:
