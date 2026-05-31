@@ -8,3 +8,4 @@ A ideia é que, ao final de cada projeto, você tenha uma aplicação funcional 
 
 - [Projeto 1: Olá Mundo](./01-hello-world.md)
 - [Projeto 2: Servidor HTTP simples](./02-http-server.md)
+- [Projeto 3: Servidor Express simples](./03-express-simple-server.md)
