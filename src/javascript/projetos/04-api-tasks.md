@@ -1,0 +1,279 @@
+# Projeto 4 - API de Tarefas
+
+Neste projeto, vamos criar uma API de tarefas usando Node.js e Express. A API permitirá que os usuários criem, leiam, atualizem e excluam tarefas que serão armazenadas em um banco de dados MySQL.
+
+## Requisitos
+
+- Ter conhecimento básico de [JavaScript](../visao-geral.md), Node.js e Express.
+- Ter conhecimento de [APIs RESTful](../../rest.md) e como elas funcionam.
+- Ter conhecimento básico de bancos de dados relacionais e [SQL](../../SQL-e-bancos-de-dados-relacionais.md).
+- Node.js instalado em sua máquina com versão 24 ou superior.
+- Editor de código de sua preferência (como Visual Studio Code, Sublime Text, etc.)
+- Terminal do Linux ou macOS.
+- [Docker](../../devops/docker.md) instalado para configurar o banco de dados MySQL.
+- [Dbeaver](https://dbeaver.io/) para gerenciar o banco de dados MySQL.
+
+## Passo 1: Configurar o Projeto
+
+1. Crie um novo diretório para o projeto e navegue até ele:
+    ```bash
+    mkdir 04-api-tasks
+    cd 04-api-tasks
+    ```
+2. Inicialize um novo projeto Node.js:
+    ```bash
+    npm init -y
+    ```
+3. Edite o arquivo `package.json` para incluir a propriedade `type` como `module` e adicione um script de inicialização:
+    ````diff
+    {
+      "name": "04-api-tasks",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+    + "type": "module",
+      "scripts": {
+    -   "test": "echo \"Error: no test specified\" && exit 1"
+    +   "test": "echo \"Error: no test specified\" && exit 1",
+    +   "start": "node src/index.js"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC"
+    }
+    ```
+4. Crie um diretório `src` para organizar o código-fonte do projeto:
+    ```bash
+    mkdir src
+    ```
+5. Edite o arquivo `package.json` para apontar o campo `main` e o script `start` para o arquivo `src/index.js`:
+    ````diff
+    {
+      "name": "04-api-tasks",
+      "version": "1.0.0",
+      "description": "",
+    - "main": "index.js",
+    + "main": "src/index.js",
+      "type": "module",
+      "scripts": {
+    -   "test": "echo \"Error: no test specified\" && exit 1",
+    +   "test": "echo \"Error: no test specified\" && exit 1",
+    +   "start": "node src/index.js"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC"
+    }
+    ```
+
+## Passo 2: Configurar o Banco de Dados MySQL via Docker
+
+1. Certifique-se de ter o Docker instalado e em execução em sua máquina.
+2. Crie um arquivo chamado `docker-compose.yml` na raiz do projeto com o seguinte conteúdo para configurar um contêiner MySQL:
+    ```yaml
+    networks:
+      internal:
+        driver: bridge
+
+    volumes:
+      mysql-storage:
+        driver: local
+
+    services:
+      mysql:
+        image: mysql:8.0
+        command: --character-set-server=utf8 --collation-server=utf8_unicode_ci
+        restart: unless-stopped
+        environment:
+          MYSQL_ROOT_HOST: '%'
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: tasks-api
+        volumes:
+          - mysql-storage:/var/lib/mysql:rw
+        ports:
+          - 3306:3306
+        networks:
+          - internal
+    ```
+
+    ### Explicação do `docker-compose.yml`:
+    - **networks**: Define uma rede personalizada chamada `internal` para isolar os serviços do projeto.
+    - **volumes**: Define um volume chamado `mysql-storage` para armazenar os dados do MySQL de forma persistente.
+    - **services**: Define o serviço `mysql` que utiliza a imagem oficial do MySQL 8.0. Ele configura o banco de dados com um nome, usuário e senha, e expõe a porta 3306 para permitir conexões externas.
+      - `command`: Configura o MySQL para usar UTF-8 como conjunto de caracteres padrão, garantindo compatibilidade com caracteres acentuados e outros símbolos.
+3. Inicie o contêiner MySQL usando o Docker Compose:
+    ```bash
+    docker-compose up -d
+    ```
+    Este comando iniciará o contêiner em segundo plano. O MySQL estará disponível na porta 3306 do localhost, e você poderá conectar-se a ele usando as credenciais definidas no arquivo `docker-compose.yml` (usuário: `root`, senha: `root`, banco de dados: `tasks-api`).
+    > Caso queira parar o contêiner, use o comando `docker-compose down`. Para visualizar os logs do contêiner, use `docker-compose logs mysql`.
+
+
+## Passo 3: Instalar as Dependências
+
+1. No terminal, dentro do diretório do projeto, execute o seguinte comando para instalar as dependências necessárias:
+    ```bash
+    npm install express@4.19.2 mysql2@3.11.0 knex@3.1.0
+    ```
+    - `express`: Framework web para Node.js que facilita a criação de APIs.
+    - `mysql2`: Biblioteca para conectar e interagir com bancos de dados MySQL.
+    - `knex`: Query builder para SQL que facilita a construção de consultas ao banco de dados.
+    > Estamos especificando as versões das dependências para garantir que elas funcionem de forma idêntica ao que foi testado durante a criação deste projeto, evitando possíveis incompatibilidades com versões mais recentes.
+2. O arquivo `package.json` deve ser atualizado para refletir as dependências instaladas:
+    ````diff
+    {
+      "name": "04-api-tasks",
+      "version": "1.0.0",
+      "description": "",
+      "main": "src/index.js",
+      "type": "module",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node src/index.js"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+    + "dependencies": {
+    +   "express": "4.19.2",
+    +   "knex": "3.1.0",
+    +   "mysql2": "3.11.0"
+    + }
+    }
+    ```
+
+## Passo 4: Criando o arquivo `knexfile.js` para configurar o Knex
+
+O knex precisa de um arquivo de configuração para saber como se conectar ao banco de dados. Crie um arquivo chamado `knexfile.js` na raiz do projeto com o seguinte conteúdo:
+
+```javascript
+import path from 'node:path'
+import process from 'node:process'
+
+/**
+ * @type {import('knex').Knex.Config}
+ */
+export default {
+  client: 'mysql2',
+  migrations: {
+    directory: path.join(process.cwd(), 'src', 'migrations'),
+  },
+  connection: {
+    host: '0.0.0.0',
+    port: 3306,
+    user: 'root',
+    password: 'root',
+    database: 'tasks-api',
+  }
+}
+```
+
+### Explicação do `knexfile.js`:
+
+- **export default**: Exporta a configuração do Knex como um módulo ES6.
+- **client**: Especifica o cliente de banco de dados a ser usado, neste caso, `mysql2`.
+- **migrations**: Define o diretório onde as migrações do banco de dados serão armazenadas. As migrações são usadas para versionar e gerenciar as alterações no esquema do banco de dados.
+  - `directory`: Usa o módulo `path` para construir um caminho absoluto para o diretório `src/migrations`, onde as migrações serão armazenadas.
+- **connection**: Configura os detalhes de conexão com o banco de dados MySQL, sendo:
+  - `host`: Define o endereço do servidor MySQL. Usamos `0.0.0.0` para permitir conexões de qualquer endereço IP.
+  - `port`: Especifica a porta em que o MySQL está escutando, que é a porta padrão 3306.
+  - `user`: O nome de usuário para autenticação no banco de dados, que é `root` conforme definido no `docker-compose.yml`.
+  - `password`: A senha para autenticação, que é `root` conforme definido no `docker-compose.yml`.
+  - `database`: O nome do banco de dados a ser usado, que é `tasks-api` conforme definido no `docker-compose.yml`.
+
+Com essa configuração, o Knex estará pronto para se conectar ao banco de dados MySQL e gerenciar as migrações necessárias para criar as tabelas e estruturas do banco de dados para a API de tarefas.
+
+
+## Passo 5: Criar script para executar as migrações
+
+Para criar um script que execute as migrações do Knex, adicione a seguinte linha ao campo `scripts` do arquivo `package.json`:
+
+````diff
+{
+  "name": "04-api-tasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+-    "start": "node src/index.js"
++    "start": "node src/index.js",
++   "migrate": "knex migrate:latest --knexfile knexfile.js",
++   "rollback": "knex migrate:rollback --knexfile knexfile.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.19.2",
+    "knex": "3.1.0",
+    "mysql2": "3.11.0"
+  }
+}
+````
+
+### Explicação dos scripts adicionados:
+- **migrate**: Este script executa as migrações do Knex para criar ou atualizar a estrutura do banco de dados. O comando `knex migrate:latest` aplica todas as migrações pendentes, e a opção `--knexfile knexfile.js` especifica o arquivo de configuração do Knex a ser usado.
+- **rollback**: Este script reverte a última migração aplicada. O comando `knex migrate:rollback` desfaz a última migração, e a opção `--knexfile knexfile.js` especifica o arquivo de configuração do Knex a ser usado.
+
+## Passo 6: Criar a migração para a tabela de tarefas
+
+1. Crie um diretório chamado `migrations` dentro do diretório `src`:
+    ```bash
+    mkdir src/migrations
+    ```
+2. Crie um arquivo de migração para a tabela de tarefas. O nome do arquivo deve seguir um formato numérico para garantir a ordem de execução, seguido por uma descrição da migração. Por exemplo:
+    ```bash
+    touch src/migrations/1.js
+    ```
+3. Edite o arquivo `src/migrations/1.js` para definir a estrutura da tabela de tarefas:
+    ```javascript
+    export const up = (knex) => {
+      return knex.schema
+        .createTable('tasks', (table) => {
+          table.comment('Tasks table')
+          table.increments()
+          table.string('name', 100).comment('Task name')
+          table.boolean('completed').defaultTo(false).comment('Task status')
+          table.timestamps()
+        })
+    }
+
+    export const down = (knex) => {
+      return knex.schema
+        .dropTable('tasks')
+    }
+    ```
+    ### Explicação da migração:
+    - **up**: Função que define as alterações a serem aplicadas ao banco de dados. Neste caso, estamos criando uma tabela chamada `tasks` com as seguintes colunas:
+      - `id`: Coluna auto-incremental que serve como chave primária.
+      - `name`: Coluna de texto para armazenar o nome da tarefa, com um limite de 100 caracteres.
+      - `completed`: Coluna booleana para indicar se a tarefa foi concluída ou não, com valor padrão `false`.
+      - `created_at` e `updated_at`: Colunas de timestamp para registrar quando a tarefa foi criada e atualizada.
+    - **down**: Função que define as alterações para reverter a migração, ou seja, o que deve ser feito para desfazer as alterações aplicadas pela função `up`. Neste caso, estamos simplesmente removendo a tabela `tasks` do banco de dados.
+4. Execute as migrações para criar a tabela de tarefas no banco de dados:
+    ```bash
+    npm run migrate
+    ```
+    Este comando executará a migração definida no arquivo `src/migrations/1.js`, criando a tabela `tasks` no banco de dados MySQL. Se precisar reverter a migração, você pode usar o comando `npm run rollback` para desfazer a última migração aplicada.
+    > É necessário que o contêiner MySQL esteja em execução para que as migrações sejam aplicadas com sucesso. Certifique-se de que o Docker Compose esteja ativo e o contêiner MySQL esteja rodando antes de executar as migrações.
+
+## Passo 7: Criar o servidor Express e as rotas da API
+
+Nesta etapa, vamos criar o arquivo `src/index.js` e incluir o conteúdo abaixo para começar a construir o servidor Express e definir as rotas da API de tarefas:
+
+```javascript
+import express from 'express'
+import console from 'node:console'
+
+const app = express()
+
+// middleware para converter o body da requisição para JSON
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
+app.listen(3000, () => {
+  console.info('Listening on 127.0.0.1:3000')
+})
+```
