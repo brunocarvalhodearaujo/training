@@ -63,7 +63,7 @@ Neste projeto, vamos criar uma aplicação simples em Node.js que exibe a mensag
    ```diff
    "scripts": {
    -  "test": "echo \"Error: no test specified\" && exit 1"
-   +. "test": "echo \"Error: no test specified\" && exit 1",
+   +  "test": "echo \"Error: no test specified\" && exit 1",
    +  "start": "node src/index.js"
    }
    ```

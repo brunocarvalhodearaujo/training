@@ -47,11 +47,38 @@ Neste projeto, vamos criar um servidor HTTP simples usando Node.js. Este servido
 
     > O script `start` é adicionado para facilitar a execução do servidor. Com ele, você pode iniciar o servidor usando o comando `npm start` em vez de `node index.js`.
 
+5. Crie um diretório `src` para organizar o código-fonte do projeto:
+    ```bash
+    mkdir src
+    ```
+
+6. Edite o arquivo `package.json` para apontar o campo `main` para o arquivo principal dentro do diretório `src`:
+
+    ````diff
+    {
+      "name": "http-server",
+      "version": "1.0.0",
+      "description": "",
+    - "main": "index.js",
+    + "main": "src/index.js",
+      "type": "module",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node src/index.js"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC"
+    }
+    ````
+
+    > Com essa configuração, o comando `npm start` agora executará o arquivo `src/index.js`, que será o ponto de entrada do nosso servidor HTTP.
+
 ### Passo 2: Criar o servidor HTTP
 
-1. Crie um arquivo chamado `index.js` na raiz do projeto:
+1. Crie um arquivo chamado `index.js` dentro do diretório `src`:
     ```bash
-    touch index.js
+    touch src/index.js
     ```
 2. Abra o arquivo `index.js` em seu editor de código e adicione o seguinte código para criar um servidor HTTP simples:
 
