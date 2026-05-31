@@ -5,6 +5,8 @@
 - [Git](./git.md)
 - [Linux](./linux.md)
 - [SQL e bancos de dados relacionais](./SQL-e-bancos-de-dados-relacionais.md)
+- [HTTP e REST](./http-e-rest.md)
+- [JSON e XML](./json-e-xml.md)
 
 # JavaScript e Node.js
 
@@ -29,10 +31,3 @@
 - [Kubernetes](./devops/kubernetes.md)
 - [Terraform](./devops/terraform.md)
 - [AWS](./devops/aws.md)
-
-# Base de conhecimento
-
-- [HTTP](./http.md)
-- [JSON](./json.md)
-- [XML](./xml.md)
-- [REST](./rest.md)
