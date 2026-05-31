@@ -1,6 +1,6 @@
 # Projeto 1 - Hello World
 
-Neste projeto, vamos criar uma aplicação simples em Node.js que exibe a mensagem "Hello World" no console. Este é um ótimo ponto de partida para se familiarizar com o ambiente de desenvolvimento Node.js e entender como criar e executar um script básico.
+Neste projeto, vamos criar uma aplicação simples em Node.js que exibe a mensagem "Hello World" (Olá Mundo) no console. Este é um ótimo ponto de partida para se familiarizar com o ambiente de desenvolvimento Node.js e entender como criar e executar um script básico.
 
 ## Requisitos
 
