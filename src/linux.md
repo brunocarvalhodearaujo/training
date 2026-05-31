@@ -1,8 +1,8 @@
 # Linux
 
-Este documento contém comandos úteis e informações relacionadas ao sistema operacional Linux.
+O Linux é um sistema operacional de código aberto baseado no kernel Linux, criado por Linus Torvalds em 1991. Ele é amplamente utilizado em servidores, desktops, dispositivos móveis e sistemas embarcados devido à sua estabilidade, segurança e flexibilidade. O Linux é conhecido por sua filosofia de software livre, permitindo que os usuários modifiquem e distribuam o sistema operacional conforme necessário. Existem várias distribuições Linux, como Ubuntu, Fedora, Debian e CentOS, cada uma com suas próprias características e propósitos específicos. O Linux é uma escolha popular para desenvolvedores, administradores de sistemas e entusiastas de tecnologia em todo o mundo.
 
-## Comandos
+## Comandos básicos do Linux
 
 ### Reiniciar o sistema
 
@@ -124,6 +124,14 @@ Substitua `<hostname_or_ip>` pelo nome do host ou endereço IP do servidor SSH c
 
 Este comando pode ser útil quando você está enfrentando problemas de autenticação SSH devido a mudanças nas chaves do servidor (ex: `Host key verification failed.`)
 
+### Conectar em um servidor remoto via SSH
+
+Para se conectar a um servidor remoto usando SSH, você pode usar o seguinte comando:
+
+```bash
+ssh user@remote_host
+```
+
 ### Configuração e Montagem de NFS
 
 Para instalar o cliente NFS no Linux, use os seguintes comandos dependendo da sua distribuição:
@@ -150,6 +158,20 @@ Substitua `<NFS_SERVER_IP>` pelo endereço IP do servidor NFS e `/path/to/nfs/sh
 
 ```bash
 sudo mount -t nfs -o resvport,rw 192.168.1.141:/mnt/hd-b550m-1/documents ./hd-b550m-1
+```
+
+### Criar tunnel SSH
+
+Para criar um tunnel SSH, você pode usar o seguinte comando:
+
+```bash
+ssh -L local_port:remote_host:remote_port user@ssh_server
+```
+
+Por exemplo, para criar um tunnel SSH que encaminha a porta local 8080 para a porta 80 do servidor remoto `example.com` através do servidor SSH `ssh.example.com`, você pode usar:
+
+```bash
+ssh -L 8080:example.com:80 user@ssh.example.com
 ```
 
 ### Configurar discovery de serviços com Avahi
@@ -361,6 +383,10 @@ Gerenciadores de pacotes no Linux são ferramentas que facilitam a instalação,
 ### O Android é baseado no kernel Linux?
 
 Sim, o Android é baseado no kernel Linux. O sistema operacional Android utiliza uma versão modificada do kernel Linux como seu núcleo, aproveitando os recursos e a estabilidade do Linux para gerenciar o hardware do dispositivo, como processadores, memória, armazenamento e periféricos. No entanto, o Android inclui várias camadas adicionais de software, como a máquina virtual Dalvik (ou ART nas versões mais recentes), bibliotecas específicas do Android e uma interface de usuário personalizada, que diferenciam o Android de outras distribuições Linux tradicionais.
+
+### O que é uma conexão SSH?
+
+SSH (Secure Shell) é um protocolo de rede criptografado usado para comunicação segura entre computadores em uma rede. Ele permite que os usuários se conectem remotamente a servidores e dispositivos de rede, executem comandos e transfiram arquivos de forma segura. O SSH é amplamente utilizado para administração remota de sistemas e é conhecido por sua segurança e confiabilidade. Ele utiliza autenticação baseada em chaves ou senhas para garantir que apenas usuários autorizados possam acessar os recursos do sistema remoto.
 
 ## Referências
 

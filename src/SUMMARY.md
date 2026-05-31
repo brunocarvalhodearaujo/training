@@ -3,6 +3,7 @@
 # Fundamentos
 
 - [Git](./git.md)
+- [Linux](./linux.md)
 
 # JavaScript e Node.js
 
@@ -18,12 +19,11 @@
 - [Projetos práticos](./javascript/projetos/README.md)
   - [Projeto 1: Hello World](./javascript/projetos/01-hello-world.md)
 
-## DevOps
+# DevOps
 
 - [Docker e Compose](./devops/docker.md)
 - [Kubernetes](./devops/kubernetes.md)
 - [Terraform](./devops/terraform.md)
-- [Linux](./devops/linux.md)
 - [AWS](./devops/aws.md)
 
 # Base de conhecimento
