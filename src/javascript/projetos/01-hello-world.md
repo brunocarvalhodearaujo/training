@@ -73,6 +73,6 @@ Neste projeto, vamos criar uma aplicação simples em Node.js que exibe a mensag
    ```
 3. Isso executará o script definido e exibirá "Hello World" no console.
 
-## Conclusão
+## Recapitulando
 
-Parabéns! Você criou com sucesso um projeto Node.js simples que exibe "Hello World". Este é o primeiro passo para explorar as possibilidades do Node.js e construir aplicações mais complexas no futuro.
+Neste projeto, criamos uma aplicação simples em Node.js que exibe "Hello World" no console. Passamos por todo o processo de configuração do ambiente, criação do arquivo principal, escrita do código e execução do projeto. Este é um excelente ponto de partida para aprender os fundamentos do desenvolvimento em Node.js e preparar o terreno para projetos mais complexos no futuro.

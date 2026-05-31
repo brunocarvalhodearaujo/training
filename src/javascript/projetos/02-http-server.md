@@ -87,3 +87,7 @@ Neste projeto, vamos criar um servidor HTTP simples usando Node.js. Este servido
 2. Você verá a mensagem "Listening on 127.0.0.1:3000" no terminal, indicando que o servidor está em execução e pronto para receber requisições.
 
 3. Abra um navegador web e acesse `http://localhost:3000`. Você verá a mensagem "Hello World!" exibida na página, confirmando que o servidor HTTP está funcionando corretamente.
+
+## Recapitulando
+
+Neste projeto, criamos um servidor HTTP simples usando Node.js que responde a todas as requisições com a mensagem "Hello World!". Passamos por todo o processo de configuração do ambiente, criação do arquivo principal, escrita do código e execução do servidor. Este é um excelente ponto de partida para aprender os fundamentos do desenvolvimento de servidores web em Node.js e preparar o terreno para projetos mais complexos no futuro.
