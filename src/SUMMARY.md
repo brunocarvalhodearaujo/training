@@ -18,6 +18,7 @@
 - [Observabilidade](./javascript/observabilidade.md)
 - [Projetos práticos](./javascript/projetos/README.md)
   - [Projeto 1: Hello World](./javascript/projetos/01-hello-world.md)
+  - [Projeto 2: Servidor HTTP simples](./javascript/projetos/02-http-server.md)
 
 # DevOps
 

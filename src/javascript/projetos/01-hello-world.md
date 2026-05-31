@@ -4,8 +4,9 @@ Neste projeto, vamos criar uma aplicação simples em Node.js que exibe a mensag
 
 ## Requisitos
 
-- Node.js instalado em sua máquina com versão 22 ou superior.
-- Acesso ao terminal do Linux ou macOS.
+- Node.js instalado em sua máquina com versão 24 ou superior.
+- Editor de código de sua preferência (como Visual Studio Code, Sublime Text, etc.)
+- Terminal do Linux ou macOS.
 
 ## Passo a Passo
 
