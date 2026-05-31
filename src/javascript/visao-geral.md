@@ -12,7 +12,7 @@ Para começar a usar o JavaScript no lado do servidor, é necessário instalar o
 
 Para instalar o Node.js em sistemas baseados em Ubuntu ou Debian, você pode usar o seguinte comando:
 
-````sh
+````bash
 curl -fsSL https://deb.nodesource.com/setup_24.x -o /tmp/nodesource_setup.sh
 bash /tmp/nodesource_setup.sh
 apt update
