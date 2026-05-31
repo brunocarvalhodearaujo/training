@@ -382,9 +382,9 @@ A partir deste ponto, a API de tarefas já tem um endpoint funcional para criar 
     ```
 6. Verifique no banco de dados MySQL, usando o DBeaver, se a nova tarefa foi inserida corretamente na tabela `tasks`. Você deve ver um registro com o nome "Minha primeira tarefa" e o status `completed` como `false`.
 
-## Passo 9: Criando uma tela em React para consumir a API de tarefas
+## Passo 9: Criando uma aplicação React para consumir a API de tarefas
 
-Nesta etapa, vamos criar uma interface simples usando React para consumir a API de tarefas que acabamos de criar. A interface permitirá que os usuários visualizem a lista de tarefas, criem novas tarefas e marquem as tarefas como concluídas.
+Nesta etapa, vamos criar uma interface simples usando [React](../react.md) para consumir a API de tarefas que acabamos de criar. A interface permitirá que os usuários visualizem a lista de tarefas, criem novas tarefas e marquem as tarefas como concluídas.
 
 Para isso vamos criar um novo projeto React fora do diretório `04-api-tasks` do nosso projeto atual. Siga os passos abaixo para iniciar uma aplicação React:
 
@@ -477,3 +477,70 @@ Para isso vamos criar um novo projeto React fora do diretório `04-api-tasks` do
     npm start
     ```
     O comando `npm start` iniciará o servidor de desenvolvimento e abrirá a aplicação React no navegador, geralmente em `http://localhost:3000`. Você verá a página inicial do Create React App, indicando que a aplicação React foi criada com sucesso.
+
+## Passo 10: Construindo a interface para cadastrar tarefas
+
+Agora você pode começar a editar os arquivos dentro do diretório `04-api-tasks-frontend/src` para construir a interface da aplicação React que irá consumir a API de tarefas. Você pode criar componentes para exibir a lista de tarefas, um formulário para criar novas tarefas e botões para marcar as tarefas como concluídas. Utilizaremos o [`fetch` API](../fetch.md) para fazer requisições HTTP à API de tarefas que criamos anteriormente e atualizar a interface com os dados recebidos.
+
+### Criando o componente para criar tarefas
+
+Crie o arquivo `src/views/CreateTask.tsx` que será responsável por exibir um formulário para criar novas tarefas e enviar os dados para a API:
+
+```tsx
+import React, { useState, type FC } from 'react'
+
+type Props = {}
+
+export const CreateTask: FC<Props> = () => {
+  const [name, setName] = useState<string>('')
+  const [loading, setLoading] = useState<boolean>(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+    setError(null)
+
+    try {
+      const requestOptions: RequestInit = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name })
+      }
+      const response = await fetch('http://localhost:3000/tasks', requestOptions)
+
+      if (!response.ok) {
+        throw new Error('Failed to create task')
+      }
+
+      const data = await response.json()
+      console.info('Task created:', data)
+      setName('')
+    } catch (err) {
+      console.error(err)
+      setError('Failed to create task')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div>
+      <h2>Create Task</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Task name"
+          required
+        />
+        <button type="submit" disabled={loading}>
+          {loading ? 'Creating...' : 'Create Task'}
+        </button>
+      </form>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+    </div>
+  )
+}
+```
