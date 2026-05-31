@@ -18,7 +18,9 @@
 
 - [Linux](./linux.md)
 - [Git](./git.md)
+- [AWS](./aws.md)
+- [HTTP](./http.md)
+- [REST](./rest.md)
 - [Docker e Compose](./docker.md)
 - [Kubernetes](./kubernetes.md)
 - [Terraform](./terraform.md)
-- [AWS](./aws.md)
