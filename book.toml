@@ -21,6 +21,7 @@ additional-js = ["mermaid.min.js", "mermaid-init.js"]
 git-repository-url = "https://github.com/brunocarvalhodearaujo/training"
 git-repository-icon = "fab-github"
 sidebar-header-nav = true
+additional-css = ["theme/custom.css"]
 
 [output.html.playground]
 editable = true
