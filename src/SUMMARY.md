@@ -1,5 +1,11 @@
 # Summary
 
+# Fundamentos
+
+- [Git](./git.md)
+- [Linux](./linux.md)
+- [SQL e bancos de dados relacionais](./SQL-e-bancos-de-dados-relacionais.md)
+
 # JavaScript e Node.js
 
 - [Fundamentos](./javascript/visao-geral.md)
@@ -16,12 +22,6 @@
   - [Projeto 2: Servidor HTTP simples](./javascript/projetos/02-http-server.md)
   - [Projeto 3: Servidor Express simples](./javascript/projetos/03-express-simple-server.md)
   - [Projeto 4: API de Tarefas](./javascript/projetos/04-api-tasks.md)
-
-# Fundamentos
-
-- [Git](./git.md)
-- [Linux](./linux.md)
-- [SQL e bancos de dados relacionais](./SQL-e-bancos-de-dados-relacionais.md)
 
 # DevOps
 
