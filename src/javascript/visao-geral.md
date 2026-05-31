@@ -4,11 +4,15 @@ O **JavaScript®** (às vezes abreviado para JS) é uma linguagem de programaç�
 
 Uma recomendação é sempre que tiver dúvidas sobre algum método ou API da linguagem consultar a [documentação oficial do MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript), que oferece uma ampla variedade de recursos, tutoriais e referências para desenvolvedores de todos os níveis, vale ressaltar que ele é confiável e mantido pela Mozilla.
 
-## Instalação do Node.js
+## Node.js
+
+O **Node.js** é um ambiente de execução JavaScript que permite executar código JavaScript fora do navegador. Ele é construído sobre o motor V8 do Google Chrome e é amplamente utilizado para desenvolvimento de aplicações web, APIs e ferramentas de linha de comando. O Node.js é conhecido por sua eficiência, escalabilidade e capacidade de lidar com operações assíncronas, tornando-o uma escolha popular para desenvolvimento de back-end.
+
+### Instalação do Node.js
 
 Para começar a usar o JavaScript no lado do servidor, é necessário instalar o Node.js. O Node.js é um ambiente de execução JavaScript que permite executar código JavaScript fora do navegador. Ele é amplamente utilizado para desenvolvimento de aplicações web, APIs e ferramentas de linha de comando. Para instalar o Node.js, siga os passos abaixo:
 
-### Ubuntu/Debian
+#### Ubuntu/Debian
 
 Para instalar o Node.js em sistemas baseados em Ubuntu ou Debian, você pode usar o seguinte comando:
 
