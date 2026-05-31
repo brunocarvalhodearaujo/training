@@ -18,6 +18,14 @@ command = "mdbook-mermaid"
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
 git-repository-url = "https://github.com/brunocarvalhodearaujo/training"
 git-repository-icon = "fab-github"
+sidebar-header-nav = false
+
+[output.html.playground]
+editable = true
+copyable = true
+copy-js = true
+line-numbers = true
+runnable = true
 
 [output.pdf]
 landscape = false
