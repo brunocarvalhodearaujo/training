@@ -575,6 +575,4 @@ export const CreateTask: FC<Props> = () => {
 
 > A primeira vista o JSX pode parecer confuso, mas ele é apenas uma sintaxe que permite escrever HTML dentro do JavaScript. O JSX é transformado em chamadas de funções do React para criar os elementos da interface. Por exemplo, o código JSX `<h2>Create Task</h2>` é transformado em `React.createElement('h2', null, 'Create Task')` durante a compilação. Isso permite que você escreva a estrutura da interface de forma mais intuitiva e legível, enquanto o React cuida de criar os elementos correspondentes no DOM.
 
-#### useState
-
-O hook `useState` é uma função do React que permite adicionar estado a componentes funcionais. Ele retorna um array com dois elementos: o valor atual do estado e uma função para atualizar esse valor. No exemplo acima, estamos usando `useState` para gerenciar o estado do nome da tarefa, o estado de carregamento e o estado de erro. Cada vez que o estado é atualizado usando a função fornecida pelo `useState`, o componente é re-renderizado para refletir as mudanças na interface.
+> O hook `useState` é uma função do React que permite adicionar estado a componentes funcionais. Ele retorna um array com dois elementos: o valor atual do estado e uma função para atualizar esse valor. No exemplo acima, estamos usando `useState` para gerenciar o estado do nome da tarefa, o estado de carregamento e o estado de erro. Cada vez que o estado é atualizado usando a função fornecida pelo `useState`, o componente é re-renderizado para refletir as mudanças na interface.
