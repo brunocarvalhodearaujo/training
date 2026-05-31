@@ -4,7 +4,11 @@ O Git é um sistema de controle de versão distribuído amplamente utilizado par
 
 ## Principais comandos
 
+Abaixo estão alguns dos principais comandos do Git que são essenciais para o uso diário:
+
 ### Comandos essenciais
+
+Os comandos a seguir são fundamentais para trabalhar com repositórios Git:
 
 - `git init`: cria um repositório local.
 - `git clone <url>`: baixa um repositório remoto.
@@ -19,6 +23,8 @@ O Git é um sistema de controle de versão distribuído amplamente utilizado par
 
 ### Comandos úteis
 
+Os comandos a seguir são úteis para tarefas mais avançadas e para melhorar a eficiência no uso do Git:
+
 - `git rebase <branch>`: reaplica commits em outra base.
 - `git stash`: guarda mudanças temporariamente.
 - `git log --oneline`: mostra histórico resumido.
@@ -29,8 +35,10 @@ O Git é um sistema de controle de versão distribuído amplamente utilizado par
 
 ### Dicas rápidas
 
+As seguintes dicas podem ajudar a melhorar a experiência de uso do Git:
+
 - Configure identidade uma vez:
-	- `git config --global user.name "Seu Nome"`
-	- `git config --global user.email "seu.email@example.com"`
+  - `git config --global user.name "Seu Nome"`
+  - `git config --global user.email "seu.email@example.com"`
 - Use `git add -p` para adicionar mudanças por partes.
 - Use `git cherry-pick <commit>` para aplicar um commit específico de outra branch.
