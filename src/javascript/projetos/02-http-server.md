@@ -52,7 +52,7 @@ Neste projeto, vamos criar um servidor HTTP simples usando Node.js. Este servido
     mkdir src
     ```
 
-6. Edite o arquivo `package.json` para apontar o campo `main` para o arquivo principal dentro do diretório `src`:
+6. Edite o arquivo `package.json` para apontar o campo `main` e o script `start` para o arquivo `src/index.js`:
 
     ````diff
     {
@@ -64,7 +64,8 @@ Neste projeto, vamos criar um servidor HTTP simples usando Node.js. Este servido
       "type": "module",
       "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node src/index.js"
+    -    "start": "node index.js"
+    +    "start": "node src/index.js"
       },
       "keywords": [],
       "author": "",
@@ -112,7 +113,6 @@ Neste projeto, vamos criar um servidor HTTP simples usando Node.js. Este servido
     npm start
     ```
 2. Você verá a mensagem "Listening on 127.0.0.1:3000" no terminal, indicando que o servidor está em execução e pronto para receber requisições.
-
 3. Abra um navegador web e acesse `http://localhost:3000`. Você verá a mensagem "Hello World!" exibida na página, confirmando que o servidor HTTP está funcionando corretamente.
 
 ## Conclusão
