@@ -197,8 +197,8 @@ Para criar um script que execute as migrações do Knex, adicione a seguinte lin
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
--    "start": "node src/index.js"
-+    "start": "node src/index.js",
+-   "start": "node src/index.js"
++   "start": "node src/index.js",
 +   "migrate": "knex migrate:latest --knexfile knexfile.js",
 +   "rollback": "knex migrate:rollback --knexfile knexfile.js"
   },
@@ -271,7 +271,6 @@ import console from 'node:console'
 
 const app = express()
 
-// middleware para converter o body da requisição para JSON
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
@@ -289,3 +288,5 @@ Nesse momento a aplicação Express está configurada para ouvir na porta 3000, 
 - **app.use(express.json())**: Middleware que converte o corpo das requisições para JSON, permitindo que a API receba dados no formato JSON.
 - **app.use(express.urlencoded({ extended: true }))**: Middleware que converte o corpo das requisições para URL-encoded, permitindo que a API receba dados de formulários HTML.
 - **app.listen(3000, () => { ... })**: Inicia o servidor Express na porta 3000 e exibe uma mensagem no console indicando que o servidor está ouvindo nessa porta.
+
+> Middlewares são funções que têm acesso ao objeto de requisição (req), ao objeto de resposta (res) e à próxima função de middleware no ciclo de requisição-resposta do aplicativo. Eles podem executar código, modificar os objetos de requisição e resposta, encerrar o ciclo de requisição-resposta ou chamar a próxima função de middleware. No exemplo acima, estamos usando middlewares para processar o corpo das requisições e permitir que a API receba dados em formatos JSON e URL-encoded.
