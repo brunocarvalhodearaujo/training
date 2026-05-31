@@ -30,6 +30,7 @@ Neste projeto, vamos criar um servidor HTTP simples usando Node.js. Este servido
       "version": "1.0.0",
       "description": "",
       "main": "server.js",
+      - ...
       + "type": "module",
       "scripts": {
         "start": "node server.js"
@@ -48,4 +49,6 @@ Neste projeto, vamos criar um servidor HTTP simples usando Node.js. Este servido
 2. Abra o arquivo `server.js` em seu editor de código e adicione o seguinte código para criar um servidor HTTP simples:
 
   ```javascript
-  const http = require('http');
+  import http from 'node:http'
+  ```
+  > É importante utilizar o prefixo `node:` ao importar módulos nativos do Node.js para garantir que o ambiente de execução reconheça corretamente os módulos.
