@@ -303,33 +303,33 @@ import console from 'node:console'
 
 +const db = knex(knexConfig)
 const app = express()
-`````
+````
 
 Em seguida, adicione o seguinte código para criar um endpoint POST que permita criar uma nova tarefa após a linha `app.use(express.urlencoded({ extended: true }))`:
 
-````diff
+````javascript,diff
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-+// Endpoint para criar uma nova tarefa
+// Endpoint para criar uma nova tarefa
 +app.post('/tasks', async (req, res) => {
 + try {
-+.   const { name, completed = false } = req.body
-+. 
-+.   const data = {
-+.     name, // nome da tarefa
-+.     completed, // se não for informado, assume o valor padrão false
-+.     created_at: new Date(), // data de criação
-+.     updated_at: new Date() // data de atualização
-+.   }
-+. 
-+.   // INSERT INTO tasks (name, completed, created_at, updated_at) VALUES (?, ?, ?, ?)
-+.   const id = await db('tasks') // tabela tasks
-+.     .insert(data) // insere os dados
-+.     .first() // retorna apenas o primeiro resultado
-+.   res
-+.     .status(201)
-+.     .json({ id, name, completed })
++    const { name, completed = false } = req.body
++  
++    const data = {
++      name, // nome da tarefa
++      completed, // se não for informado, assume o valor padrão false
++      created_at: new Date(), // data de criação
++      updated_at: new Date() // data de atualização
++    }
++  
++    // INSERT INTO tasks (name, completed, created_at, updated_at) VALUES (?, ?, ?, ?)
++    const id = await db('tasks') // tabela tasks
++      .insert(data) // insere os dados
++      .first() // retorna apenas o primeiro resultado
++    res
++      .status(201)
++      .json({ id, name, completed })
 + } catch (error) {
 +   console.error('Error creating task:', error)
 +   res.status(500).json({ error: 'Failed to create task' })
