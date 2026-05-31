@@ -33,8 +33,8 @@ Neste projeto, vamos criar um servidor HTTP simples usando Node.js. Este servido
       "main": "index.js",
     + "type": "module",
       "scripts": {
-    -    "test": "echo \"Error: no test specified\" && exit 1"
-    +    "test": "echo \"Error: no test specified\" && exit 1",
+    -   "test": "echo \"Error: no test specified\" && exit 1"
+    +   "test": "echo \"Error: no test specified\" && exit 1",
     +   "start": "node index.js"
       },
       "keywords": [],
