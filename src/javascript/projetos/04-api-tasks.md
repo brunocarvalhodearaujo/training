@@ -289,4 +289,78 @@ Nesse momento a aplicação Express está configurada para ouvir na porta 3000, 
 - **app.use(express.urlencoded({ extended: true }))**: Middleware que converte o corpo das requisições para URL-encoded, permitindo que a API receba dados de formulários HTML.
 - **app.listen(3000, () => { ... })**: Inicia o servidor Express na porta 3000 e exibe uma mensagem no console indicando que o servidor está ouvindo nessa porta.
 
-> Middlewares são funções que têm acesso ao objeto de requisição (req), ao objeto de resposta (res) e à próxima função de middleware no ciclo de requisição-resposta do aplicativo. Eles podem executar código, modificar os objetos de requisição e resposta, encerrar o ciclo de requisição-resposta ou chamar a próxima função de middleware. No exemplo acima, estamos usando middlewares para processar o corpo das requisições e permitir que a API receba dados em formatos JSON e URL-encoded.
+> No express os **middlewares** são funções que têm acesso ao objeto de requisição (req), ao objeto de resposta (res) e à próxima função de middleware no ciclo de requisição-resposta do aplicativo. Eles podem executar código, modificar os objetos de requisição e resposta, encerrar o ciclo de requisição-resposta ou chamar a próxima função de middleware. No exemplo acima, estamos usando middlewares para processar o corpo das requisições e permitir que a API receba dados em formatos JSON e URL-encoded.
+
+## Passo 8: Criação do endpoint para criar uma nova tarefa
+
+Neste passo, vamos editar o arquivo `src/index.js` para adicionar o knex, para isso deixe o arquivo como o exemplo abaixo:
+
+````diff
+import express from 'express'
+import console from 'node:console'
++import knex from 'knex'
++import knexConfig from '../knexfile.js'
+
++const db = knex(knexConfig)
+const app = express()
+`````
+
+Em seguida, adicione o seguinte código para criar um endpoint POST que permita criar uma nova tarefa após a linha `app.use(express.urlencoded({ extended: true }))`:
+
+````diff
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
++// Endpoint para criar uma nova tarefa
++app.post('/tasks', async (req, res) => {
++ try {
++.   const { name, completed = false } = req.body
++. 
++.   const data = {
++.     name, // nome da tarefa
++.     completed, // se não for informado, assume o valor padrão false
++.     created_at: new Date(), // data de criação
++.     updated_at: new Date() // data de atualização
++.   }
++. 
++.   // INSERT INTO tasks (name, completed, created_at, updated_at) VALUES (?, ?, ?, ?)
++.   const id = await db('tasks') // tabela tasks
++.     .insert(data) // insere os dados
++.     .first() // retorna apenas o primeiro resultado
++.   res
++.     .status(201)
++.     .json({ id, name, completed })
++ } catch (error) {
++   console.error('Error creating task:', error)
++   res.status(500).json({ error: 'Failed to create task' })
++ }
++})
+
+app.listen(3000, () => {
+  console.info('Listening on port 3000')
+})
+````
+
+### Explicação do código:
+- **app.post('/tasks', async (req, res) => { ... })**: Define um endpoint POST na rota `/tasks` para criar uma nova tarefa. A função é assíncrona para permitir o uso de operações assíncronas, como a interação com o banco de dados.
+- **try { ... } catch (error) { ... }**: Bloco de código para capturar e lidar com erros que possam ocorrer durante o processo de criação da tarefa.
+- **const { name, completed = false } = req.body**: [Desestrutura](../destructuring.md) o corpo da requisição para obter os campos `name` e `completed`. O campo `completed` tem um valor padrão de `false` caso não seja fornecido na requisição.
+- **const data = { ... }**: Cria um objeto `data` que contém os dados da nova tarefa, incluindo o nome, o status de conclusão e as datas de criação e atualização.
+- **const id = await db('tasks').insert(data).first()**: Usa o Knex para inserir os dados da nova tarefa na tabela `tasks` do banco de dados. O método `insert` insere os dados e o método `first` retorna o ID da nova tarefa criada.
+- **res.status(201).json({ id, name, completed })**: Retorna uma resposta JSON com o ID, nome e status da tarefa criada, e define o status HTTP para 201 (Created) para indicar que a tarefa foi criada com sucesso.
+- **catch (error) { ... }**: Captura qualquer erro que ocorra durante o processo de criação da tarefa e retorna uma resposta de erro com status HTTP 500 (Internal Server Error) e uma mensagem de erro.
+
+A partir deste ponto, a API de tarefas já tem um endpoint funcional para criar novas tarefas. Nesse momento vamos testar esse endpoint usando o Postman ou qualquer outra ferramenta de teste de APIs para garantir que ele esteja funcionando corretamente antes de prosseguir para a implementação dos outros endpoints (leitura, atualização e exclusão de tarefas).
+
+### Testando o endpoint de criação de tarefas:
+
+1. Abra o Postman e crie uma nova requisição POST para a URL `http://localhost:3000/tasks`.
+2. No corpo da requisição, selecione o formato JSON e adicione o seguinte conteúdo para criar uma nova tarefa:
+    ```json
+    { "name": "Minha primeira tarefa" }
+    ```
+3. Envie a requisição e verifique se a resposta retorna o ID, nome e status da tarefa criada, com um status HTTP 201 (Created). A resposta deve ser semelhante a:
+    ```json
+    { "id": 1, "name": "Minha primeira tarefa", "completed": false }
+    ```
+4. Verifique no banco de dados MySQL, usando o DBeaver, se a nova tarefa foi inserida corretamente na tabela `tasks`. Você deve ver um registro com o nome "Minha primeira tarefa" e o status `completed` como `false`.
