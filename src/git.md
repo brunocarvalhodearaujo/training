@@ -1,8 +1,10 @@
 # Git
 
-Guia rápido com os principais comandos de Git.
+O Git é um sistema de controle de versão distribuído amplamente utilizado para gerenciar projetos de software. Ele permite que os desenvolvedores acompanhem as mudanças no código-fonte ao longo do tempo, colaborem com outros desenvolvedores e mantenham um histórico completo do desenvolvimento do projeto.
 
-## Comandos essenciais
+## Principais comandos
+
+### Comandos essenciais
 
 - `git init`: cria um repositório local.
 - `git clone <url>`: baixa um repositório remoto.
@@ -15,7 +17,7 @@ Guia rápido com os principais comandos de Git.
 - `git checkout <branch>`: troca de branch.
 - `git merge <branch>`: junta outra branch na atual.
 
-## Comandos úteis
+### Comandos úteis
 
 - `git rebase <branch>`: reaplica commits em outra base.
 - `git stash`: guarda mudanças temporariamente.
@@ -25,7 +27,7 @@ Guia rápido com os principais comandos de Git.
 - `git tag <tag>`: cria uma tag.
 - `git reset --hard <commit>`: volta para um commit e descarta alterações posteriores.
 
-## Dicas rápidas
+### Dicas rápidas
 
 - Configure identidade uma vez:
 	- `git config --global user.name "Seu Nome"`

@@ -4,12 +4,20 @@ O Linux é um sistema operacional de código aberto baseado no kernel Linux, cri
 
 ## Comandos básicos do Linux
 
+### Executar um comando com privilégios de superusuário
+
+Para executar um comando com privilégios de superusuário, você pode usar o comando `sudo` seguido do comando que deseja executar. Por exemplo:
+
+```bash
+sudo apt-get update
+```
+
 ### Reiniciar o sistema
 
 Para reiniciar o sistema, você pode usar o seguinte comando:
 
 ```bash
-sudo reboot
+reboot
 ```
 
 ### Desligar o sistema
@@ -17,7 +25,7 @@ sudo reboot
 Para desligar o sistema, você pode usar o seguinte comando:
 
 ```bash
-sudo shutdown -h now
+shutdown -h now
 ```
 
 ### Consultar os processos em execução
@@ -33,13 +41,13 @@ Em alguns sistemas, pode ser necessário instalar o `htop` primeiro. No Ubuntu/D
 - Ubuntu/Debian:
 
     ```bash
-    sudo apt-get install htop
+    apt-get install htop
     ```
 
 - CentOS/RHEL:
 
     ```bash
-    sudo yum install htop
+    yum install htop
     ```
 
 O `htop` fornece uma interface interativa para visualizar e gerenciar processos em execução, permitindo que você veja o uso da CPU, memória e outras informações relevantes, seu resultado será semelhante a este:
@@ -139,25 +147,25 @@ Para instalar o cliente NFS no Linux, use os seguintes comandos dependendo da su
 - Ubuntu/Debian:
 
     ```bash
-    sudo apt-get install nfs-common
+    apt-get install nfs-common
     ```
 
 - CentOS/RHEL:
 
     ```bash
-    sudo yum install nfs-utils
+    yum install nfs-utils
     ```
 
 Em seguida, você pode montar um compartilhamento NFS usando o comando `mount`. Aqui está um exemplo:
 
 ````bash
-sudo mount -t nfs <NFS_SERVER_IP>:/path/to/nfs/share /mnt/nfs
+mount -t nfs <NFS_SERVER_IP>:/path/to/nfs/share /mnt/nfs
 ````
 
 Substitua `<NFS_SERVER_IP>` pelo endereço IP do servidor NFS e `/path/to/nfs/share` pelo caminho do compartilhamento NFS que você deseja montar. O ponto de montagem local é `/mnt/nfs`, mas você pode alterá-lo conforme necessário, como no exemplo abaixo:
 
 ```bash
-sudo mount -t nfs -o resvport,rw 192.168.1.141:/mnt/hd-b550m-1/documents ./hd-b550m-1
+mount -t nfs -o resvport,rw 192.168.1.141:/mnt/hd-b550m-1/documents ./hd-b550m-1
 ```
 
 ### Criar tunnel SSH
@@ -183,20 +191,20 @@ Para configurar o Avahi para descoberta de serviços na rede local, siga os pass
     - Ubuntu/Debian:
 
         ```bash
-        sudo apt-get install avahi-daemon avahi-utils
+        apt-get install avahi-daemon avahi-utils
         ```
 
     - CentOS/RHEL:
 
         ```bash
-        sudo yum install avahi avahi-tools
+        yum install avahi avahi-tools
         ```
 
 2. Inicie e habilite o serviço Avahi:
 
     ```bash
-    sudo systemctl start avahi-daemon
-    sudo systemctl enable avahi-daemon
+    systemctl start avahi-daemon
+    systemctl enable avahi-daemon
     ```
 
 ### Instalação do docker no Ubuntu/Debian via terminal
@@ -206,13 +214,13 @@ Para instalar o Docker no Ubuntu/Debian via terminal, siga os passos abaixo:
 1. Atualize o índice de pacotes:
 
     ```bash
-    sudo apt-get update
+    apt-get update
     ```
 
 2. Instale os pacotes necessários para permitir o uso de repositórios HTTPS:
 
     ```bash
-    sudo apt-get install curl
+    apt-get install curl
     ```
 
 3. Execute o script de instalação oficial do Docker:
@@ -224,7 +232,7 @@ Para instalar o Docker no Ubuntu/Debian via terminal, siga os passos abaixo:
 4. Adicione seu usuário ao grupo `docker` para executar comandos Docker sem `sudo`:
 
     ```bash
-    sudo usermod -aG docker $(whoami)
+    usermod -aG docker $(whoami)
     ```
 
 - [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
@@ -244,10 +252,10 @@ Substitua `user@remote_host` pelo seu nome de usuário e o endereço do host rem
 
 ### Não solicitar senha ao usar sudo
 
-Para configurar o sudo para não solicitar senha ao executar comandos, você pode editar o arquivo sudoers usando o comando `visudo`:
+Para configurar o para não solicitar senha ao executar comandos, você pode editar o arquivo sudoers usando o comando `visudo`:
 
 ```bash
-sudo visudo
+visudo
 ```
 
 Adicione a seguinte linha ao final do arquivo, substituindo `seu_usuario` pelo seu nome de usuário:
@@ -299,7 +307,7 @@ Para instalar o OpenRGB no Ubuntu/Debian via terminal, siga os passos abaixo:
 2. Instale o pacote usando o `dpkg`:
 
     ```bash
-    sudo dpkg -i openrgb_0.9_amd64_bookworm_b5f46e3.deb
+    dpkg -i openrgb_0.9_amd64_bookworm_b5f46e3.deb
     ```
 
 3. Caso queira ativar a inicialização automática do OpenRGB na inicialização do sistema, crie um serviço systemd conforme descrito na proxima anterior.
