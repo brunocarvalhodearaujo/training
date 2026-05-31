@@ -10,6 +10,7 @@ build-dir = "build"
 [preprocessor.toc]
 command = "mdbook-toc"
 renderer = ["html"]
+optional = true
 
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
