@@ -26,7 +26,16 @@ Os status codes são códigos numéricos retornados pelo servidor em resposta a 
 | 4xx (Client Error) | Indica que houve um erro por parte do cliente. | 400 Bad Request, 401 Unauthorized, 404 Not Found |
 | 5xx (Server Error) | Indica que houve um erro por parte do servidor. | 500 Internal Server Error, 502 Bad Gateway |
 
+## REST
+
+O REST (Representational State Transfer) é um estilo de arquitetura de software para sistemas distribuídos, como a web. Ele define um conjunto de princípios e restrições para criar serviços web escaláveis e fáceis de manter. O REST é amplamente utilizado para construir APIs (Application Programming Interfaces) que permitem a comunicação entre diferentes sistemas.
+
+O protocolo foi introduzido por Roy Fielding em sua tese de doutorado em 2000. Ele se baseia em recursos, onde cada recurso é identificado por uma URL (Uniform Resource Locator). Os clientes interagem com os recursos usando métodos HTTP, como GET, POST, PUT e DELETE. O REST também enfatiza a utilização de representações de recursos, como [JSON ou XML](./json-e-xml.md), para a troca de informações entre clientes e servidores.
+
+O REST é baseado em recursos, onde cada recurso é identificado por uma URL (Uniform Resource Locator). Os clientes interagem com os recursos usando métodos HTTP, como GET, POST, PUT e DELETE. O REST também enfatiza a utilização de representações de recursos, como [JSON ou XML](./json-e-xml.md), para a troca de informações entre clientes e servidores.
 
 ## Postman
 
 O Postman é uma ferramenta popular para testar e desenvolver APIs. Ele permite que os desenvolvedores criem, enviem e analisem requisições HTTP de forma fácil e eficiente. Com o Postman, é possível criar coleções de requisições, organizar testes automatizados, e compartilhar configurações com outros membros da equipe. Ele suporta diversos métodos HTTP e permite a personalização de cabeçalhos, parâmetros e corpo das requisições, facilitando o processo de desenvolvimento e depuração de APIs.
+
+![Postman](./.attachments/Screenshot%202026-05-31%20at%2016.08.33.png)
