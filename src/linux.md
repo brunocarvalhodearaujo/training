@@ -1,6 +1,6 @@
 # Linux
 
-## Visão geral
+![Linux](./.attachments/ubuntu-desktop-rounded-corners.png.avif)
 
 O Linux é um sistema operacional de código aberto baseado no kernel Linux, criado por Linus Torvalds em 1991. Ele é amplamente utilizado em servidores, desktops, dispositivos móveis e sistemas embarcados devido à sua estabilidade, segurança e flexibilidade.
 
