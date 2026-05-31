@@ -1,5 +1,7 @@
 # Git
 
+![Git Logo](https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png)
+
 O Git é um sistema de controle de versão distribuído amplamente utilizado para gerenciar projetos de software. Ele permite que os desenvolvedores acompanhem as mudanças no código-fonte ao longo do tempo, colaborem com outros desenvolvedores e mantenham um histórico completo do desenvolvimento do projeto.
 
 ## Principais comandos
