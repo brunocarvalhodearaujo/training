@@ -37,7 +37,8 @@ jobs:
         uses: peaceiris/actions-mdbook@v2
         with:
           mdbook-version: "0.5.3"
-      - run: mdbook build
+      - name: Build HTML
+        run: mdbook build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
