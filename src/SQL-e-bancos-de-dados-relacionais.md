@@ -2,6 +2,53 @@
 
 O SQL (Structured Query Language) é a linguagem padrão para gerenciamento de bancos de dados relacionais. Ele permite criar, ler, atualizar e excluir dados em um banco de dados. Os bancos de dados relacionais organizam os dados em tabelas, que são compostas por linhas e colunas. Cada tabela tem um nome e cada coluna tem um tipo de dado específico. As tabelas podem estar relacionadas entre si por meio de chaves primárias e estrangeiras, o que permite a construção de consultas complexas para recuperar informações de várias tabelas ao mesmo tempo. O SQL é amplamente utilizado em aplicações web, sistemas de gerenciamento de conteúdo, análise de dados e muitas outras áreas onde o armazenamento e a manipulação de dados são essenciais. Existem vários sistemas de gerenciamento de bancos de dados relacionais (RDBMS) que suportam SQL, como MySQL, PostgreSQL, Oracle Database e Microsoft SQL Server. Cada um desses sistemas tem suas próprias extensões e características, mas todos seguem os princípios básicos do SQL para manipulação de dados. O conhecimento de SQL é fundamental para desenvolvedores, analistas de dados e administradores de bancos de dados, pois é a base para trabalhar com dados em muitos contextos diferentes.
 
+## INSERT
+
+O comando `INSERT` é usado para adicionar novos registros a uma tabela em um banco de dados relacional. Ele permite especificar os valores para cada coluna da tabela, ou pode ser usado para inserir dados em todas as colunas de uma vez. O comando `INSERT` é fundamental para a manipulação de dados, pois permite que os usuários adicionem informações ao banco de dados de forma estruturada e organizada. Ele pode ser combinado com outras cláusulas, como `SELECT`, para inserir dados provenientes de outras tabelas ou consultas, tornando-o uma ferramenta poderosa para a gestão de dados em bancos de dados relacionais.
+
+### Exemplo de uso do INSERT
+
+```sql
+INSERT INTO usuarios (nome, idade) VALUES ('Maria', 25);
+```
+
+Neste exemplo, o comando `INSERT` está adicionando um novo registro à tabela `usuarios`, com o nome 'Maria' e a idade 25.
+
+## SELECT
+
+O comando `SELECT` é usado para recuperar dados de uma ou mais tabelas em um banco de dados relacional. Ele permite especificar quais colunas devem ser retornadas, de quais tabelas os dados devem ser extraídos e quais condições devem ser aplicadas para filtrar os resultados. O comando `SELECT` é a base para a maioria das consultas SQL e pode ser combinado com outras cláusulas, como `WHERE`, `GROUP BY`, `ORDER BY` e `JOIN`, para criar consultas mais complexas e obter informações específicas dos dados armazenados no banco de dados.
+
+### Exemplo de uso do SELECT
+
+```sql
+SELECT nome, idade FROM usuarios WHERE idade > 18;
+```
+
+Neste exemplo, o comando `SELECT` está recuperando as colunas `nome` e `idade` da tabela `usuarios`, mas apenas para os registros onde a idade é maior que 18.
+
+## UPDATE
+
+O comando `UPDATE` é usado para modificar os dados existentes em uma tabela de um banco de dados relacional. Ele permite especificar quais colunas devem ser atualizadas e quais valores devem ser atribuídos a essas colunas. O comando `UPDATE` também pode incluir uma cláusula `WHERE` para filtrar quais registros devem ser atualizados, garantindo que apenas os dados desejados sejam modificados. Sem a cláusula `WHERE`, o comando `UPDATE` afetará todos os registros da tabela, o que pode levar a alterações indesejadas. O uso do comando `UPDATE` é fundamental para manter os dados atualizados e corretos em um banco de dados relacional.
+
+### Exemplo de uso do UPDATE
+
+```sql
+UPDATE usuarios SET idade = 30 WHERE nome = 'João';
+```
+
+Neste exemplo, o comando `UPDATE` está modificando a coluna `idade` para o valor 30 na tabela `usuarios`, mas apenas para os registros onde o nome é 'João'.
+
+## DELETE
+
+O comando `DELETE` é usado para remover registros de uma tabela em um banco de dados relacional. Ele permite especificar quais registros devem ser excluídos usando uma cláusula `WHERE` para filtrar os dados. Sem a cláusula `WHERE`, o comando `DELETE` removerá todos os registros da tabela, o que pode resultar em perda de dados importante. O uso do comando `DELETE` é essencial para manter a integridade dos dados e garantir que apenas as informações relevantes sejam mantidas no banco de dados.
+
+### Exemplo de uso do DELETE
+
+```sql
+DELETE FROM usuarios WHERE idade < 18;
+```
+
+Neste exemplo, o comando `DELETE` está removendo os registros da tabela `usuarios` onde a idade é menor que 18.
 
 ## Dbeaver
 

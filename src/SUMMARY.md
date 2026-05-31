@@ -4,6 +4,7 @@
 
 - [Git](./git.md)
 - [Linux](./linux.md)
+- [SQL e bancos de dados relacionais](./SQL-e-bancos-de-dados-relacionais.md)
 
 # JavaScript e Node.js
 
