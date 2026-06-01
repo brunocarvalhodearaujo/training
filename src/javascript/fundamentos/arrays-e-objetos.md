@@ -366,3 +366,174 @@ console.info(frutas.length)
 ```
 
 > Vale ressaltar que as funções de manipulação de arrays também podem ser usadas em objetos do tipo `String`, pois as strings são tratadas como arrays de caracteres em JavaScript.
+
+## Objetos
+
+Os objetos são usados para armazenar dados em pares de chave-valor. Eles são uma das estruturas de dados mais importantes em JavaScript e permitem organizar informações de maneira flexível.
+
+```javascript
+const pessoa = {
+  nome: "Bruno",
+  idade: 32,
+  profissao: "Desenvolvedor"
+}
+console.info(pessoa)
+console.info(pessoa.nome)
+console.info(pessoa["idade"])
+```
+
+```output
+{ nome: 'Bruno', idade: 32, profissao: 'Desenvolvedor' }
+Bruno
+32
+```
+
+### Métodos de manipulação de objetos
+
+O JavaScript oferece métodos para manipular objetos, como `Object.keys`, `Object.values`, `Object.entries`, entre outros. Esses métodos permitem acessar e modificar as propriedades de um objeto de maneira eficiente.
+
+#### `Object.keys`
+
+Retorna um array contendo as chaves de um objeto.
+
+```javascript
+const pessoa = {
+  nome: "Bruno",
+  idade: 32,
+  profissao: "Desenvolvedor"
+}
+const chaves = Object.keys(pessoa)
+console.info(chaves)
+```
+
+```output
+[ 'nome', 'idade', 'profissao' ]
+```
+
+#### `Object.values`
+
+Retorna um array contendo os valores de um objeto.
+
+```javascript
+const pessoa = {
+  nome: "Bruno",
+  idade: 32,
+  profissao: "Desenvolvedor"
+}
+const valores = Object.values(pessoa)
+console.info(valores)
+```
+
+```output
+[ 'Bruno', 32, 'Desenvolvedor' ]
+```
+
+#### `Object.entries`
+
+Retorna um array de pares [chave, valor] de um objeto.
+
+```javascript
+const pessoa = {
+  nome: "Bruno",
+  idade: 32,
+  profissao: "Desenvolvedor"
+}
+const entradas = Object.entries(pessoa)
+console.info(entradas)
+```
+
+```output
+[ [ 'nome', 'Bruno' ], [ 'idade', 32 ], [ 'profissao', 'Desenvolvedor' ] ]
+```
+
+#### `hasOwnProperty`
+
+Verifica se um objeto possui uma propriedade específica como sua própria propriedade (não herdada).
+
+```javascript
+const pessoa = {
+  nome: "Bruno",
+  idade: 32,
+  profissao: "Desenvolvedor"
+}
+
+console.info(pessoa.hasOwnProperty("nome")) // true
+console.info(pessoa.hasOwnProperty("sobrenome")) // false
+```
+
+```output
+true
+false
+```
+
+#### `delete`
+
+Remove uma propriedade de um objeto.
+
+```javascript
+const pessoa = {
+  nome: "Bruno",
+  idade: 32,
+  profissao: "Desenvolvedor"
+}
+delete pessoa.idade
+console.info(pessoa)
+```
+
+```output
+{ nome: 'Bruno', profissao: 'Desenvolvedor' }
+```
+
+#### `Object.assign`
+
+Copia as propriedades de um ou mais objetos para um objeto de destino.
+
+```javascript
+const pessoa1 = { nome: "Bruno", idade: 32 }
+const pessoa2 = { profissao: "Desenvolvedor" }
+const pessoaCompleta = Object.assign({}, pessoa1, pessoa2)
+console.info(pessoaCompleta)
+```
+
+```output
+{ nome: 'Bruno', idade: 32, profissao: 'Desenvolvedor' }
+```
+
+#### `Object.freeze`
+
+Impede que um objeto seja modificado. Ele torna o objeto imutável.
+
+```javascript
+const pessoa = {
+  nome: "Bruno",
+  idade: 32
+}
+Object.freeze(pessoa)
+pessoa.idade = 33 // Esta linha não terá efeito, pois o objeto está congelado
+console.info(pessoa)
+```
+
+```output
+{ nome: 'Bruno', idade: 32 }
+```
+
+#### `Object.seal`
+
+Impede que novas propriedades sejam adicionadas a um objeto, mas permite a modificação das propriedades existentes.
+
+```javascript
+const pessoa = {
+  nome: "Bruno",
+  idade: 32
+}
+Object.seal(pessoa)
+pessoa.idade = 33 // Esta linha terá efeito, pois o objeto está selado
+pessoa.sobrenome = "Silva" // Esta linha não terá efeito, pois o objeto está selado
+console.info(pessoa)
+```
+
+```output
+{ nome: 'Bruno', idade: 33 }
+```
+
+
