@@ -45,6 +45,12 @@ Nesse projeto, vamos criar os seguintes endpoints para a API de tarefas:
 - `PUT /tasks/:id`: Atualizar uma tarefa existente.
 - `DELETE /tasks/:id`: Excluir uma tarefa.
 
+### O que fizemos até agora:
+
+- Definimos a arquitetura da aplicação, com um backend em Node.js e Express, um banco de dados MySQL e um frontend em React.
+- Listamos os requisitos necessários para desenvolver a aplicação, incluindo conhecimentos em JavaScript, Node.js, Express, APIs RESTful, SQL, React, Docker e Dbeaver.
+- Especificamos os endpoints que serão implementados na API de tarefas para permitir a criação, leitura, atualização e exclusão de tarefas.
+
 
 ## Fase 2 - Configuração do Projeto
 
@@ -329,6 +335,12 @@ Nesse momento a aplicação Express está configurada para ouvir na porta 3000, 
 
 > No express os **middlewares** são funções que têm acesso ao objeto de requisição (req), ao objeto de resposta (res) e à próxima função de middleware no ciclo de requisição-resposta do aplicativo. Eles podem executar código, modificar os objetos de requisição e resposta, encerrar o ciclo de requisição-resposta ou chamar a próxima função de middleware. No exemplo acima, estamos usando middlewares para processar o corpo das requisições e permitir que a API receba dados em formatos JSON e URL-encoded.
 
+### O que fizemos até agora:
+
+- Configuramos o projeto Node.js e Express para criar a API de tarefas.
+- Configuramos o banco de dados MySQL usando Docker e criamos a tabela `tasks` usando migrações do Knex.
+- Criamos o arquivo `src/index.js` para configurar o servidor Express e definir os middlewares para processar o corpo das requisições.
+
 ## Fase 3 - Implementação dos Endpoint de cadastro de tarefas
 
 Neste passo, vamos editar o arquivo `src/index.js` para adicionar o knex, para isso deixe o arquivo como o exemplo abaixo:
@@ -420,6 +432,12 @@ A partir deste ponto, a API de tarefas já tem um endpoint funcional para criar 
     { "id": 1, "name": "Minha primeira tarefa", "completed": false }
     ```
 6. Verifique no banco de dados MySQL, usando o DBeaver, se a nova tarefa foi inserida corretamente na tabela `tasks`. Você deve ver um registro com o nome "Minha primeira tarefa" e o status `completed` como `false`.
+
+### O que fizemos até agora:
+
+- Adicionamos o Knex ao projeto para facilitar a interação com o banco de dados MySQL.
+- Criamos um endpoint POST `/tasks` para permitir a criação de novas tarefas, recebendo os dados no corpo da requisição e inserindo-os na tabela `tasks` do banco de dados.
+- Testamos o endpoint usando o Postman e verificamos se a tarefa foi criada corretamente no banco de dados MySQL.
 
 
 ## Fase 4 - Criando uma aplicação React para consumir a API de tarefas
@@ -518,6 +536,11 @@ Para isso vamos criar um novo projeto React fora do diretório `04-api-tasks` do
     ```
     O comando `npm start` iniciará o servidor de desenvolvimento e abrirá a aplicação React no navegador, geralmente em `http://localhost:3000`. Você verá a página inicial do Create React App, indicando que a aplicação React foi criada com sucesso.
 
+### O que fizemos até agora:
+
+- Criamos uma nova aplicação React usando o Create React App com template TypeScript.
+- Iniciamos o servidor de desenvolvimento do React para visualizar a aplicação no navegador.
+
 ## Fase 5 - Construindo o componente responsável por cadastrar tarefas
 
 Agora você pode começar a editar os arquivos dentro do diretório `04-api-tasks-frontend/src` para construir a interface da aplicação React que irá consumir a API de tarefas. Você pode criar componentes para exibir a lista de tarefas, um formulário para criar novas tarefas e botões para marcar as tarefas como concluídas. Utilizaremos o [`fetch` API](../fetch.md) para fazer requisições HTTP à API de tarefas que criamos anteriormente e atualizar a interface com os dados recebidos.
@@ -615,3 +638,9 @@ export const CreateTask: FC<Props> = () => {
 
 > A primeira vista o JSX pode parecer confuso, mas ele é apenas uma sintaxe que permite escrever HTML dentro do JavaScript. O JSX é transformado em chamadas de funções do React para criar os elementos da interface. Por exemplo, o código JSX `<h2>Create Task</h2>` é transformado em `React.createElement('h2', null, 'Create Task')` durante a compilação. Isso permite que você escreva a estrutura da interface de forma mais intuitiva e legível, enquanto o React cuida de criar os elementos correspondentes no DOM.
 
+
+### O que fizemos até agora:
+
+- Criamos um arquivo `src/api.ts` para centralizar as chamadas à API de tarefas, começando com a função `createTask` para criar novas tarefas.
+- Criamos um componente React `CreateTask` que exibe um formulário para criar novas tarefas e utiliza a função `createTask` para enviar os dados para a API.
+- Implementamos o estado para gerenciar o nome da tarefa, o estado de carregamento e o estado de erro, e adicionamos lógica para lidar com a submissão do formulário e exibir mensagens de erro quando necessário.
