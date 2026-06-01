@@ -1,5 +1,6 @@
 :root {
   --sidebar-bg: #ffffff;
+  --sidebar-resize-indicator-width: 4px;
 }
 
 .nav-wide-wrapper {
@@ -15,5 +16,5 @@
 }
 
 .sidebar-resize-indicator {
-  display: none;
+  display: none !important;
 }
