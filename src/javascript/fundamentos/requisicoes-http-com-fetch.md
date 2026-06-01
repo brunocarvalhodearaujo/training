@@ -1,4 +1,4 @@
-# Fetch API
+# Requisições HTTP com Fetch
 
 O Fetch API é uma interface JavaScript que permite fazer requisições HTTP de forma fácil e eficiente. Ele é baseado em Promises, o que torna o código mais legível e fácil de trabalhar com operações assíncronas. Com o Fetch API, você pode enviar requisições para servidores, obter respostas e manipular os dados recebidos de maneira simples.
 
@@ -118,3 +118,8 @@ console.log(data)
 }
 ```
   
+
+## Referencias
+
+- [Fetch API - MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API)
+- [Fetch Living Standard — Last Updated 8 May 2026](https://fetch.spec.whatwg.org/#fetch-method)
