@@ -1,6 +1,8 @@
-# Projeto 4 - App de controle de tarefas
+# Projeto 4 - App de controle de tarefas com Node.js, Express, MySQL e React
 
-## Fase 1 - Ideia e arquitetura
+A ideia desse projeto é criar uma aplicação de controle de tarefas usando Node.js, Express e MySQL. A aplicação permitirá que os usuários criem, visualizem, atualizem e excluam tarefas, e os dados serão armazenados em um banco de dados MySQL. Além disso, vamos criar uma interface simples usando React para consumir a API de tarefas que criamos.
+
+## Fase 1 - Concepção do Projeto
 
 A ideia desse projeto é criar uma aplicação de controle de tarefas usando Node.js, Express e MySQL. A aplicação permitirá que os usuários criem, visualizem, atualizem e excluam tarefas, e os dados serão armazenados em um banco de dados MySQL. Além disso, vamos criar uma interface simples usando React para consumir a API de tarefas que criamos.
 
