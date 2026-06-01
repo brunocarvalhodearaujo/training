@@ -1,7 +1,19 @@
-.nav-wide-wrapper {
-  display: none !important;
+:root {
+  --sidebar-bg: #ffffff;
 }
 
-.mdbook-sidebar-toggle {
-  display: none !important;
+.nav-wide-wrapper {
+  display: none;
+}
+
+#mdbook-sidebar-toggle {
+  display: none;
+}
+
+#mdbook-sidebar-resize-handle {
+  background-color: #bdbdbd;
+}
+
+.sidebar-resize-indicator {
+  display: none;
 }
