@@ -22,6 +22,7 @@
 - [Testes unitários](./javascript/testes-unitarios.md)
 - [Gerenciando dependências com NPM](./javascript/gerenciando-dependencias-com-npm.md)
 - [React](./javascript/react.md)
+- [Limitando a concorrência com `Readable.map`](./javascript/concurrency.md)
 - [Observabilidade](./javascript/observabilidade.md)
 - [Projetos práticos](./javascript/projetos/README.md)
   - [Projeto 1: Olá Mundo](./javascript/projetos/01-hello-world.md)
