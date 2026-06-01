@@ -40,34 +40,34 @@ Existem vários cargos e níveis em uma carreira de desenvolvimento de software,
 9. **Diretor de Tecnologia**: O Diretor de Tecnologia é responsável por definir a visão tecnológica da empresa, alinhar a estratégia de TI com os objetivos de negócios e supervisionar todas as operações de tecnologia.
 10. **CTO (Chief Technology Officer)**: O CTO é o executivo responsável pela direção tecnológica da empresa, tomando decisões estratégicas sobre tecnologia, inovação e desenvolvimento de produtos.
 
-## Missões para subir de cargo
+## Missões para subir de nível como desenvolvedor
 
-Vamos pensar que a carreira de um desenvolvedor é como um jogo de RPG, onde cada cargo representa um nível e cada missão é uma tarefa ou projeto que o desenvolvedor deve completar para avançar para o próximo nível. Aqui estão algumas missões que um desenvolvedor pode enfrentar para subir de cargo:
+Vamos pensar que a carreira de um desenvolvedor é como um jogo de RPG, onde você é o personagem principal e cada cargo é um nível que você precisa alcançar. Para subir de nível, você precisa completar missões específicas que demonstram suas habilidades e conhecimentos. Aqui estão algumas missões para cada nível:
 
-### Desenvolvedor Júnior para Pleno
+### Inicio da jornada - Iniciante
 
-Um desenvolvedor júnior pode ser promovido a pleno ao completar missões como:
+Nesse momento você está começando sua jornada como desenvolvedor. O foco é aprender os fundamentos e ganhar experiência prática.
 
-- Completar um projeto simples de desenvolvimento de software, como criar um aplicativo de lista de tarefas.
-- Aprender a usar um sistema de controle de versão, como Git, e colaborar com outros desenvolvedores em um projeto de equipe.
-- Participar de code reviews e aprender a dar e receber feedback construtivo sobre o código.
-- Aprender a escrever testes unitários para garantir a qualidade do código.
-- Contribuir para a documentação do projeto e ajudar a manter o código limpo e organizado.
-- Participar de reuniões de equipe e aprender a comunicar ideias técnicas de forma eficaz.
-- Aprender a usar ferramentas de desenvolvimento, como IDEs, depuradores e sistemas de build.
-- Aprender a lidar com bugs e problemas de produção, desenvolvendo habilidades de resolução de problemas.
-- Demonstrar iniciativa e proatividade, buscando oportunidades para aprender e contribuir além das tarefas atribuídas.
+#### Missão: Aprender HTML e CSS para criar páginas web básicas.
 
-### Desenvolvedor Pleno para Sênior
+- **Objetivo**: Aprender os fundamentos de HTML e CSS para criar páginas web básicas.
+- **Recompensa**: Conhecimento básico para criar e estilizar páginas web.
 
-Um desenvolvedor pleno pode ser promovido a sênior ao completar missões como:
+#### Missão: Criar um projeto simples, como um site pessoal.
 
-- Liderar um projeto de desenvolvimento de software, desde a concepção até a entrega.
-- Mentorar desenvolvedores juniores e ajudá-los a crescer em suas carreiras.
-- Tomar decisões técnicas importantes e justificar essas decisões com base em boas práticas e experiência.
-- Contribuir para a arquitetura do projeto e garantir que o código esteja alinhado com a visão arquitetônica.
-- Participar de reuniões de planejamento e ajudar a definir a direção técnica do projeto.
-- Aprender a lidar com prazos e gerenciar o tempo de forma eficaz para garantir a entrega de projetos.
-- Demonstrar habilidades de liderança e comunicação, trabalhando bem com outros membros da equipe e stakeholders.
-- Contribuir para a cultura da equipe, promovendo um ambiente de trabalho positivo e colaborativo.
-- Continuar aprendendo e se atualizando sobre as últimas tendências e tecnologias em desenvolvimento de software.
+- **Objetivo**: Criar um projeto simples, como um site pessoal.
+- **Recompensa**: Um portfólio inicial para mostrar suas habilidades.
+
+### Subindo de nível - Desenvolvedor Júnior
+
+Nesse nível, você está buscando ganhar mais experiência prática e começar a contribuir para projetos reais. Pense que você é um aventureiro que está explorando novas terras e enfrentando desafios para se tornar mais forte. Aqui estão algumas missões para subir de nível:
+
+#### Missão: Criar uma API RESTful usando Node.js e Express que seja capaz de realizar operações CRUD (Create, Read, Update, Delete) em um banco de dados relacional como MySQL ou PostgreSQL.
+
+- **Objetivo**: Criar uma API RESTful usando Node.js e Express que seja capaz de realizar operações CRUD (Create, Read, Update, Delete) em um banco de dados relacional como MySQL ou PostgreSQL.
+- **Recompensa**: Experiência prática com desenvolvimento backend e manipulação de bancos de dados.
+
+#### Missão: Criar uma aplicação web simples usando um framework como React para consumir a API criada na missão anterior e listar itens.
+
+- **Objetivo**: Criar uma aplicação web simples usando um framework como React para consumir a API criada na missão anterior e listar itens.
+- **Recompensa**: Experiência prática com frameworks modernos e desenvolvimento de aplicações web interativas.
