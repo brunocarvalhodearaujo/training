@@ -71,3 +71,23 @@ Nesse nível, você está buscando ganhar mais experiência prática e começar 
 
 - **Objetivo**: Criar uma aplicação web simples usando um framework como React para consumir a API criada na missão anterior e listar itens.
 - **Recompensa**: Experiência prática com frameworks modernos e desenvolvimento de aplicações web interativas.
+
+#### Missão: Aprender a usar um sistema de controle de versão, como Git, e colaborar com outros desenvolvedores em um projeto de equipe.
+
+- **Objetivo**: Aprender a usar um sistema de controle de versão, como Git, e colaborar com outros desenvolvedores em um projeto de equipe.
+- **Recompensa**: Habilidade de trabalhar em equipe e gerenciar mudanças no código de forma eficiente.
+
+#### Missão: Escrever testes unitários para a API criada, utilizando uma biblioteca de testes como Jest ou Mocha.
+
+- **Objetivo**: Escrever testes unitários para a API criada, utilizando uma biblioteca de testes como Jest ou Mocha.
+- **Recompensa**: Habilidade de garantir a qualidade do código e prevenir bugs.
+
+#### Missão: Participar de code reviews e aprender a dar e receber feedback construtivo sobre o código.
+
+- **Objetivo**: Participar de code reviews e aprender a dar e receber feedback construtivo sobre o código.
+- **Recompensa**: Habilidade de melhorar a qualidade do código e colaborar efetivamente com outros desenvolvedores.
+
+#### Missão: Demonstrar iniciativa e proatividade, buscando oportunidades para aprender e contribuir além das tarefas atribuídas.
+
+- **Objetivo**: Demonstrar iniciativa e proatividade, buscando oportunidades para aprender e contribuir além das tarefas atribuídas.
+- **Recompensa**: Reconhecimento como um membro valioso da equipe e oportunidades de crescimento.
