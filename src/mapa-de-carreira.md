@@ -1,7 +1,5 @@
 # Mapa de carreira de um desenvolvedor
 
-## Introdução
-
 O mapa de carreira de um desenvolvedor é uma representação visual das diferentes etapas e cargos que um profissional de desenvolvimento de software pode alcançar ao longo de sua trajetória. Ele serve como um guia para aqueles que desejam seguir uma carreira na área de tecnologia, mostrando as possíveis progressões e os requisitos para cada nível.
 
 Abaixo está um exemplo de mapa de carreira para um desenvolvedor, ilustrando as diferentes posições e caminhos que podem ser seguidos:
