@@ -94,6 +94,7 @@ O loop `for...of` é usado para iterar sobre objetos iteráveis, como arrays, st
 
 ```javascript
 const frutas = ["maçã", "banana", "laranja"]
+
 for (const fruta of frutas) {
   console.info(fruta)
 }
@@ -111,6 +112,7 @@ O loop `while` executa um bloco de código enquanto uma condição especificada 
 
 ```javascript
 let contador = 0
+
 while (contador < 5) {
   console.info(contador)
   contador++
@@ -131,6 +133,7 @@ O loop `do...while` é semelhante ao `while`, mas a condição é verificada ap�
 
 ```javascript
 let contador = 0
+
 do {
   console.info(contador)
   contador++
