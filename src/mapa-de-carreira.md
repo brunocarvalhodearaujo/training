@@ -40,6 +40,26 @@ Existem vários cargos e níveis em uma carreira de desenvolvimento de software,
 9. **Diretor de Tecnologia**: O Diretor de Tecnologia é responsável por definir a visão tecnológica da empresa, alinhar a estratégia de TI com os objetivos de negócios e supervisionar todas as operações de tecnologia.
 10. **CTO (Chief Technology Officer)**: O CTO é o executivo responsável pela direção tecnológica da empresa, tomando decisões estratégicas sobre tecnologia, inovação e desenvolvimento de produtos.
 
+## Sugestões para o início da jornada como desenvolvedor
+
+Se você está começando sua jornada como desenvolvedor, aqui estão algumas sugestões para ajudá-lo a dar os primeiros passos:
+
+### Aprenda os fundamentos
+
+Comece aprendendo as linguagens de marcação básicas como HTML, CSS e em seguida o JavaScript. Esses são os blocos de construção para o desenvolvimento web e fornecerão uma base sólida para aprender outras tecnologias. O Javascript é um bom ponto de partida, pois é uma linguagem versátil que pode ser usada tanto para desenvolvimento frontend, backend e mobile. Além disso, por ter uma sintaxe relativamente simples e uma grande comunidade de suporte, o JavaScript é uma ótima escolha para iniciantes. Ele também é amplamente utilizado na indústria, o que significa que aprender JavaScript pode abrir muitas oportunidades de emprego.
+
+As pessoas não costumam falar mais você não precisa memorizar tudo (ex: sintaxe, funções, métodos), mas é importante entender e saber que existem para que quando for necessário, você possa consultar a documentação e usar esses recursos de forma eficaz.
+
+### Pratique com projetos reais
+
+A melhor maneira de aprender é praticando. Tente criar projetos simples, como um site pessoal ou uma aplicação de tarefas. Isso ajudará a solidificar seus conhecimentos e a ganhar experiência prática. Além disso, participar de projetos de código aberto ou contribuir para projetos existentes pode ser uma ótima maneira de aprender com outros desenvolvedores e ganhar experiência em um ambiente colaborativo.
+
+Uma outra otima maneira de praticar é tentar conseguir trabalhos freelance ou estágios, onde você pode aplicar seus conhecimentos em projetos reais e ganhar experiência prática. Existem diversas plataformas online onde você pode encontrar oportunidades de trabalho freelance. Além disso, muitas empresas oferecem estágios para estudantes ou recém-formados, o que pode ser uma ótima maneira de ganhar experiência prática e construir um portfólio.
+
+### Busque mentoria e feedback
+
+Encontrar um mentor ou participar de comunidades de desenvolvedores pode ser extremamente útil para o seu crescimento. Eles podem fornecer orientação, responder a perguntas e oferecer feedback sobre seu trabalho. Participar de eventos, meetups e conferências também pode ser uma ótima maneira de conhecer outros profissionais da área e aprender com suas experiências.
+
 ## Missões para subir de nível como desenvolvedor
 
 Vamos pensar que a carreira de um desenvolvedor é como um jogo de RPG, onde você é o personagem principal e cada cargo é um nível que você precisa alcançar. Para subir de nível, você precisa completar missões específicas que demonstram suas habilidades e conhecimentos. Aqui estão algumas missões para cada nível:
