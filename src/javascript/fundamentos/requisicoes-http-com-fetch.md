@@ -91,7 +91,7 @@ const requestOptions = {
   body: JSON.stringify({ nome: 'Nova Tarefa', completed: false })
 }
 
-const response = await fetch('https://viacep.com.br/ws/26130230/json', requestOptions)
+const response = await fetch('https://api.exemplo.com/tarefas', requestOptions)
 
 if (!response.ok) {
   throw new Error('Erro na requisição: ' + response.status)
@@ -102,22 +102,40 @@ console.log(data)
 
 ```output
 {
-  "cep": "26130-230",
-  "logradouro": "Avenida Gonçalves Gatto",
-  "complemento": "",
-  "unidade": "",
-  "bairro": "Centro",
-  "localidade": "Belford Roxo",
-  "uf": "RJ",
-  "estado": "Rio de Janeiro",
-  "regiao": "Sudeste",
-  "ibge": "3300456",
-  "gia": "",
-  "ddd": "21",
-  "siafi": "2909"
+  "id": 123,
+  "nome": "Nova Tarefa",
+  "completed": false
 }
 ```
-  
+
+## Definindo o tempo máximo para a requisição
+
+O fetch possui suporte a `AbortSignal.timeout()` para definir um tempo máximo para a requisição. Se a resposta não for recebida dentro do tempo especificado, a requisição será abortada.
+
+```javascript
+const requestOptions = {
+  signal: AbortSignal.timeout(5000) // Define um tempo máximo de 5 segundos
+}
+
+try {
+  const response = await fetch('https://api.exemplo.com/tarefas', requestOptions)
+  if (!response.ok) {
+    throw new Error('Erro na requisição: ' + response.status)
+  }
+  const data = await response.json()
+  console.log(data)
+} catch (error) {
+  if (error.name === 'AbortError') {
+    console.error('A requisição foi abortada devido ao tempo limite.')
+  } else {
+    console.error('Erro:', error)
+  }
+}
+```
+
+````output
+A requisição foi abortada devido ao tempo limite.
+```
 
 ## Referencias
 
