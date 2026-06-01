@@ -7,7 +7,12 @@ function saudacao(nome) {
   return `Olá, ${nome}!`
 }
 
-const mensagem = saudacao("João") // mensagem é "Olá, João!"
+const mensagem = saudacao("João")
+console.info(mensagem)
+```
+
+```output
+Olá, João!
 ```
 
 ## Funções em flecha (arrow functions)
@@ -19,17 +24,24 @@ const saudacao = (nome) => {
   return `Olá, ${nome}!`
 }
 
-const mensagem = saudacao("João") // mensagem é "Olá, João!"
+const mensagem = saudacao("João")
+console.info(mensagem)
 ```
 
 ```output
+Olá, João!
 ```
 
 > É importante notar que as funções em flecha não possuem seu próprio `this`, `arguments`, `super` ou `new.target`, o que as torna inadequadas para certos casos, como métodos de objetos ou funções construtoras, Além disso é possível escrever a função em flecha de forma ainda mais concisa quando ela possui apenas um parâmetro e uma expressão de retorno:
 
 ```javascript
 const saudacao = nome => `Olá, ${nome}!`
-const mensagem = saudacao("João") // mensagem é "Olá, João!"
+const mensagem = saudacao("João")
+console.info(mensagem)
+```
+
+```output
+Olá, João!
 ```
 
 ## Funções anônimas
@@ -42,10 +54,18 @@ setTimeout(function() {
 }, 2000)
 ```
 
+```output
+Esta mensagem será exibida após 2 segundos
+```
+
 Essa mesma função anônima pode ser escrita como uma função em flecha para uma sintaxe mais concisa:
 
 ```javascript
 setTimeout(() => {
   console.info("Esta mensagem será exibida após 2 segundos")
 }, 2000)
+```
+
+```output
+Esta mensagem será exibida após 2 segundos
 ```

@@ -25,6 +25,10 @@ fetchData()
   })
 ```
 
+```output
+Data received: { name: 'John', age: 30 }
+```
+
 ## Async/Await
 
 O async/await é uma sintaxe mais moderna e elegante para lidar com operações assíncronas, construída sobre as Promises. A palavra-chave `async` é usada para declarar uma função assíncrona, enquanto `await` é usada para esperar a resolução de uma Promise dentro dessa função. Isso torna o código mais fácil de ler e escrever, especialmente quando há várias operações assíncronas encadeadas.
@@ -50,3 +54,7 @@ async function getData() {
 
 getData()
 ````
+
+```output
+Data received: { name: 'John', age: 30 }
+```

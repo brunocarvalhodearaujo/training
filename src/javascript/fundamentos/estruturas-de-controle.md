@@ -14,11 +14,15 @@ O `if` é usado para executar um bloco de código se uma condição for verdadei
 const idade = 18
 
 if (idade >= 18) {
-  // código a ser executado se a condição for verdadeira
+  console.info("Você é maior de idade.")
 } else {
-  // código a ser executado se a condição for falsa
+  console.info("Você é menor de idade.")
 }
 ````
+
+```output
+Você é maior de idade.
+```
 
 ### Else if
 
@@ -28,12 +32,16 @@ O `else if` é usado para verificar múltiplas condições em sequência. Ele pe
 const nota = 85
 
 if (nota >= 90) {
-  // código a ser executado se a nota for maior ou igual a 90
+  console.info("Parabéns! Você tirou uma nota excelente.")
 } else if (nota >= 80) {
-  // código a ser executado se a nota for maior ou igual a 80 e menor que 90
+  console.info("Bom trabalho! Você tirou uma boa nota.")
 } else {
-  // código a ser executado se a nota for menor que 80
+  console.info("Você precisa melhorar. Estude mais para a próxima vez.")
 }
+```
+
+```output
+Bom trabalho! Você tirou uma boa nota.
 ```
 
 ### Switch
@@ -45,14 +53,18 @@ const fruta = "maçã"
 
 switch (fruta) {
   case "maçã":
-    // código a ser executado se a expressão for igual a "maçã"
+    console.info("Você escolheu uma maçã.")
     break;
   case "banana":
-    // código a ser executado se a expressão for igual a "banana"
+    console.info("Você escolheu uma banana.")
     break;
   default:
-    // código a ser executado se a expressão não for igual a nenhum dos casos anteriores
+    console.info("Você escolheu uma fruta diferente.")
 }
+```
+
+```output
+Você escolheu uma maçã.
 ```
 
 ## Estruturas de loop: `for in`, `for of`, `while`, `do...while`
@@ -71,6 +83,11 @@ for (const chave in pessoa) {
 }
 ```
 
+```output
+nome
+idade
+```
+
 ### For...of
 
 O loop `for...of` é usado para iterar sobre objetos iteráveis, como arrays, strings, mapas, conjuntos, entre outros. Ele percorre os valores dos elementos do objeto iterável.
@@ -80,6 +97,12 @@ const frutas = ["maçã", "banana", "laranja"]
 for (const fruta of frutas) {
   console.info(fruta) // Imprime os valores do array
 }
+```
+
+```output
+maçã
+banana
+laranja
 ```
 
 ### While
@@ -94,6 +117,14 @@ while (contador < 5) {
 }
 ```
 
+```output
+0
+1
+2
+3
+4
+```
+
 ### Do...while
 
 O loop `do...while` é semelhante ao `while`, mas a condição é verificada após a execução do bloco de código, garantindo que o bloco seja executado pelo menos uma vez.
@@ -104,5 +135,13 @@ do {
   console.info(contador)
   contador++
 } while (contador < 5)
+```
+
+```output
+0
+1
+2
+3
+4
 ```
 
