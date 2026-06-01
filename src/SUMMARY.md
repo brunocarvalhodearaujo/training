@@ -2,12 +2,12 @@
 
 # Fundamentos
 
-- [Git](./git.md)
-- [Linux](./linux.md)
-- [SQL e bancos de dados relacionais](./SQL-e-bancos-de-dados-relacionais.md)
-- [HTTP e REST](./http-e-rest.md)
-- [JSON e XML](./json-e-xml.md)
-- [O que é um Micro-serviço](./microservico.md)
+- [Git](./fundamentos/git.md)
+- [Linux](./fundamentos/linux.md)
+- [SQL e bancos de dados relacionais](./fundamentos/SQL-e-bancos-de-dados-relacionais.md)
+- [HTTP e REST](./fundamentos/http-e-rest.md)
+- [JSON e XML](./fundamentos/json-e-xml.md)
+- [O que é um Micro-serviço](./fundamentos/microservico.md)
 
 # JavaScript e Node.js
 
@@ -19,7 +19,7 @@
   - [Promises e async/await para programação assíncrona](./javascript/fundamentos/promises-e-async-await.md)
   - [Destructuring](./javascript/fundamentos/destructuring.md)
   - [Módulos](./javascript/fundamentos/modulos.md)
-  - [Fetch API](./javascript/fundamentos/fetch.md)
+  - [Requisições HTTP com Fetch](./javascript/fundamentos/requisicoes-http-com-fetch.md)
 - [Testes unitários](./javascript/testes-unitarios.md)
 - [Gerenciando dependências com NPM](./javascript/gerenciando-dependencias-com-npm.md)
 - [React](./javascript/react.md)
