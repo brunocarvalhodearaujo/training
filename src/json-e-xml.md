@@ -39,17 +39,6 @@ O XML (Extensible Markup Language) é um formato de dados utilizado para a troca
 
 O XML é um formato de texto que pode ser lido por humanos e processado por máquinas. Ele é utilizado para representar dados hierárquicos, onde os elementos podem conter outros elementos, criando uma estrutura em árvore. O XML também suporta a definição de esquemas, que permitem validar a estrutura e o conteúdo dos documentos XML. O XML é amplamente utilizado em conjunto com outros padrões, como XSLT (Extensible Stylesheet Language Transformations) para transformar documentos XML em outros formatos, e XPath (XML Path Language) para navegar e selecionar elementos em um documento XML.
 
-### Vantagens
-
-- **Flexibilidade**: O XML é altamente flexível e pode representar dados complexos e hierárquicos.
-- **Suporte a Esquemas**: O XML permite a definição de esquemas, que ajudam a validar a estrutura e o conteúdo dos documentos.
-- **Amplo Suporte**: O XML é amplamente suportado por diversas linguagens de programação e ferramentas.
-
-### Desvantagens
-
-- **Verbosidade**: O XML tende a ser mais verboso do que o JSON, o que pode resultar em arquivos maiores e transmissão de dados mais lenta.
-- **Complexidade**: A manipulação de XML pode ser mais complexa devido à sua estrutura e à necessidade de parsing.
-
 Abaixo estão alguns exemplos de elementos e atributos em XML:
 
 ```xml
@@ -60,3 +49,15 @@ Abaixo estão alguns exemplos de elementos e atributos em XML:
   <body>Don't forget our meeting tomorrow!</body>
 </note>
 ```
+
+
+### Vantagens
+
+- **Flexibilidade**: O XML é altamente flexível e pode representar dados complexos e hierárquicos.
+- **Suporte a Esquemas**: O XML permite a definição de esquemas, que ajudam a validar a estrutura e o conteúdo dos documentos.
+- **Amplo Suporte**: O XML é amplamente suportado por diversas linguagens de programação e ferramentas.
+
+### Desvantagens
+
+- **Verbosidade**: O XML tende a ser mais verboso do que o JSON, o que pode resultar em arquivos maiores e transmissão de dados mais lenta.
+- **Complexidade**: A manipulação de XML pode ser mais complexa devido à sua estrutura e à necessidade de parsing.
