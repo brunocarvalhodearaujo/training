@@ -29,6 +29,8 @@ graph TD
 
 ## Descrição e requisitos para cada cargo
 
+Existem vários cargos e níveis em uma carreira de desenvolvimento de software, cada um com suas próprias responsabilidades e requisitos. A seguir, estão descritos alguns dos cargos mais comuns e o que é necessário para alcançá-los:
+
 1. **Iniciante**: Este é o ponto de partida para muitos desenvolvedores. Geralmente, os iniciantes estão aprendendo as bases da programação e podem estar cursando uma graduação ou fazendo cursos online.
 2. **Estagiário**: Estagiários são estudantes ou recém-formados que estão ganhando experiência prática em um ambiente de trabalho. Eles geralmente trabalham sob supervisão e têm tarefas simples.
 3. **Desenvolvedor Júnior**: Desenvolvedores juniores têm pouca experiência prática e trabalham em projetos com supervisão. Eles estão aprendendo a lidar com código e a colaborar com outros membros da equipe.
