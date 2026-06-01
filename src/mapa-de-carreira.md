@@ -48,12 +48,12 @@ Vamos pensar que a carreira de um desenvolvedor é como um jogo de RPG, onde voc
 
 Nesse momento você está começando sua jornada como desenvolvedor. O foco é aprender os fundamentos e ganhar experiência prática.
 
-#### Missão: Aprender HTML e CSS para criar páginas web básicas.
+#### Missão 1: Aprender HTML e CSS para criar páginas web básicas.
 
 - **Objetivo**: Aprender os fundamentos de HTML e CSS para criar páginas web básicas.
 - **Recompensa**: Conhecimento básico para criar e estilizar páginas web.
 
-#### Missão: Criar um projeto simples, como um site pessoal.
+#### Missão 2: Criar um projeto simples, como um site pessoal.
 
 - **Objetivo**: Criar um projeto simples, como um site pessoal.
 - **Recompensa**: Um portfólio inicial para mostrar suas habilidades.
@@ -62,32 +62,32 @@ Nesse momento você está começando sua jornada como desenvolvedor. O foco é a
 
 Nesse nível, você está buscando ganhar mais experiência prática e começar a contribuir para projetos reais. Pense que você é um aventureiro que está explorando novas terras e enfrentando desafios para se tornar mais forte. Aqui estão algumas missões para subir de nível:
 
-#### Missão: Criar uma API RESTful usando Node.js e Express que seja capaz de realizar operações CRUD (Create, Read, Update, Delete) em um banco de dados relacional como MySQL ou PostgreSQL.
+#### Missão 1: Criar uma API RESTful usando Node.js e Express que seja capaz de realizar operações CRUD (Create, Read, Update, Delete) em um banco de dados relacional como MySQL ou PostgreSQL.
 
 - **Objetivo**: Criar uma API RESTful usando Node.js e Express que seja capaz de realizar operações CRUD (Create, Read, Update, Delete) em um banco de dados relacional como MySQL ou PostgreSQL.
 - **Recompensa**: Experiência prática com desenvolvimento backend e manipulação de bancos de dados.
 
-#### Missão: Criar uma aplicação web simples usando um framework como React para consumir a API criada na missão anterior e listar itens.
+#### Missão 2: Criar uma aplicação web simples usando um framework como React para consumir a API criada na missão anterior e listar itens.
 
 - **Objetivo**: Criar uma aplicação web simples usando um framework como React para consumir a API criada na missão anterior e listar itens.
 - **Recompensa**: Experiência prática com frameworks modernos e desenvolvimento de aplicações web interativas.
 
-#### Missão: Aprender a usar um sistema de controle de versão, como Git, e colaborar com outros desenvolvedores em um projeto de equipe.
+#### Missão 3: Aprender a usar um sistema de controle de versão, como Git, e colaborar com outros desenvolvedores em um projeto de equipe.
 
 - **Objetivo**: Aprender a usar um sistema de controle de versão, como Git, e colaborar com outros desenvolvedores em um projeto de equipe.
 - **Recompensa**: Habilidade de trabalhar em equipe e gerenciar mudanças no código de forma eficiente.
 
-#### Missão: Escrever testes unitários para a API criada, utilizando uma biblioteca de testes como Jest ou Mocha.
+#### Missão 4: Escrever testes unitários para a API criada, utilizando uma biblioteca de testes como Jest ou Mocha.
 
 - **Objetivo**: Escrever testes unitários para a API criada, utilizando uma biblioteca de testes como Jest ou Mocha.
 - **Recompensa**: Habilidade de garantir a qualidade do código e prevenir bugs.
 
-#### Missão: Participar de code reviews e aprender a dar e receber feedback construtivo sobre o código.
+#### Missão 5: Participar de code reviews e aprender a dar e receber feedback construtivo sobre o código.
 
 - **Objetivo**: Participar de code reviews e aprender a dar e receber feedback construtivo sobre o código.
 - **Recompensa**: Habilidade de melhorar a qualidade do código e colaborar efetivamente com outros desenvolvedores.
 
-#### Missão: Demonstrar iniciativa e proatividade, buscando oportunidades para aprender e contribuir além das tarefas atribuídas.
+#### Missão 6: Demonstrar iniciativa e proatividade, buscando oportunidades para aprender e contribuir além das tarefas atribuídas.
 
 - **Objetivo**: Demonstrar iniciativa e proatividade, buscando oportunidades para aprender e contribuir além das tarefas atribuídas.
 - **Recompensa**: Reconhecimento como um membro valioso da equipe e oportunidades de crescimento.
