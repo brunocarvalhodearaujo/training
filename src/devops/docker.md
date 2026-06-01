@@ -1,7 +1,47 @@
-# Comandos para o Docker e compose
+# Docker
 
-Este documento contém os principais comandos para manipulação do Docker e Docker compose e algumas explicações sobre
-conceitos importantes.
+O Docker é uma plataforma de software que permite criar, testar e implantar aplicações rapidamente. Ele utiliza a tecnologia de containers para empacotar uma aplicação e suas dependências em um ambiente isolado, garantindo que a aplicação funcione de forma consistente em diferentes ambientes, desde o desenvolvimento até a produção. O Docker é amplamente utilizado para facilitar o desenvolvimento, a implantação e a escalabilidade de aplicações, além de ser uma ferramenta essencial para a implementação de práticas de DevOps.
+
+## O que é um container?
+
+Um container é uma unidade leve e portátil que empacota uma aplicação e todas as suas dependências, incluindo bibliotecas, arquivos de configuração e outras ferramentas necessárias para a execução da aplicação. Os containers compartilham o kernel do sistema operacional host, mas são isolados uns dos outros, garantindo que cada container tenha seu próprio ambiente de execução. Isso permite que os containers sejam iniciados rapidamente e consumam menos recursos do sistema em comparação com máquinas virtuais tradicionais. Os containers são ideais para criar ambientes de desenvolvimento consistentes, implantar aplicações em diferentes ambientes e facilitar a escalabilidade de aplicações.
+
+## O que é uma imagem?
+
+Uma imagem Docker é um arquivo leve, independente e executável que contém tudo o que é necessário para executar uma aplicação, incluindo o código, as bibliotecas, as dependências e as configurações. As imagens são usadas para criar containers, que são instâncias em execução das imagens. As imagens Docker são construídas a partir de um arquivo chamado `Dockerfile`, que contém uma série de instruções para definir como a imagem deve ser construída. As imagens podem ser armazenadas em registros de imagens, como o Docker Hub, e compartilhadas entre diferentes ambientes e usuários. As imagens Docker são imutáveis, o que significa que uma vez criada, ela não pode ser alterada, garantindo consistência e confiabilidade na execução de aplicações em containers.
+
+### Como funciona o Docker?
+
+O Docker é uma plataforma que permite empacotar, distribuir e executar aplicações em containers. Containers são ambientes isolados que contêm tudo o que uma aplicação precisa para funcionar, incluindo código, bibliotecas e dependências. Isso garante que a aplicação funcione de forma consistente em diferentes ambientes, desde o desenvolvimento até a produção.
+
+### Qual a diferença entre Docker e máquinas virtuais?
+
+A principal diferença entre Docker e máquinas virtuais (VMs) é a forma como eles isolam os ambientes. VMs executam um sistema operacional completo em cima de um hypervisor, o que consome mais recursos do sistema. Já o Docker utiliza containers que compartilham o kernel do sistema operacional host, tornando-os mais leves e eficientes em termos de uso de recursos. Isso permite iniciar containers rapidamente e executar mais containers no mesmo hardware em comparação com VMs.
+
+### Como funcionam as redes no Docker?
+
+As redes no Docker permitem que os containers se comuniquem entre si e com o mundo externo. Existem diferentes tipos de redes, sendo as principais:
+
+- `Bridge`: Rede padrão para containers em um host Docker.
+- `Host`: Compartilha a rede do host, sem isolamento.
+- `Overlay`: Permite comunicação entre containers em diferentes hosts Docker.
+- `Macvlan`: Atribui um endereço MAC a um container, permitindo que ele apareça como um dispositivo físico na rede.
+
+### Como funcionam os volumes no Docker?
+
+Volumes no Docker são usados para persistir dados gerados e usados por containers. Eles permitem que os dados sejam armazenados fora do ciclo de vida do container, garantindo que os dados não sejam perdidos quando o container é removido. Volumes podem ser compartilhados entre múltiplos containers, facilitando o compartilhamento de dados.
+
+### Como funcionam as tags de imagens no Docker?
+
+As tags de imagens no Docker são usadas para identificar versões específicas de uma imagem. Uma imagem pode ter várias tags associadas a ela, permitindo que os usuários escolham qual versão da imagem desejam usar. A tag padrão é `latest`, mas é recomendável usar tags específicas (como números de versão) para garantir consistência e evitar problemas causados por atualizações inesperadas da imagem.
+
+### O que é um registro de imagens Docker?
+
+Um registro de imagens Docker é um serviço que armazena e distribui imagens Docker. Ele permite que os usuários façam upload (push) e download (pull) de imagens Docker para facilitar o compartilhamento e a implantação de aplicações em diferentes ambientes. Existem registros públicos, como o Docker Hub, e registros privados, que podem ser configurados para uso interno em organizações. Os registros ajudam a gerenciar versões de imagens e facilitam a automação de processos de construção e implantação de containers.
+
+### O que é o Docker Hub?
+
+O Docker Hub é um serviço de registro de imagens Docker público e gratuito, mantido pela Docker Inc. Ele permite que os usuários armazenem, compartilhem e gerenciem imagens Docker. O Docker Hub oferece uma vasta biblioteca de imagens oficiais e comunitárias, facilitando o acesso a aplicações populares e ferramentas de desenvolvimento. Além disso, o Docker Hub suporta repositórios privados, permitindo que organizações armazenem imagens de forma segura. Ele também oferece recursos como integração com sistemas de CI/CD, webhooks e automação de builds.
 
 ## Instalação
 
@@ -13,7 +53,71 @@ Para instalar o Docker, siga as instruções de acordo com o sistema operacional
 curl -sSL https://get.docker.com | sh
 ````
 
+## Estrutura de um arquivo `Dockerfile`
+
+Um arquivo `Dockerfile` é um script de texto que contém uma série de instruções para construir uma imagem Docker. Abaixo está um exemplo básico da estrutura de um arquivo `Dockerfile`:
+
+````Dockerfile
+FROM node:14
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+ENV NODE_ENV=production
+CMD ["node", "app.js"]
+````
+
+- `FROM`: Especifica a imagem base a partir da qual a nova imagem será construída.
+- `WORKDIR`: Define o diretório de trabalho dentro do container.
+- `COPY`: Copia arquivos ou diretórios do sistema host para o sistema de arquivos do container.
+- `RUN`: Executa comandos no container durante a construção da imagem.
+- `EXPOSE`: Informa ao Docker que o container escutará na porta especificada em tempo de execução.
+- `ENV`: Define variáveis de ambiente dentro do container.
+- `CMD`: Especifica o comando padrão a ser executado quando o container for iniciado.
+
+É possível criar imagens multilayer (com várias camadas) utilizando múltiplas instruções `FROM` em um único `Dockerfile`. Cada instrução `FROM` inicia uma nova etapa de construção, permitindo que você crie imagens mais complexas e otimizadas como no exemplo abaixo:
+
+````Dockerfile
+FROM node:14 AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+````
+
+- Neste exemplo, a primeira etapa (`build`) constrói a aplicação Node.js, enquanto a segunda etapa utiliza a imagem Nginx para servir os arquivos estáticos gerados na etapa de build. Isso resulta em uma imagem final mais leve, contendo apenas o necessário para executar a aplicação.
+- O comando `COPY --from=build` é usado para copiar arquivos da etapa de construção anterior para a imagem final.
+- O comando `AS build` nomeia a etapa de construção, facilitando a referência a ela posteriormente.
+- O comando `FROM` pode ser utilizado múltiplas vezes para criar imagens com várias camadas, otimizando o tamanho e a eficiência da imagem final.
+
+## Como incluir um registro inseguro no Docker?
+
+Para incluir um registro inseguro no Docker, você precisa editar o arquivo de configuração do Docker, geralmente localizado em `/etc/docker/daemon.json`. Adicione a seguinte configuração, substituindo `[endereço_do_registro]` pelo endereço do seu registro inseguro:
+
+````json
+{
+  "insecure-registries": ["[endereço_do_registro]"]
+}
+````
+
+Por exemplo, se o endereço do registro for `myregistry.local:5000`, a configuração ficaria assim:
+
+````json
+{
+  "insecure-registries": ["myregistry.local:5000"]
+}
+````
+
 ## Comandos do Docker
+
+Abaixo estão alguns dos principais comandos para manipulação de imagens e containers Docker:
 
 ### Criar tag de uma imagem
 
@@ -214,6 +318,10 @@ Para remover todas as redes Docker, utilize o comando abaixo:
 docker network rm -f $(docker network ls -q)
 ````
 
+# Docker compose
+
+O Docker compose é uma ferramenta que permite definir e gerenciar múltiplos containers Docker como um único serviço. Ele utiliza um arquivo de configuração YAML para definir os serviços, redes e volumes necessários para a aplicação. O Docker compose facilita a orquestração de containers, permitindo que você inicie, pare e gerencie todo o ambiente de forma simples e eficiente. Ele é especialmente útil para ambientes de desenvolvimento, testes e implantação de aplicações em produção.
+
 ## Comandos do Docker compose
 
 Esta seção contém os principais comandos para manipulação de projetos Docker compose.
@@ -355,102 +463,7 @@ services:       # Define os serviços (containers) que serão criados
   - `on-failure`: Reinicia o container apenas se ele sair com um código de erro.
   - `unless-stopped`: Reinicia o container a menos que ele tenha sido parado manualmente.
 
-## Estrutura de um arquivo `Dockerfile`
-
-Um arquivo `Dockerfile` é um script de texto que contém uma série de instruções para construir uma imagem Docker. Abaixo está um exemplo básico da estrutura de um arquivo `Dockerfile`:
-
-````Dockerfile
-FROM node:14
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-EXPOSE 3000
-ENV NODE_ENV=production
-CMD ["node", "app.js"]
-````
-
-- `FROM`: Especifica a imagem base a partir da qual a nova imagem será construída.
-- `WORKDIR`: Define o diretório de trabalho dentro do container.
-- `COPY`: Copia arquivos ou diretórios do sistema host para o sistema de arquivos do container.
-- `RUN`: Executa comandos no container durante a construção da imagem.
-- `EXPOSE`: Informa ao Docker que o container escutará na porta especificada em tempo de execução.
-- `ENV`: Define variáveis de ambiente dentro do container.
-- `CMD`: Especifica o comando padrão a ser executado quando o container for iniciado.
-
-É possível criar imagens multilayer (com várias camadas) utilizando múltiplas instruções `FROM` em um único `Dockerfile`. Cada instrução `FROM` inicia uma nova etapa de construção, permitindo que você crie imagens mais complexas e otimizadas como no exemplo abaixo:
-
-````Dockerfile
-FROM node:14 AS build
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
-
-FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-````
-
-- Neste exemplo, a primeira etapa (`build`) constrói a aplicação Node.js, enquanto a segunda etapa utiliza a imagem Nginx para servir os arquivos estáticos gerados na etapa de build. Isso resulta em uma imagem final mais leve, contendo apenas o necessário para executar a aplicação.
-- O comando `COPY --from=build` é usado para copiar arquivos da etapa de construção anterior para a imagem final.
-- O comando `AS build` nomeia a etapa de construção, facilitando a referência a ela posteriormente.
-- O comando `FROM` pode ser utilizado múltiplas vezes para criar imagens com várias camadas, otimizando o tamanho e a eficiência da imagem final.
-
-## Como incluir um registro inseguro no Docker?
-
-Para incluir um registro inseguro no Docker, você precisa editar o arquivo de configuração do Docker, geralmente localizado em `/etc/docker/daemon.json`. Adicione a seguinte configuração, substituindo `[endereço_do_registro]` pelo endereço do seu registro inseguro:
-
-````json
-{
-  "insecure-registries": ["[endereço_do_registro]"]
-}
-````
-
-Por exemplo, se o endereço do registro for `myregistry.local:5000`, a configuração ficaria assim:
-
-````json
-{
-  "insecure-registries": ["myregistry.local:5000"]
-}
-````
-
 ## Dúvidas Frequentes
-
-### Como funciona o Docker?
-
-O Docker é uma plataforma que permite empacotar, distribuir e executar aplicações em containers. Containers são ambientes isolados que contêm tudo o que uma aplicação precisa para funcionar, incluindo código, bibliotecas e dependências. Isso garante que a aplicação funcione de forma consistente em diferentes ambientes, desde o desenvolvimento até a produção.
-
-### Qual a diferença entre Docker e máquinas virtuais?
-
-A principal diferença entre Docker e máquinas virtuais (VMs) é a forma como eles isolam os ambientes. VMs executam um sistema operacional completo em cima de um hypervisor, o que consome mais recursos do sistema. Já o Docker utiliza containers que compartilham o kernel do sistema operacional host, tornando-os mais leves e eficientes em termos de uso de recursos. Isso permite iniciar containers rapidamente e executar mais containers no mesmo hardware em comparação com VMs.
-
-### Como funcionam as redes no Docker?
-
-As redes no Docker permitem que os containers se comuniquem entre si e com o mundo externo. Existem diferentes tipos de redes, sendo as principais:
-
-- `Bridge`: Rede padrão para containers em um host Docker.
-- `Host`: Compartilha a rede do host, sem isolamento.
-- `Overlay`: Permite comunicação entre containers em diferentes hosts Docker.
-- `Macvlan`: Atribui um endereço MAC a um container, permitindo que ele apareça como um dispositivo físico na rede.
-
-### Como funcionam os volumes no Docker?
-
-Volumes no Docker são usados para persistir dados gerados e usados por containers. Eles permitem que os dados sejam armazenados fora do ciclo de vida do container, garantindo que os dados não sejam perdidos quando o container é removido. Volumes podem ser compartilhados entre múltiplos containers, facilitando o compartilhamento de dados.
-
-### Como funcionam as tags de imagens no Docker?
-
-As tags de imagens no Docker são usadas para identificar versões específicas de uma imagem. Uma imagem pode ter várias tags associadas a ela, permitindo que os usuários escolham qual versão da imagem desejam usar. A tag padrão é `latest`, mas é recomendável usar tags específicas (como números de versão) para garantir consistência e evitar problemas causados por atualizações inesperadas da imagem.
-
-### O que é um registro de imagens Docker?
-
-Um registro de imagens Docker é um serviço que armazena e distribui imagens Docker. Ele permite que os usuários façam upload (push) e download (pull) de imagens Docker para facilitar o compartilhamento e a implantação de aplicações em diferentes ambientes. Existem registros públicos, como o Docker Hub, e registros privados, que podem ser configurados para uso interno em organizações. Os registros ajudam a gerenciar versões de imagens e facilitam a automação de processos de construção e implantação de containers.
-
-### O que é o Docker Hub?
-
-O Docker Hub é um serviço de registro de imagens Docker público e gratuito, mantido pela Docker Inc. Ele permite que os usuários armazenem, compartilhem e gerenciem imagens Docker. O Docker Hub oferece uma vasta biblioteca de imagens oficiais e comunitárias, facilitando o acesso a aplicações populares e ferramentas de desenvolvimento. Além disso, o Docker Hub suporta repositórios privados, permitindo que organizações armazenem imagens de forma segura. Ele também oferece recursos como integração com sistemas de CI/CD, webhooks e automação de builds.
 
 ### Como incluir um usuário em um grupo do Docker?
 
