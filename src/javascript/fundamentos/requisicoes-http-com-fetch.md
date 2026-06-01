@@ -75,9 +75,9 @@ fetchData()
 }
 ```
 
-## Configurações adicionais
+## Configurações de método, cabeçalhos e corpo da requisição
 
-O Fetch API também permite configurar opções adicionais para as requisições, como método, cabeçalhos, corpo da requisição, entre outros. Por exemplo:
+O Fetch API permite configurar o método HTTP, os cabeçalhos e o corpo da requisição através do segundo argumento da função `fetch()`, que é um objeto de opções. A seguir, um exemplo de como enviar uma requisição POST com um corpo JSON:
 
 ```javascript
 /**
@@ -107,6 +107,13 @@ console.log(data)
   "completed": false
 }
 ```
+
+### Explicação do código
+
+- `method`: Especifica o método HTTP a ser usado (neste caso, 'POST').
+- `headers`: Define os cabeçalhos da requisição. Aqui, estamos indicando que o corpo da requisição é do tipo JSON.
+- `body`: Contém os dados que serão enviados no corpo da requisição. Usamos `JSON.stringify()` para converter o objeto JavaScript em uma string JSON.
+
 
 ## Definindo o tempo máximo para a requisição
 
