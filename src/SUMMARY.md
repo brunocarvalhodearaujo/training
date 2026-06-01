@@ -19,6 +19,7 @@
   - [Destructuring](./javascript/destructuring.md)
   - [Módulos](./javascript/modulos.md)
   - [Fetch API](./javascript/fetch.md)
+- [Testes unitários](./javascript/testes-unitarios.md)
 - [Gerenciando dependências com NPM](./javascript/gerenciando-dependencias-com-npm.md)
 - [React](./javascript/react.md)
 - [Observabilidade](./javascript/observabilidade.md)

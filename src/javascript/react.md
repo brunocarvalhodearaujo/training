@@ -65,7 +65,7 @@ function Counter() {
 
 O Virtual DOM é uma representação leve do DOM real. Quando o estado de um componente muda, o React cria uma nova árvore do Virtual DOM e a compara com a árvore anterior. Ele então calcula as mudanças necessárias para atualizar o DOM real de forma eficiente, minimizando as operações de manipulação do DOM, que podem ser lentas.
 
-## Hooks
+## React Hooks
 
 Os Hooks são uma adição ao React que permitem usar o estado e outras funcionalidades do React em componentes funcionais. Eles foram introduzidos na versão 16.8 do React e incluem Hooks como `useState`, `useEffect`, `useContext`, entre outros.
 
@@ -291,4 +291,92 @@ function App() {
     </Router>
   )
 }
+```
+
+## Styled Components
+
+Styled Components é uma biblioteca para React que permite escrever CSS dentro do JavaScript, utilizando a sintaxe de template literals. Ele ajuda a criar componentes estilizados de forma modular e reutilizável.
+
+Para instalar o Styled Components, você pode usar o seguinte comando:
+
+```bash
+npm install styled-components
+```
+
+```jsx
+import React from 'react'
+import styled from 'styled-components'
+
+const Button = styled.button`
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darkblue;
+  }
+`
+
+function App() {
+  return (
+    <div>
+      <Button>Styled Button</Button>
+    </div>
+  )
+}
+```
+
+## Typescript com React
+
+O TypeScript é um superset do JavaScript que adiciona tipagem estática ao código. Ele é amplamente utilizado com React para melhorar a qualidade do código e facilitar a manutenção de grandes aplicações.
+
+Para criar um projeto React com TypeScript, você pode usar o Create React App com a opção `--template typescript`:
+
+```bash
+npx create-react-app my-app --template typescript
+```
+
+```tsx
+import React, { type FC } from 'react'
+
+interface Props {
+  name: string
+}
+
+const Greeting: FC<Props> = ({ name }) => {
+  return <h1>Hello, {name}!</h1>
+}
+
+function App() {
+  return (
+    <div>
+      <Greeting name="World" />
+    </div>
+  )
+}
+```
+
+## Testes com jest
+
+O Jest é um framework de testes para JavaScript que é amplamente utilizado com React. Ele fornece uma maneira fácil de escrever testes unitários e de integração para componentes React.
+
+Para instalar o Jest, você pode usar o seguinte comando:
+
+```bash
+npm install --save-dev jest
+```
+
+```jsx
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import Greeting from './Greeting'
+
+test('renders greeting message', () => {
+  render(<Greeting name="World" />)
+  const greetingElement = screen.getByText(/Hello, World!/i)
+  expect(greetingElement).toBeInTheDocument()
+})
 ```
