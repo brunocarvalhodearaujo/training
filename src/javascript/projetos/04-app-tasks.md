@@ -1,6 +1,22 @@
-# Projeto 4 - API de Tarefas
+# Projeto 4 - App de controle de tarefas
 
-Neste projeto, vamos criar uma API de tarefas usando Node.js e Express. A API permitirá que os usuários criem, leiam, atualizem e excluam tarefas que serão armazenadas em um banco de dados MySQL.
+# Fase 1 - Ideia e arquitetura
+
+A ideia desse projeto é criar uma aplicação de controle de tarefas usando Node.js, Express e MySQL. A aplicação permitirá que os usuários criem, visualizem, atualizem e excluam tarefas, e os dados serão armazenados em um banco de dados MySQL. Além disso, vamos criar uma interface simples usando React para consumir a API de tarefas que criamos.
+
+## Arquitetura
+
+A aplicação será composta por um backend construído com Node.js e Express, que expõe uma API RESTful para gerenciar as tarefas. O backend se comunicará com um banco de dados MySQL para armazenar as informações das tarefas. O frontend será desenvolvido usando React, que consumirá a API do backend para exibir a lista de tarefas e permitir a criação, atualização e exclusão de tarefas.
+
+````mermaid
+graph LR
+  subgraph Backend
+    A[Express Server] --> B[MySQL Database]
+  end
+  subgraph Frontend
+    C[React App] --> A
+  end
+````
 
 ## Requisitos
 
@@ -12,6 +28,23 @@ Neste projeto, vamos criar uma API de tarefas usando Node.js e Express. A API pe
 - Terminal do Linux ou macOS.
 - [Docker](../../devops/docker.md) instalado para configurar o banco de dados MySQL.
 - [Dbeaver](https://dbeaver.io/) para gerenciar o banco de dados MySQL.
+
+
+## Endpoints
+
+Nesse projeto, vamos criar os seguintes endpoints para a API de tarefas:
+
+- `POST /tasks`: Criar uma nova tarefa.
+- `GET /tasks`: Listar todas as tarefas.
+- `GET /tasks/:id`: Obter detalhes de uma tarefa específica.
+- `PUT /tasks/:id`: Atualizar uma tarefa existente.
+- `DELETE /tasks/:id`: Excluir uma tarefa.
+
+
+# Fase 2 - Configuração do Projeto
+
+Vamos configurar o projeto passo a passo, começando pela criação do backend com Node.js e Express, seguido pela configuração do banco de dados MySQL usando Docker, e finalmente criando a interface frontend com React para consumir a API de tarefas.
+
 
 ## Passo 1: Configurar o Projeto
 
@@ -291,7 +324,7 @@ Nesse momento a aplicação Express está configurada para ouvir na porta 3000, 
 
 > No express os **middlewares** são funções que têm acesso ao objeto de requisição (req), ao objeto de resposta (res) e à próxima função de middleware no ciclo de requisição-resposta do aplicativo. Eles podem executar código, modificar os objetos de requisição e resposta, encerrar o ciclo de requisição-resposta ou chamar a próxima função de middleware. No exemplo acima, estamos usando middlewares para processar o corpo das requisições e permitir que a API receba dados em formatos JSON e URL-encoded.
 
-## Passo 8: Criação do endpoint para criar uma nova tarefa
+# Fase 3 - Implementação dos Endpoint de cadastro de tarefas
 
 Neste passo, vamos editar o arquivo `src/index.js` para adicionar o knex, para isso deixe o arquivo como o exemplo abaixo:
 
@@ -342,7 +375,8 @@ app.listen(3000, () => {
 })
 ````
 
-### Explicação do código:
+## Explicação do código:
+
 - **app.post('/tasks', async (req, res) => { ... })**: Define um endpoint POST na rota `/tasks` para criar uma nova tarefa. A função é assíncrona para permitir o uso de operações assíncronas, como a interação com o banco de dados.
 - **try { ... } catch (error) { ... }**: Bloco de código para capturar e lidar com erros que possam ocorrer durante o processo de criação da tarefa.
 - **const { name, completed = false } = req.body**: [Desestrutura](../destructuring.md) o corpo da requisição para obter os campos `name` e `completed`. O campo `completed` tem um valor padrão de `false` caso não seja fornecido na requisição.
@@ -353,7 +387,7 @@ app.listen(3000, () => {
 
 A partir deste ponto, a API de tarefas já tem um endpoint funcional para criar novas tarefas. Nesse momento vamos testar esse endpoint usando o Postman ou qualquer outra ferramenta de teste de APIs para garantir que ele esteja funcionando corretamente antes de prosseguir para a implementação dos outros endpoints (leitura, atualização e exclusão de tarefas).
 
-### Testando o endpoint de criação de tarefas:
+## Testando o endpoint de criação de tarefas:
 
 1. Execute o servidor Express usando o comando:
     ```bash
@@ -382,7 +416,8 @@ A partir deste ponto, a API de tarefas já tem um endpoint funcional para criar 
     ```
 6. Verifique no banco de dados MySQL, usando o DBeaver, se a nova tarefa foi inserida corretamente na tabela `tasks`. Você deve ver um registro com o nome "Minha primeira tarefa" e o status `completed` como `false`.
 
-## Passo 9: Criando uma aplicação React para consumir a API de tarefas
+
+# Fase 4 - Criando uma aplicação React para consumir a API de tarefas
 
 Nesta etapa, vamos criar uma interface simples usando [React](../react.md) para consumir a API de tarefas que acabamos de criar. A interface permitirá que os usuários visualizem a lista de tarefas, criem novas tarefas e marquem as tarefas como concluídas.
 
@@ -478,7 +513,7 @@ Para isso vamos criar um novo projeto React fora do diretório `04-api-tasks` do
     ```
     O comando `npm start` iniciará o servidor de desenvolvimento e abrirá a aplicação React no navegador, geralmente em `http://localhost:3000`. Você verá a página inicial do Create React App, indicando que a aplicação React foi criada com sucesso.
 
-## Passo 10: Construindo a interface para cadastrar tarefas
+# Fase 5 - Construindo o componente responsável por cadastrar tarefas
 
 Agora você pode começar a editar os arquivos dentro do diretório `04-api-tasks-frontend/src` para construir a interface da aplicação React que irá consumir a API de tarefas. Você pode criar componentes para exibir a lista de tarefas, um formulário para criar novas tarefas e botões para marcar as tarefas como concluídas. Utilizaremos o [`fetch` API](../fetch.md) para fazer requisições HTTP à API de tarefas que criamos anteriormente e atualizar a interface com os dados recebidos.
 
@@ -506,14 +541,14 @@ export const createTask = async (name: string) => {
 }
 ```
 
-#### Explicação do código:
+### Explicação do código:
 - **createTask**: Função assíncrona que recebe o nome da tarefa como parâmetro e faz uma requisição POST para a API de tarefas.
 - **requestOptions**: Objeto que define as opções da requisição, incluindo o método HTTP, os cabeçalhos e o corpo da requisição, que é convertido para JSON usando `JSON.stringify`.
 - **fetch**: Função nativa do JavaScript para fazer requisições HTTP. Ela é usada para enviar a requisição para o endpoint da API de tarefas.
 - **response.ok**: Verifica se a resposta da API foi bem-sucedida (status HTTP 200-299). Se não for bem-sucedida, lança um erro.
-- **response.json()**: Converte a resposta da API para um objeto JavaScript usando o método `json()` da resposta, que é uma função
+- **response.json()**: Converte a resposta da API para um objeto JavaScript usando o método `json()` da resposta, que é uma função assíncrona.
 
-### Criando o componente para criar tarefas
+## Criando o componente para criar tarefas
 
 Crie o arquivo `src/views/CreateTask.tsx` que será responsável por exibir um formulário para criar novas tarefas e enviar os dados para a API:
 
@@ -574,3 +609,4 @@ export const CreateTask: FC<Props> = () => {
 - **error**: Se houver um erro durante a criação da tarefa, a mensagem de erro é exibida abaixo do formulário em vermelho.
 
 > A primeira vista o JSX pode parecer confuso, mas ele é apenas uma sintaxe que permite escrever HTML dentro do JavaScript. O JSX é transformado em chamadas de funções do React para criar os elementos da interface. Por exemplo, o código JSX `<h2>Create Task</h2>` é transformado em `React.createElement('h2', null, 'Create Task')` durante a compilação. Isso permite que você escreva a estrutura da interface de forma mais intuitiva e legível, enquanto o React cuida de criar os elementos correspondentes no DOM.
+
