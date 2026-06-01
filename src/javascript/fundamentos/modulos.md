@@ -6,6 +6,19 @@ Em JavaScript, os módulos são uma forma de organizar e reutilizar código. Ele
 
 A sintaxe de módulos ES6 é a forma mais moderna de trabalhar com módulos em JavaScript. Ela utiliza as palavras-chave `import` e `export` para definir e usar módulos.
 
+No nosso exemplo nós temos uma estrutura de arquivos da seguinte maneira:
+
+````output
+package.json
+src/
+  math.js
+  index.js
+````
+
+- `src/math.js`: Contém funções matemáticas que queremos exportar.
+- `src/index.js`: O arquivo principal onde importamos e usamos as funções do módulo `math.js`.
+- `package.json`: O arquivo de configuração do projeto, onde podemos definir as dependências e scripts.
+
 ### Exportação
 
 Existem duas formas principais de exportar código em um módulo: exportação nomeada e exportação padrão.
@@ -13,7 +26,7 @@ Existem duas formas principais de exportar código em um módulo: exportação n
 #### Exportação Nomeada
 
 ````javascript
-// math.js
+// src/math.js
 export function add(a, b) {
   return a + b
 }
@@ -26,7 +39,7 @@ export function subtract(a, b) {
 #### Exportação Padrão
 
 ````javascript
-// math.js
+// src/math.js
 export default function multiply(a, b) {
   return a * b
 }
@@ -39,7 +52,7 @@ Para importar um módulo, você pode usar a sintaxe de importação corresponden
 #### Importação de Exportação Nomeada
 
 ````javascript
-// main.js
+// src/index.js
 import { add, subtract } from './math.js'
 
 console.log(add(2, 3))
@@ -54,7 +67,7 @@ console.log(subtract(5, 2))
 #### Importação de Exportação Padrão
 
 ````javascript
-// main.js
+// src/index.js
 import multiply from './math.js'
 
 console.log(multiply(2, 3))
