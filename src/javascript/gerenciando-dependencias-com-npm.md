@@ -74,6 +74,20 @@ O NPM permite diferenciar entre dependências de desenvolvimento e dependências
 
 Sim, além do NPM, existem outros gerenciadores de pacotes populares para JavaScript, como o Yarn e o PNPM. O Yarn é conhecido por sua velocidade e confiabilidade, enquanto o PNPM é conhecido por sua eficiência no uso de espaço em disco. Ambos os gerenciadores de pacotes oferecem funcionalidades semelhantes ao NPM, mas com algumas diferenças em termos de desempenho e gerenciamento de dependências.
 
+## O arquivo `.npmrc`
+
+O arquivo `.npmrc` é um arquivo de configuração do NPM que permite personalizar o comportamento do gerenciador de pacotes. Ele pode ser usado para definir configurações globais ou específicas para um projeto, como o registro de pacotes, a cache, as credenciais de autenticação e outras opções. O arquivo `.npmrc` pode ser criado na raiz do projeto ou no diretório do usuário, dependendo do escopo das configurações desejadas.
+
+Um exemplo de configuração no arquivo `.npmrc` para definir um registro de pacotes personalizado seria:
+
+```ini
+registry=https://registry.npmjs.org/
+```
+
+## O arquivo `package-lock.json`
+
+O arquivo `package-lock.json` é gerado automaticamente pelo NPM quando as dependências são instaladas ou atualizadas. Ele contém informações detalhadas sobre as versões exatas dos pacotes instalados, bem como suas dependências e subdependências. O objetivo do `package-lock.json` é garantir que o projeto seja reproduzível, ou seja, que as mesmas versões dos pacotes sejam instaladas em diferentes ambientes ou por diferentes desenvolvedores, evitando possíveis quebras causadas por atualizações automáticas de dependências.
+
 ## Sugestão de exercício
 
 - [ ] Inicialize um novo projeto Node.js utilizando o comando `npm init` e instale o pacote `express` como dependência de produção e o pacote `nodemon` como dependência de desenvolvimento. Em seguida, configure um script que inicie um arquivo `index.js` usando o comando `node` e outro script que inicie o mesmo arquivo usando o `nodemon`. Teste ambos os scripts para garantir que estão funcionando corretamente.
