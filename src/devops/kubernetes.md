@@ -28,7 +28,7 @@ Você pode aplicar uma configuração definida em um arquivo YAML usando o segui
 kubectl apply -f [arquivo_de_configuração].yaml
 ```
 
-É possível tambem aplicar diretamente de uma URL:
+É possível também aplicar diretamente de uma URL:
 
 ```sh
 kubectl apply -f https://exemplo.com/arquivo_de_configuração.yaml

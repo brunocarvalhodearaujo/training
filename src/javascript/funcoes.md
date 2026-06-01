@@ -22,6 +22,9 @@ const saudacao = (nome) => {
 const mensagem = saudacao("João") // mensagem é "Olá, João!"
 ```
 
+```output
+```
+
 > É importante notar que as funções em flecha não possuem seu próprio `this`, `arguments`, `super` ou `new.target`, o que as torna inadequadas para certos casos, como métodos de objetos ou funções construtoras, Além disso é possível escrever a função em flecha de forma ainda mais concisa quando ela possui apenas um parâmetro e uma expressão de retorno:
 
 ```javascript

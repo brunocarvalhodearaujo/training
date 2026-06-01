@@ -10,14 +10,25 @@ build-dir = "build"
 [preprocessor.toc]
 command = "mdbook-toc"
 renderer = ["html"]
+optional = true
 
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
+optional = true
 
 [output.html]
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
 git-repository-url = "https://github.com/brunocarvalhodearaujo/training"
 git-repository-icon = "fab-github"
+sidebar-header-nav = true
+additional-css = ["theme/custom.css"]
+
+[output.html.playground]
+editable = true
+copyable = true
+copy-js = true
+line-numbers = true
+runnable = true
 
 [output.pdf]
 landscape = false
@@ -37,6 +48,8 @@ footer-template = "<p style='font-size:10px; margin-left: 48%; display: none'><s
 prefer-css-page-size = true
 generate-document-outline = false
 generate-tagged-pdf = true
+optional = true
 
 [output.pdf-outline]
 like-wkhtmltopdf = true
+optional = true

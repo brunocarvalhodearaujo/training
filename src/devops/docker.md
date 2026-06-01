@@ -3,6 +3,16 @@
 Este documento contém os principais comandos para manipulação do Docker e Docker compose e algumas explicações sobre
 conceitos importantes.
 
+## Instalação
+
+Para instalar o Docker, siga as instruções de acordo com o sistema operacional utilizado:
+
+### Ubuntu
+
+````bash
+curl -sSL https://get.docker.com | sh
+````
+
 ## Comandos do Docker
 
 ### Criar tag de uma imagem
@@ -389,6 +399,24 @@ CMD ["nginx", "-g", "daemon off;"]
 - O comando `AS build` nomeia a etapa de construção, facilitando a referência a ela posteriormente.
 - O comando `FROM` pode ser utilizado múltiplas vezes para criar imagens com várias camadas, otimizando o tamanho e a eficiência da imagem final.
 
+## Como incluir um registro inseguro no Docker?
+
+Para incluir um registro inseguro no Docker, você precisa editar o arquivo de configuração do Docker, geralmente localizado em `/etc/docker/daemon.json`. Adicione a seguinte configuração, substituindo `[endereço_do_registro]` pelo endereço do seu registro inseguro:
+
+````json
+{
+  "insecure-registries": ["[endereço_do_registro]"]
+}
+````
+
+Por exemplo, se o endereço do registro for `myregistry.local:5000`, a configuração ficaria assim:
+
+````json
+{
+  "insecure-registries": ["myregistry.local:5000"]
+}
+````
+
 ## Dúvidas Frequentes
 
 ### Como funciona o Docker?
@@ -433,26 +461,6 @@ sudo usermod -aG docker [nome_do_usuario]
 ````
 
 É necessário substituir `[nome_do_usuario]` pelo nome do usuário que você deseja adicionar ao grupo do Docker. Após executar este comando, é recomendado fazer logout e login novamente para que as alterações tenham efeito.
-
-## Como incluir um registro inseguro no Docker?
-
-Para incluir um registro inseguro no Docker, você precisa editar o arquivo de configuração do Docker, geralmente localizado em `/etc/docker/daemon.json`. Adicione a seguinte configuração, substituindo `[endereço_do_registro]` pelo endereço do seu registro inseguro:
-
-````json
-{
-  "insecure-registries": ["[endereço_do_registro]"]
-}
-````
-
-Por exemplo, se o endereço do registro for `myregistry.local:5000`, a configuração ficaria assim:
-
-````json
-{
-  "insecure-registries": ["myregistry.local:5000"]
-}
-````
-
-
 
 ## Referências
 
