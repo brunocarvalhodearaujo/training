@@ -42,8 +42,13 @@ Para importar um módulo, você pode usar a sintaxe de importação corresponden
 // main.js
 import { add, subtract } from './math.js'
 
-console.log(add(2, 3)) // 5
-console.log(subtract(5, 2)) // 3
+console.log(add(2, 3))
+console.log(subtract(5, 2))
+````
+
+````output
+5
+3
 ````
 
 #### Importação de Exportação Padrão
@@ -52,5 +57,9 @@ console.log(subtract(5, 2)) // 3
 // main.js
 import multiply from './math.js'
 
-console.log(multiply(2, 3)) // 6
+console.log(multiply(2, 3))
+````
+
+````output
+6
 ````

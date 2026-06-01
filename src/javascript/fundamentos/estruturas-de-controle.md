@@ -79,7 +79,7 @@ O loop `for...in` é usado para iterar sobre as propriedades enumeráveis de um 
 const pessoa = { nome: "João", idade: 30 }
 
 for (const chave in pessoa) {
-  console.info(chave) // Imprime as chaves do objeto
+  console.info(chave)
 }
 ```
 
@@ -95,7 +95,7 @@ O loop `for...of` é usado para iterar sobre objetos iteráveis, como arrays, st
 ```javascript
 const frutas = ["maçã", "banana", "laranja"]
 for (const fruta of frutas) {
-  console.info(fruta) // Imprime os valores do array
+  console.info(fruta)
 }
 ```
 
