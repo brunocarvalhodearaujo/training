@@ -78,6 +78,7 @@ npm install --save-dev jest
 3. Escreva seus testes em um arquivo, por exemplo, `soma.test.js`:
 ```javascript
 import { soma } from './soma.js'
+
 test('deve somar dois números corretamente', () => {
   expect(soma(2, 3)).toBe(5)
 })
