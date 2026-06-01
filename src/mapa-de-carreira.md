@@ -62,20 +62,20 @@ Nesse momento você está começando sua jornada como desenvolvedor. O foco é a
 
 Nesse nível, você está buscando ganhar mais experiência prática e começar a contribuir para projetos reais. Pense que você é um aventureiro que está explorando novas terras e enfrentando desafios para se tornar mais forte. Aqui estão algumas missões para subir de nível:
 
-#### Missão 1: Criar uma API RESTful usando Node.js e Express que seja capaz de realizar operações CRUD (Create, Read, Update, Delete) em um banco de dados relacional como MySQL ou PostgreSQL.
+#### Missão 1: Aprender a usar um sistema de controle de versão, como Git, e colaborar com outros desenvolvedores em um projeto de equipe.
+
+- **Objetivo**: Aprender a usar um sistema de controle de versão, como Git, e colaborar com outros desenvolvedores em um projeto de equipe.
+- **Recompensa**: Habilidade de trabalhar em equipe e gerenciar mudanças no código de forma eficiente.
+
+#### Missão 2: Criar uma API RESTful usando Node.js e Express que seja capaz de realizar operações CRUD (Create, Read, Update, Delete) em um banco de dados relacional como MySQL ou PostgreSQL.
 
 - **Objetivo**: Criar uma API RESTful usando Node.js e Express que seja capaz de realizar operações CRUD (Create, Read, Update, Delete) em um banco de dados relacional como MySQL ou PostgreSQL.
 - **Recompensa**: Experiência prática com desenvolvimento backend e manipulação de bancos de dados.
 
-#### Missão 2: Criar uma aplicação web simples usando um framework como React para consumir a API criada na missão anterior e listar itens.
+#### Missão 3: Criar uma aplicação web simples usando um framework como React para consumir a API criada na missão anterior e listar itens.
 
 - **Objetivo**: Criar uma aplicação web simples usando um framework como React para consumir a API criada na missão anterior e listar itens.
 - **Recompensa**: Experiência prática com frameworks modernos e desenvolvimento de aplicações web interativas.
-
-#### Missão 3: Aprender a usar um sistema de controle de versão, como Git, e colaborar com outros desenvolvedores em um projeto de equipe.
-
-- **Objetivo**: Aprender a usar um sistema de controle de versão, como Git, e colaborar com outros desenvolvedores em um projeto de equipe.
-- **Recompensa**: Habilidade de trabalhar em equipe e gerenciar mudanças no código de forma eficiente.
 
 #### Missão 4: Escrever testes unitários para a API criada, utilizando uma biblioteca de testes como Jest ou Mocha.
 
