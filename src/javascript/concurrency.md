@@ -13,7 +13,7 @@ import { setTimeout } from 'node:timers/promises'
  * @param {number} ms 
  * @returns {Promise<{ms: number, time: string}>}
  */
-async function timeout(ms) {
+async function fakeProcess(ms) {
   await setTimeout(ms * 1000)
   return { ms, time: new Date().toISOString() }
 }
@@ -24,7 +24,7 @@ async function timeout(ms) {
 const rows = [1, 2, 1, 3, 4, 5]
 const chunks =  Readable
   .from(rows)
-  .map(timeout, { concurrency: 10, signal: AbortSignal.timeout(10000) })
+  .map(fakeProcess, { concurrency: 10, signal: AbortSignal.timeout(10000) })
 
 for await (const chunk of chunks) {
   console.info(chunk, 'is a chunk')
@@ -42,10 +42,10 @@ for await (const chunk of chunks) {
 
 ## Entendendo o código
 
-- A função `timeout` é uma função assíncrona que simula uma operação que leva um certo tempo para ser concluída. Ela recebe um número de segundos, aguarda esse tempo usando `setTimeout`, e retorna um objeto com o tempo em milissegundos e a hora atual.
-- O array `rows` contém os números que serão processados. Cada número representa o tempo que a função `timeout` levará para ser concluída.
+- A função `fakeProcess` é uma função assíncrona que simula uma operação que leva um certo tempo para ser concluída. Ela recebe um número de segundos, aguarda esse tempo usando `setTimeout`, e retorna um objeto com o tempo em milissegundos e a hora atual.
+- O array `rows` contém os números que serão processados. Cada número representa o tempo que a função `fakeProcess` levará para ser concluída.
 - O método `Readable.from(rows)` cria um stream legível a partir do array `rows`.
-- O método `map` é usado para aplicar a função `timeout` a cada elemento do stream. A opção `concurrency: 10` limita o número de tarefas assíncronas que podem ser executadas simultaneamente a 10. A opção `signal: AbortSignal.timeout(10000)` define um tempo limite de 10 segundos para a operação.
+- O método `map` é usado para aplicar a função `fakeProcess` a cada elemento do stream. A opção `concurrency: 10` limita o número de tarefas assíncronas que podem ser executadas simultaneamente a 10. A opção `signal: AbortSignal.timeout(10000)` define um tempo limite de 10 segundos para a operação.
 - O loop `for await` é usado para iterar sobre os chunks processados e imprimir o resultado no console.
 
 ## Conclusão
