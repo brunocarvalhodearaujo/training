@@ -5,7 +5,7 @@ O Fetch API é uma interface JavaScript que permite fazer requisições HTTP de 
 ## Exemplo de uso do Fetch API
 
 ```javascript
-fetch('https://viacep.com.br/ws/01001000/json')
+fetch('https://viacep.com.br/ws/26130230/json')
   .then(response => {
     if (!response.ok) {
       throw new Error('Erro na requisição: ' + response.status)
@@ -22,19 +22,19 @@ fetch('https://viacep.com.br/ws/01001000/json')
 
 ```output
 {
-  cep: '01001-000',
-  logradouro: 'Praça da Sé',
-  complemento: 'lado ímpar',
-  unidade: '',
-  bairro: 'Sé',
-  localidade: 'São Paulo',
-  uf: 'SP',
-  estado: 'São Paulo',
-  regiao: 'Sudeste',
-  ibge: '3550308',
-  gia: '1004',
-  ddd: '11',
-  siafi: '7107'
+  "cep": "26130-230",
+  "logradouro": "Avenida Gonçalves Gatto",
+  "complemento": "",
+  "unidade": "",
+  "bairro": "Centro",
+  "localidade": "Belford Roxo",
+  "uf": "RJ",
+  "estado": "Rio de Janeiro",
+  "regiao": "Sudeste",
+  "ibge": "3300456",
+  "gia": "",
+  "ddd": "21",
+  "siafi": "2909"
 }
 ```
 
@@ -43,7 +43,7 @@ Abaixo a mesma requisição utilizando `async`/`await` para uma sintaxe mais lim
 ```javascript
 async function fetchData() {
   try {
-    const response = await fetch('https://viacep.com.br/ws/01001000/json')
+    const response = await fetch('https://viacep.com.br/ws/26130230/json')
     if (!response.ok) {
       throw new Error('Erro na requisição: ' + response.status)
     }
@@ -59,19 +59,19 @@ fetchData()
 
 ```output
 {
-  cep: '01001-000',
-  logradouro: 'Praça da Sé',
-  complemento: 'lado ímpar',
-  unidade: '',
-  bairro: 'Sé',
-  localidade: 'São Paulo',
-  uf: 'SP',
-  estado: 'São Paulo',
-  regiao: 'Sudeste',
-  ibge: '3550308',
-  gia: '1004',
-  ddd: '11',
-  siafi: '7107'
+  "cep": "26130-230",
+  "logradouro": "Avenida Gonçalves Gatto",
+  "complemento": "",
+  "unidade": "",
+  "bairro": "Centro",
+  "localidade": "Belford Roxo",
+  "uf": "RJ",
+  "estado": "Rio de Janeiro",
+  "regiao": "Sudeste",
+  "ibge": "3300456",
+  "gia": "",
+  "ddd": "21",
+  "siafi": "2909"
 }
 ```
 
@@ -91,7 +91,7 @@ const requestOptions = {
   body: JSON.stringify({ nome: 'Nova Tarefa', completed: false })
 }
 
-const response = await fetch('https://viacep.com.br/ws/01001000/json', requestOptions)
+const response = await fetch('https://viacep.com.br/ws/26130230/json', requestOptions)
 
 if (!response.ok) {
   throw new Error('Erro na requisição: ' + response.status)
@@ -102,19 +102,19 @@ console.log(data)
 
 ```output
 {
-  cep: '01001-000',
-  logradouro: 'Praça da Sé',
-  complemento: 'lado ímpar',
-  unidade: '',
-  bairro: 'Sé',
-  localidade: 'São Paulo',
-  uf: 'SP',
-  estado: 'São Paulo',
-  regiao: 'Sudeste',
-  ibge: '3550308',
-  gia: '1004',
-  ddd: '11',
-  siafi: '7107'
+  "cep": "26130-230",
+  "logradouro": "Avenida Gonçalves Gatto",
+  "complemento": "",
+  "unidade": "",
+  "bairro": "Centro",
+  "localidade": "Belford Roxo",
+  "uf": "RJ",
+  "estado": "Rio de Janeiro",
+  "regiao": "Sudeste",
+  "ibge": "3300456",
+  "gia": "",
+  "ddd": "21",
+  "siafi": "2909"
 }
 ```
   
