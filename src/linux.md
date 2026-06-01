@@ -78,10 +78,8 @@ Para verificar há quanto tempo o sistema está em execução, você pode usar o
 uptime
 ```
 
-Ele irá exibir uma saída semelhante a esta:
-
-```plaintext
-14:23:45 up 10 days,  4:12,  2 users,  load average: 0.15, 0.10, 0.05
+```output
+13:01  up 81 days, 15:36, 1 user, load averages: 2.30 2.61 2.90
 ```
 
 ### Consultar espaço em disco
@@ -92,12 +90,20 @@ Para verificar o uso do espaço em disco, você pode usar o comando `df -h`:
 df -h
 ```
 
-Ele irá exibir o uso do espaço em disco de forma legível para humanos em um formato semelhante a este:
-
-```plaintext
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/sda1        50G   20G   28G  42% /
-tmpfs           2.0G     0  2.0G   0% /dev/shm
+```output
+Filesystem        Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s3s1   228Gi    17Gi    11Gi    61%    453k  116M    0%   /
+devfs            199Ki   199Ki     0Bi   100%     690     0  100%   /dev
+/dev/disk3s6     228Gi   9.0Gi    11Gi    45%       9  116M    0%   /System/Volumes/VM
+/dev/disk3s4     228Gi    16Gi    11Gi    60%    2.0k  116M    0%   /System/Volumes/Preboot
+/dev/disk3s2     228Gi   805Mi    11Gi     7%     450  116M    0%   /System/Volumes/Update
+/dev/disk1s2     500Mi   6.0Mi   482Mi     2%       3  4.9M    0%   /System/Volumes/xarts
+/dev/disk1s1     500Mi   5.8Mi   482Mi     2%      35  4.9M    0%   /System/Volumes/iSCPreboot
+/dev/disk1s3     500Mi   1.1Mi   482Mi     1%      43  4.9M    0%   /System/Volumes/Hardware
+/dev/disk3s1     228Gi   172Gi    11Gi    94%    2.8M  116M    2%   /System/Volumes/Data
+map auto_home      0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home
+/dev/disk2s1     5.0Gi   2.1Gi   2.8Gi    44%      63   30M    0%   /System/Volumes/Update/SFR/mnt1
+/dev/disk3s3     228Gi    17Gi    11Gi    61%    459k  116M    0%   /System/Volumes/Update/mnt1
 ```
 
 - O `-h` torna a saída mais legível, exibindo os tamanhos em KB, MB ou GB conforme apropriado.
