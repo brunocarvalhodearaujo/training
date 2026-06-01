@@ -306,27 +306,7 @@ Para obter o endereço IP e o endereço MAC do servidor, você pode usar o coman
     /sbin/ifconfig -a
     ```
 
-### Instalação do OpenRGB no Ubuntu/Debian via terminal
-
-Para instalar o OpenRGB no Ubuntu/Debian via terminal, siga os passos abaixo:
-
-1. Baixe o pacote .deb mais recente do OpenRGB:
-
-    ```bash
-    wget https://openrgb.org/releases/release_0.9/openrgb_0.9_amd64_bookworm_b5f46e3.deb
-    ```
-
-2. Instale o pacote usando o `dpkg`:
-
-    ```bash
-    dpkg -i openrgb_0.9_amd64_bookworm_b5f46e3.deb
-    ```
-
-3. Caso queira ativar a inicialização automática do OpenRGB na inicialização do sistema, crie um serviço systemd conforme descrito na proxima anterior.
-
-- [OpenRGB em Proxmox](https://forum.proxmox.com/threads/openrgb-container.121435/)
-
-### Criar um serviço para ser iniciado na inicialização do sistema
+### Criar um serviço para ser iniciado na inicialização do Ubuntu/Debian
 
 Para criar um serviço que seja iniciado automaticamente na inicialização do sistema, você pode criar um arquivo de unidade do systemd. Aqui está um exemplo básico:
 

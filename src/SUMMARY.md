@@ -5,7 +5,6 @@
 # Fundamentos
 
 - [Git](./fundamentos/git.md)
-- [Linux](./fundamentos/linux.md)
 - [SQL e bancos de dados relacionais](./fundamentos/SQL-e-bancos-de-dados-relacionais.md)
 - [HTTP e REST](./fundamentos/http-e-rest.md)
 - [JSON e XML](./fundamentos/json-e-xml.md)
@@ -36,6 +35,8 @@
 
 # DevOps
 
+- [Introdução](./devops/README.md)
+- [Linux](./devops/linux.md)
 - [Docker e Compose](./devops/docker.md)
 - [Kubernetes](./devops/kubernetes.md)
 - [Terraform](./devops/terraform.md)
