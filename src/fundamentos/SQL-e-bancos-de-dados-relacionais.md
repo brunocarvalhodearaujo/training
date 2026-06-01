@@ -126,11 +126,11 @@ O DBeaver é uma ferramenta de gerenciamento de bancos de dados que suporta uma 
 Para configurar uma conexão no DBeaver, siga os passos abaixo:
 
 1. Abra o DBeaver e clique em "Database" no menu superior, depois selecione "New Database Connection".
-  ![Seleção de banco de dados no DBeaver](./.attachments/Screenshot%202026-05-31%20at%2015.35.49.png)
+  ![Seleção de banco de dados no DBeaver](../.attachments/Screenshot%202026-05-31%20at%2015.35.49.png)
 2. Na janela de seleção de banco de dados, escolha o tipo de banco de dados que deseja conectar (por exemplo, MySQL, PostgreSQL, etc.) e clique em "Next".
-  ![Seleção do MySQL no DBeaver](./.attachments/Screenshot%202026-05-31%20at%2015.40.55.png)
+  ![Seleção do MySQL no DBeaver](../.attachments/Screenshot%202026-05-31%20at%2015.40.55.png)
 3. Preencha as informações de conexão, como host, porta, nome do banco de dados, nome de usuário e senha. Você também pode testar a conexão para garantir que as informações estão corretas.
-  ![Configuração de conexão no DBeaver 2](./.attachments/Screenshot%202026-05-31%20at%2015.40.18.png)
+  ![Configuração de conexão no DBeaver 2](../.attachments/Screenshot%202026-05-31%20at%2015.40.18.png)
 4. Clique em "Finish" para salvar a conexão. Agora você pode acessar o banco de dados e começar a executar consultas SQL, visualizar tabelas e gerenciar seus dados usando a interface do DBeaver.
 5. Para acessar o banco de dados, basta clicar na conexão que você criou na barra lateral esquerda do DBeaver. Você poderá expandir a conexão para visualizar as tabelas, colunas e outros objetos do banco de dados, além de poder executar consultas SQL diretamente na interface do DBeaver.
-  ![Acessando o banco de dados](./.attachments/Screenshot%202026-05-31%20at%2015.43.08.png)
+  ![Acessando o banco de dados](../.attachments/Screenshot%202026-05-31%20at%2015.43.08.png)

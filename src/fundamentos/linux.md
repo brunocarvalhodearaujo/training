@@ -1,6 +1,6 @@
 # Linux
 
-![Linux](./.attachments/ubuntu-desktop-rounded-corners.png.avif)
+![Linux](../.attachments/ubuntu-desktop-rounded-corners.png.avif)
 
 ## Introdução ao Linux
 

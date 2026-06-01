@@ -60,4 +60,4 @@ O REST é baseado em recursos, onde cada recurso é identificado por uma URL (Un
 
 O Postman é uma ferramenta popular para testar e desenvolver APIs. Ele permite que os desenvolvedores criem, enviem e analisem requisições HTTP de forma fácil e eficiente. Com o Postman, é possível criar coleções de requisições, organizar testes automatizados, e compartilhar configurações com outros membros da equipe. Ele suporta diversos métodos HTTP e permite a personalização de cabeçalhos, parâmetros e corpo das requisições, facilitando o processo de desenvolvimento e depuração de APIs.
 
-![Postman](./.attachments/Screenshot%202026-05-31%20at%2016.08.33.png)
+![Postman](../.attachments/Screenshot%202026-05-31%20at%2016.08.33.png)
