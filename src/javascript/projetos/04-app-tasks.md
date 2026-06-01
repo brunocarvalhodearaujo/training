@@ -1,10 +1,10 @@
 # Projeto 4 - App de controle de tarefas
 
-# Fase 1 - Ideia e arquitetura
+## Fase 1 - Ideia e arquitetura
 
 A ideia desse projeto é criar uma aplicação de controle de tarefas usando Node.js, Express e MySQL. A aplicação permitirá que os usuários criem, visualizem, atualizem e excluam tarefas, e os dados serão armazenados em um banco de dados MySQL. Além disso, vamos criar uma interface simples usando React para consumir a API de tarefas que criamos.
 
-## Arquitetura
+### Arquitetura
 
 A aplicação será composta por um backend construído com Node.js e Express, que expõe uma API RESTful para gerenciar as tarefas. O backend se comunicará com um banco de dados MySQL para armazenar as informações das tarefas. O frontend será desenvolvido usando React, que consumirá a API do backend para exibir a lista de tarefas e permitir a criação, atualização e exclusão de tarefas.
 
@@ -18,19 +18,22 @@ graph LR
   end
 ````
 
-## Requisitos
+### Requisitos
 
 - Ter conhecimento básico de [JavaScript](../visao-geral.md), Node.js e Express.
-- Ter conhecimento de [APIs RESTful](../../rest.md) e como elas funcionam.
+- Ter conhecimento básico de [APIs RESTful](../../rest.md) e como elas funcionam.
 - Ter conhecimento básico de bancos de dados relacionais e [SQL](../../SQL-e-bancos-de-dados-relacionais.md).
-- Node.js instalado em sua máquina com versão 24 ou superior.
+- Ter conhecimento básico de [React](../react.md) para criar a interface frontend.
+- Ter conhecimento básico de [Docker](../../devops/docker.md) para configurar o banco de dados MySQL.
+- Ter conhecimento básico de [Dbeaver](https://dbeaver.io/) para gerenciar o banco de dados MySQL.
+- Ter um ambiente de desenvolvimento configurado com Node.js 24, Docker e Dbeaver.
 - Editor de código de sua preferência (como Visual Studio Code, Sublime Text, etc.)
 - Terminal do Linux ou macOS.
 - [Docker](../../devops/docker.md) instalado para configurar o banco de dados MySQL.
 - [Dbeaver](https://dbeaver.io/) para gerenciar o banco de dados MySQL.
 
 
-## Endpoints
+### Endpoints
 
 Nesse projeto, vamos criar os seguintes endpoints para a API de tarefas:
 
@@ -41,12 +44,12 @@ Nesse projeto, vamos criar os seguintes endpoints para a API de tarefas:
 - `DELETE /tasks/:id`: Excluir uma tarefa.
 
 
-# Fase 2 - Configuração do Projeto
+## Fase 2 - Configuração do Projeto
 
 Vamos configurar o projeto passo a passo, começando pela criação do backend com Node.js e Express, seguido pela configuração do banco de dados MySQL usando Docker, e finalmente criando a interface frontend com React para consumir a API de tarefas.
 
 
-## Passo 1: Configurar o Projeto
+### Passo 1: Configurar o Projeto
 
 1. Crie um novo diretório para o projeto e navegue até ele:
     ```bash
@@ -99,7 +102,7 @@ Vamos configurar o projeto passo a passo, começando pela criação do backend c
     }
     ```
 
-## Passo 2: Configurar o Banco de Dados MySQL via Docker
+### Passo 2: Configurar o Banco de Dados MySQL via Docker
 
 1. Certifique-se de ter o Docker instalado e em execução em sua máquina.
 2. Crie um arquivo chamado `docker-compose.yml` na raiz do projeto com o seguinte conteúdo para configurar um contêiner MySQL:
@@ -142,7 +145,7 @@ Vamos configurar o projeto passo a passo, começando pela criação do backend c
     > Caso queira parar o contêiner, use o comando `docker-compose down`. Para visualizar os logs do contêiner, use `docker-compose logs mysql`.
 
 
-## Passo 3: Instalar as Dependências
+### Passo 3: Instalar as Dependências
 
 1. No terminal, dentro do diretório do projeto, execute o seguinte comando para instalar as dependências necessárias:
     ```bash
@@ -175,7 +178,7 @@ Vamos configurar o projeto passo a passo, começando pela criação do backend c
     }
     ```
 
-## Passo 4: Criando o arquivo `knexfile.js` para configurar o Knex
+### Passo 4: Criando o arquivo `knexfile.js` para configurar o Knex
 
 O knex precisa de um arquivo de configuração para saber como se conectar ao banco de dados. Crie um arquivo chamado `knexfile.js` na raiz do projeto com o seguinte conteúdo:
 
@@ -201,7 +204,7 @@ export default {
 }
 ```
 
-### Explicação do `knexfile.js`:
+#### Explicação do `knexfile.js`:
 
 - **export default**: Exporta a configuração do Knex como um módulo ES6.
 - **client**: Especifica o cliente de banco de dados a ser usado, neste caso, `mysql2`.
@@ -217,7 +220,7 @@ export default {
 Com essa configuração, o Knex estará pronto para se conectar ao banco de dados MySQL e gerenciar as migrações necessárias para criar as tabelas e estruturas do banco de dados para a API de tarefas.
 
 
-## Passo 5: Criar script para executar as migrações
+### Passo 5: Criar script para executar as migrações
 
 Para criar um script que execute as migrações do Knex, adicione a seguinte linha ao campo `scripts` do arquivo `package.json`:
 
@@ -246,11 +249,11 @@ Para criar um script que execute as migrações do Knex, adicione a seguinte lin
 }
 ````
 
-### Explicação dos scripts adicionados:
+#### Explicação dos scripts adicionados:
 - **migrate**: Este script executa as migrações do Knex para criar ou atualizar a estrutura do banco de dados. O comando `knex migrate:latest` aplica todas as migrações pendentes, e a opção `--knexfile knexfile.js` especifica o arquivo de configuração do Knex a ser usado.
 - **rollback**: Este script reverte a última migração aplicada. O comando `knex migrate:rollback` desfaz a última migração, e a opção `--knexfile knexfile.js` especifica o arquivo de configuração do Knex a ser usado.
 
-## Passo 6: Criar a migração para a tabela de tarefas
+### Passo 6: Criar a migração para a tabela de tarefas
 
 1. Crie um diretório chamado `migrations` dentro do diretório `src`:
     ```bash
@@ -294,7 +297,7 @@ Para criar um script que execute as migrações do Knex, adicione a seguinte lin
 5. Abra o DBeaver e conecte-se ao banco de dados MySQL usando as credenciais definidas no `docker-compose.yml` (host: `localhost`, porta: `3306`, usuário: `root`, senha: `root`, banco de dados: `tasks-api`). Verifique se a tabela `tasks` foi criada com sucesso e explore sua estrutura.
   > Você pode visualizar o [manual de configuração do DBeaver](../../SQL-e-bancos-de-dados-relacionais.md#dbeaver) para aprender como configurar conexões no DBeaver e gerenciar seu banco de dados MySQL.
 
-## Passo 7: Criar arquivo `src/index.js` para configurar o servidor Express
+### Passo 7: Criar arquivo `src/index.js` para configurar o servidor Express
 
 Nesta etapa, vamos criar o arquivo `src/index.js` e incluir o conteúdo abaixo para começar a construir o servidor Express e definir as rotas da API de tarefas:
 
@@ -324,7 +327,7 @@ Nesse momento a aplicação Express está configurada para ouvir na porta 3000, 
 
 > No express os **middlewares** são funções que têm acesso ao objeto de requisição (req), ao objeto de resposta (res) e à próxima função de middleware no ciclo de requisição-resposta do aplicativo. Eles podem executar código, modificar os objetos de requisição e resposta, encerrar o ciclo de requisição-resposta ou chamar a próxima função de middleware. No exemplo acima, estamos usando middlewares para processar o corpo das requisições e permitir que a API receba dados em formatos JSON e URL-encoded.
 
-# Fase 3 - Implementação dos Endpoint de cadastro de tarefas
+## Fase 3 - Implementação dos Endpoint de cadastro de tarefas
 
 Neste passo, vamos editar o arquivo `src/index.js` para adicionar o knex, para isso deixe o arquivo como o exemplo abaixo:
 
@@ -375,7 +378,7 @@ app.listen(3000, () => {
 })
 ````
 
-## Explicação do código:
+### Explicação do código:
 
 - **app.post('/tasks', async (req, res) => { ... })**: Define um endpoint POST na rota `/tasks` para criar uma nova tarefa. A função é assíncrona para permitir o uso de operações assíncronas, como a interação com o banco de dados.
 - **try { ... } catch (error) { ... }**: Bloco de código para capturar e lidar com erros que possam ocorrer durante o processo de criação da tarefa.
@@ -387,7 +390,7 @@ app.listen(3000, () => {
 
 A partir deste ponto, a API de tarefas já tem um endpoint funcional para criar novas tarefas. Nesse momento vamos testar esse endpoint usando o Postman ou qualquer outra ferramenta de teste de APIs para garantir que ele esteja funcionando corretamente antes de prosseguir para a implementação dos outros endpoints (leitura, atualização e exclusão de tarefas).
 
-## Testando o endpoint de criação de tarefas:
+### Testando o endpoint de criação de tarefas:
 
 1. Execute o servidor Express usando o comando:
     ```bash
@@ -417,7 +420,7 @@ A partir deste ponto, a API de tarefas já tem um endpoint funcional para criar 
 6. Verifique no banco de dados MySQL, usando o DBeaver, se a nova tarefa foi inserida corretamente na tabela `tasks`. Você deve ver um registro com o nome "Minha primeira tarefa" e o status `completed` como `false`.
 
 
-# Fase 4 - Criando uma aplicação React para consumir a API de tarefas
+## Fase 4 - Criando uma aplicação React para consumir a API de tarefas
 
 Nesta etapa, vamos criar uma interface simples usando [React](../react.md) para consumir a API de tarefas que acabamos de criar. A interface permitirá que os usuários visualizem a lista de tarefas, criem novas tarefas e marquem as tarefas como concluídas.
 
@@ -513,11 +516,11 @@ Para isso vamos criar um novo projeto React fora do diretório `04-api-tasks` do
     ```
     O comando `npm start` iniciará o servidor de desenvolvimento e abrirá a aplicação React no navegador, geralmente em `http://localhost:3000`. Você verá a página inicial do Create React App, indicando que a aplicação React foi criada com sucesso.
 
-# Fase 5 - Construindo o componente responsável por cadastrar tarefas
+## Fase 5 - Construindo o componente responsável por cadastrar tarefas
 
 Agora você pode começar a editar os arquivos dentro do diretório `04-api-tasks-frontend/src` para construir a interface da aplicação React que irá consumir a API de tarefas. Você pode criar componentes para exibir a lista de tarefas, um formulário para criar novas tarefas e botões para marcar as tarefas como concluídas. Utilizaremos o [`fetch` API](../fetch.md) para fazer requisições HTTP à API de tarefas que criamos anteriormente e atualizar a interface com os dados recebidos.
 
-## Criando um arquivo para armazenar as chamadas à API
+### Criando um arquivo para armazenar as chamadas à API
 
 Crie um arquivo `src/api.ts` para centralizar as chamadas à API de tarefas. Este arquivo conterá funções para criar, ler, atualizar e excluir tarefas, facilitando a manutenção e reutilização do código relacionado à comunicação com a API. E para começar, adicione a função para criar uma nova tarefa:
 
@@ -541,14 +544,14 @@ export const createTask = async (name: string) => {
 }
 ```
 
-### Explicação do código:
+#### Explicação do código:
 - **createTask**: Função assíncrona que recebe o nome da tarefa como parâmetro e faz uma requisição POST para a API de tarefas.
 - **requestOptions**: Objeto que define as opções da requisição, incluindo o método HTTP, os cabeçalhos e o corpo da requisição, que é convertido para JSON usando `JSON.stringify`.
 - **fetch**: Função nativa do JavaScript para fazer requisições HTTP. Ela é usada para enviar a requisição para o endpoint da API de tarefas.
 - **response.ok**: Verifica se a resposta da API foi bem-sucedida (status HTTP 200-299). Se não for bem-sucedida, lança um erro.
 - **response.json()**: Converte a resposta da API para um objeto JavaScript usando o método `json()` da resposta, que é uma função assíncrona.
 
-## Criando o componente para criar tarefas
+### Criando o componente para criar tarefas
 
 Crie o arquivo `src/views/CreateTask.tsx` que será responsável por exibir um formulário para criar novas tarefas e enviar os dados para a API:
 
