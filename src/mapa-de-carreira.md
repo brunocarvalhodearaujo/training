@@ -69,7 +69,7 @@ Nesse nível, você está buscando ganhar mais experiência prática e começar 
 
 #### Missão 2: Criar uma API RESTful usando Node.js e Express que seja capaz de realizar operações CRUD (Create, Read, Update, Delete) em um banco de dados relacional como MySQL ou PostgreSQL.
 
-- **Objetivo**: Criar uma API RESTful usando Node.js e Express que seja capaz de realizar operações CRUD (Create, Read, Update, Delete) em um banco de dados relacional como MySQL ou PostgreSQL.
+- **Objetivo**: Criar uma [API RESTful usando Node.js e Express](./javascript/projetos/04-app-tasks.md) que seja capaz de realizar operações CRUD (Create, Read, Update, Delete) em um banco de dados relacional como MySQL ou PostgreSQL.
 - **Recompensa**: Experiência prática com desenvolvimento backend e manipulação de bancos de dados.
 
 #### Missão 3: Criar uma aplicação web simples usando um framework como React para consumir a API criada na missão anterior e listar itens.
