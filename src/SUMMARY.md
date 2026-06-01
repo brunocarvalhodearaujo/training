@@ -7,6 +7,7 @@
 - [SQL e bancos de dados relacionais](./SQL-e-bancos-de-dados-relacionais.md)
 - [HTTP e REST](./http-e-rest.md)
 - [JSON e XML](./json-e-xml.md)
+- [O que é um Micro-serviço](./microservico.md)
 
 # JavaScript e Node.js
 
