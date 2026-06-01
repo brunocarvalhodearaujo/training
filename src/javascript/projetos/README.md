@@ -9,4 +9,4 @@ A ideia é que, ao final de cada projeto, você tenha uma aplicação funcional 
 - [Projeto 1: Olá Mundo](./01-hello-world.md)
 - [Projeto 2: Servidor HTTP simples](./02-http-server.md)
 - [Projeto 3: Servidor Express simples](./03-express-simple-server.md)
-- [Projeto 4: API de Tarefas](./04-api-tasks.md)
+- [Projeto 4: App de controle de tarefas com Node.js, Express, MySQL e React](./04-app-tasks.md)
