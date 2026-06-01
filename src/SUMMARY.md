@@ -18,6 +18,7 @@
   - [Arrays e objetos](./javascript/fundamentos/arrays-e-objetos.md)
   - [Promises e async/await para programação assíncrona](./javascript/fundamentos/promises-e-async-await.md)
   - [Destructuring](./javascript/fundamentos/destructuring.md)
+  - [Rest e Spread](./javascript/fundamentos/rest-spread.md)
   - [Módulos](./javascript/fundamentos/modulos.md)
   - [Requisições HTTP com Fetch](./javascript/fundamentos/requisicoes-http-com-fetch.md)
 - [Testes unitários](./javascript/testes-unitarios.md)
