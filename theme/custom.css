@@ -1,3 +1,7 @@
 .nav-wide-wrapper {
   display: none !important;
 }
+
+.mdbook-sidebar-toggle {
+  display: none !important;
+}
