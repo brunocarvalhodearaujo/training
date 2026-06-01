@@ -63,3 +63,7 @@ console.log(multiply(2, 3))
 ````output
 6
 ````
+
+## Referências
+
+- [MDN Web Docs - Módulos JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Modules)
