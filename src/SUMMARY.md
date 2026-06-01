@@ -2,6 +2,7 @@
 
 # Fundamentos
 
+- [Mapa de carreira de um desenvolvedor](./mapa-de-carreira.md)
 - [Git](./fundamentos/git.md)
 - [Linux](./fundamentos/linux.md)
 - [SQL e bancos de dados relacionais](./fundamentos/SQL-e-bancos-de-dados-relacionais.md)
