@@ -22,6 +22,7 @@
   - [Rest e Spread](./javascript/fundamentos/rest-spread.md)
   - [Módulos](./javascript/fundamentos/modulos.md)
   - [Requisições HTTP com Fetch](./javascript/fundamentos/requisicoes-http-com-fetch.md)
+  - [Utilidades](./javascript/utilidades.md)
 - [Testes unitários](./javascript/testes-unitarios.md)
 - [Gerenciando dependências com NPM](./javascript/gerenciando-dependencias-com-npm.md)
 - [React](./javascript/react.md)
