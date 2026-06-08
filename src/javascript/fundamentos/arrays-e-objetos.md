@@ -536,4 +536,29 @@ console.info(pessoa)
 { nome: 'Bruno', idade: 33 }
 ```
 
+#### `Object.groupBy`
 
+Agrupa os elementos de um array com base em uma função de agrupamento.
+
+```javascript
+const pessoas = [
+  { nome: "Bruno", idade: 32, role: "Desenvolvedor" },
+  { nome: "Ana", idade: 28, role: "Designer" },
+  { nome: "Carlos", idade: 32, role: "Designer" }
+]
+const agrupadoPorRole = Object.groupBy(pessoas, pessoa => pessoa.role)
+
+console.info(agrupadoPorRole)
+```
+
+```output
+{
+  'Desenvolvedor': [
+    { nome: 'Bruno', idade: 32, role: 'Desenvolvedor' }
+  ],
+  'Designer': [
+    { nome: 'Ana', idade: 28, role: 'Designer' },
+    { nome: 'Carlos', idade: 32, role: 'Designer' }
+  ]
+}
+```
