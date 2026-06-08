@@ -8,12 +8,12 @@ Caso queira formatar um valor monetário, o método `toLocaleString` é uma óti
 const amount = 59.90
 
 const currencyBRL = (value) => {
-  let options = { style: 'currency', currency: 'BRL' }
+  const options = { style: 'currency', currency: 'BRL' }
   return value.toLocaleString('pt-BR', options)
 }
 
 const currencyUSD = (value) => {
-  let options = { style: 'currency', currency: 'USD' }
+  const options = { style: 'currency', currency: 'USD' }
   return value.toLocaleString('en-US', options)
 }
 
