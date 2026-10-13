@@ -95,3 +95,33 @@ No time o scrum master costuma ser o responsável por criar a apresentação e c
 A retrospectiva é uma reunião realizada ao final de cada sprint, onde a equipe reflete sobre o processo, identifica pontos de melhoria e define ações para aprimorar continuamente seu desempenho e colaboração.
 
 No time o scrum master costuma ser o responsável por conduzir a retrospectiva, garantindo que todos os membros da equipe tenham a oportunidade de compartilhar suas opiniões e que a reunião resulte em ações concretas para melhorar o processo.
+
+## Papéis
+
+### Product Owner
+
+O product owner é responsável por maximizar o valor do produto resultante do trabalho da equipe de desenvolvimento. Ele gerencia o backlog do produto, define prioridades e garante que a equipe esteja trabalhando nas funcionalidades mais importantes para o negócio.
+
+#### Responsabilidades
+
+- Definir e comunicar a visão do produto para a equipe e as partes interessadas.
+- Gerenciar o backlog do produto, incluindo a criação, priorização e detalhamento dos itens.
+- Garantir que a equipe de desenvolvimento compreenda os requisitos e objetivos do produto.
+- Tomar decisões sobre o escopo e prioridades do produto com base no valor para o negócio.
+- Colaborar com as partes interessadas para obter feedback contínuo e ajustar o backlog conforme necessário.
+
+### Scrum Master
+
+O scrum master atua como um facilitador dentro da equipe que segue a metodologia Scrum, garantindo que os princípios ágeis sejam aplicados corretamente e ajudando a remover obstáculos que possam impedir o progresso do time.
+
+#### Responsabilidades
+
+- Facilitar as cerimônias Scrum, como planning, daily, review e retrospectiva.
+- Ajudar a equipe a remover impedimentos que possam atrapalhar o progresso das atividades.
+- Garantir que a equipe siga as práticas ágeis e os princípios do Scrum.
+- Proteger a equipe de interferências externas e distrações.
+- Promover a melhoria contínua dentro da equipe.
+
+### Equipe de Desenvolvimento
+
+A equipe de desenvolvimento é composta pelos profissionais responsáveis por entregar incrementos de produto potencialmente utilizáveis ao final de cada sprint. Eles possuem todas as habilidades necessárias para transformar os itens do backlog em funcionalidades funcionando.

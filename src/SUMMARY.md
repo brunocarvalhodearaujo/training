@@ -4,6 +4,7 @@
 
 # Fundamentos
 
+- [Agilidade](./fundamentos/agilidade.md)
 - [Git](./fundamentos/git.md)
 - [SQL e bancos de dados relacionais](./fundamentos/SQL-e-bancos-de-dados-relacionais.md)
 - [HTTP e REST](./fundamentos/http-e-rest.md)
