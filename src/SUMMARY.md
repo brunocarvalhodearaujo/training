@@ -1,7 +1,5 @@
 # Summary
 
-- [Mapa de carreira de um desenvolvedor](./mapa-de-carreira.md)
-
 # Fundamentos
 
 - [Agilidade](./fundamentos/agilidade.md)
@@ -11,7 +9,11 @@
 - [JSON e XML](./fundamentos/json-e-xml.md)
 - [O que é um Micro-serviço](./fundamentos/microservico.md)
 
-# JavaScript e Node.js
+# Desenvolvimento de Software
+
+- [Mapa de carreira de um desenvolvedor](./mapa-de-carreira.md)
+
+## JavaScript e Node.js
 
 - [Fundamentos](./javascript/fundamentos/visao-geral.md)
   - [Variáveis](./javascript/fundamentos/variaveis.md)
