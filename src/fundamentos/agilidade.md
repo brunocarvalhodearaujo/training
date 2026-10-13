@@ -125,3 +125,12 @@ O scrum master atua como um facilitador dentro da equipe que segue a metodologia
 ### Equipe de Desenvolvimento
 
 A equipe de desenvolvimento é composta pelos profissionais responsáveis por entregar incrementos de produto potencialmente utilizáveis ao final de cada sprint. Eles possuem todas as habilidades necessárias para transformar os itens do backlog em funcionalidades funcionando.
+
+#### Responsabilidades
+
+- Participar ativamente das cerimônias Scrum, como planning, daily, review e retrospectiva.
+- Colaborar com o product owner para entender os requisitos e objetivos do produto.
+- Estimar e planejar o trabalho a ser realizado durante a sprint.
+- Desenvolver, testar e entregar incrementos de produto de alta qualidade.
+- Identificar e comunicar impedimentos que possam afetar o progresso da equipe.
+- Contribuir para a melhoria contínua do processo e da colaboração dentro da equipe.
