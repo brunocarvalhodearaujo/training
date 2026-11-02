@@ -2,8 +2,8 @@
 
 # Fundamentos
 
-- [Agilidade](./fundamentos/agilidade.md)
 - [Git](./fundamentos/git.md)
+- [Agilidade](./fundamentos/agilidade.md)
 - [SQL e bancos de dados relacionais](./fundamentos/SQL-e-bancos-de-dados-relacionais.md)
 - [HTTP e REST](./fundamentos/http-e-rest.md)
 - [JSON e XML](./fundamentos/json-e-xml.md)
@@ -13,7 +13,7 @@
 
 - [Mapa de carreira de um desenvolvedor](./mapa-de-carreira.md)
 
-## JavaScript e Node.js
+# JavaScript e Node.js
 
 - [Fundamentos](./javascript/fundamentos/visao-geral.md)
   - [Variáveis](./javascript/fundamentos/variaveis.md)
@@ -29,7 +29,7 @@
 - [Testes unitários](./javascript/testes-unitarios.md)
 - [Gerenciando dependências com NPM](./javascript/gerenciando-dependencias-com-npm.md)
 - [React](./javascript/react.md)
-- [Limitando a concorrência com `Readable.map`](./javascript/concurrency.md)
+- [Limitando a concorrência com `Readable.map`](./javascript/concorrencia.md)
 - [Observabilidade](./javascript/observabilidade.md)
 - [Projetos práticos](./javascript/projetos/README.md)
   - [Projeto 1: Olá Mundo](./javascript/projetos/01-hello-world.md)
@@ -40,12 +40,11 @@
 # DevOps
 
 - [Introdução](./devops/README.md)
-- [Linux](./devops/linux.md)
+- [Linux](./devops/linux/README.md)
+  - [Dúvidas frequentes](./devops/linux/duvidas.md)
 - [Docker e Compose](./devops/docker.md)
 - [Kubernetes](./devops/kubernetes.md)
 - [Terraform](./devops/terraform.md)
 - [AWS](./devops/aws.md)
-
-## Proxmox
-
-- [OpenRGB](./devops/proxmox/openrgb.md)
+- [Proxmox](./devops/proxmox/README.md)
+  - [OpenRGB](./devops/proxmox/openrgb.md)
