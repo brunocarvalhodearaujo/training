@@ -45,5 +45,7 @@
 - [Kubernetes](./devops/kubernetes.md)
 - [Terraform](./devops/terraform.md)
 - [AWS](./devops/aws.md)
-- Proxmox
-  - [OpenRGB](./devops/proxmox/openrgb.md)
+
+## Proxmox
+
+- [OpenRGB](./devops/proxmox/openrgb.md)
