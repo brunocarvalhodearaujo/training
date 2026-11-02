@@ -48,3 +48,4 @@
 - [AWS](./devops/aws.md)
 - [Proxmox](./devops/proxmox/README.md)
   - [OpenRGB](./devops/proxmox/openrgb.md)
+  - [NVIDIA GPU Passthrough em LXC](./devops/proxmox/NVIDIA-GPU-Passthrough-LXC.md)
