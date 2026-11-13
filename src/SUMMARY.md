@@ -31,6 +31,7 @@
 - [React](./javascript/react.md)
 - [Limitando a concorrência com `Readable.map`](./javascript/concorrencia.md)
 - [Download de Imagem da Wikipedia com Streams em Node.js](./javascript/download-de-imagem-da-wikipedia-com-streams-em-node.md)
+- [Criando um Proxy Server com o pacote `proxy`](./javascript/proxy-server.md)
 - [Observabilidade](./javascript/observabilidade.md)
 - [Projetos práticos](./javascript/projetos/README.md)
   - [Projeto 1: Olá Mundo](./javascript/projetos/01-hello-world.md)
